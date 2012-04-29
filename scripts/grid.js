@@ -1,6 +1,6 @@
 /* grid.js
  * JavaScript file for Wesnoth Canvas
- * last updated 27 Apr 12
+ * last updated 29 Apr 12
  */
 
 var tile = new Image();
@@ -15,6 +15,8 @@ var botSelect = 'images/misc/hover-hex-bottom.png';
 
 var canvas;
 var effects;
+
+var map;
 
 preload([ green, desert, hills, cave, forest, light ]);
 
@@ -65,6 +67,12 @@ function init() {
   drawLayer(forest,1,2);
     
   document.addEventListener('mousemove', mouseMove, true);
+  
+  map = readMap('maps/2p_Aethermaw.map');
+  
+  $.each(map, function(index) {
+    
+  })
   
   function mouseMove(e) {
     var mouseX, mouseY;
