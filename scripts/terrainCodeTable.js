@@ -365,7 +365,7 @@ var terrainTable = {
     'name': 'Snowy Mountains',
     'alias': [ 'At', 'Mm' ],
     'group': [ 'frozen', 'rough' ],
-    'tile': 'hills/snow-tile.png'
+    'tile': 'hills/snow.png'
   },
   'Hh^Fp': {
     'name': 'Forested Hills',
@@ -531,7 +531,7 @@ var terrainTable = {
     'name': 'Volcano',
     'alias': 'Qt',
     'group': [ 'obstacle', 'rough' ],
-    'tile': 'mountanis/volcano-tile.png'
+    'tile': 'mountains/volcano-tile.png'
   },
   'Mm^Xm': {
     'name': 'Regular Impassable Mountains',
@@ -579,13 +579,13 @@ var terrainTable = {
     'name': 'Stone Wall',
     'alias': 'Xt',
     'group': [ 'cave', 'obstacle' ],
-    'tile': 'cave/wall-stone-tile.png'
+    'tile': 'walls/wall-stone-tile.png'
   },
   'Xol': {
     'name': 'Lit Stone Wall',
     'alias': 'Xt',
     'group': [ 'cave', 'obstacle' ],
-    'tile': 'cave/wall-stone-tile.png'
+    'tile': 'walls/wall-stone-tile.png'
   },
   '^Xo': {
     'name': 'Impassable Overlay',
@@ -651,7 +651,7 @@ var terrainTable = {
     'name': 'Snowy Cottage',
     'alias': [ '_bas', 'Vi' ],
     'group': [ 'frozen', 'village' ],
-    'tile': 'village/human-snow-tile.png'
+    'tile': 'village/snow-tile.png'
   },
   '^Vhr': {
     'name': 'Ruined Cottage',
@@ -669,7 +669,7 @@ var terrainTable = {
     'name': 'Windmill Village',
     'alias': [ '_bas', 'Vi' ],
     'group': 'village',
-    'tile': 'village/windmill-tile.png'
+    'tile': 'misc/windmill-tile.png'
   },
   '^Vhca': {
     'name': 'Snowy Human City',
@@ -818,7 +818,7 @@ var terrainTable = {
     'name': 'Dwarven Castle',
     'alias': 'Ch',
     'group': [ 'castle', 'cave' ],
-    'tile': 'castle/dwaven-castle-tile.png'
+    'tile': 'castle/dwarven-castle-tile.png'
   },
   'Chr': {
     'name': 'Ruined Human Castle',
@@ -860,7 +860,7 @@ var terrainTable = {
     'name': 'Tall Encampment Keep',
     'alias': 'Ch',
     'group': 'castle',
-    'tile': 'castle/sand/tall-keep-tile.png'
+    'tile': 'castle/encampment/tall-keep-tile.png'
   },
   'Kea': {
     'name': 'Snowy Encampment Keep',

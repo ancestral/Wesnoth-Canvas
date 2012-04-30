@@ -4,12 +4,6 @@
  */
 
 var tile = new Image();
-var green = 'images/terrain/grass/green.png';
-var desert = 'images/terrain/sand/desert.png';
-var hills = 'images/terrain/hills/regular.png';
-var cave = 'images/terrain/cave/floor.png';
-var forest = 'images/terrain/forest/deciduous-summer3.png';
-var light = 'images/terrain/light.png';
 var topSelect = 'images/misc/hover-hex-top.png';
 var botSelect = 'images/misc/hover-hex-bottom.png';
 
@@ -17,12 +11,13 @@ var canvas;
 var effects;
 
 var map;
+var debug = 0;
 
-preload([ green, desert, hills, cave, forest, light ]);
+preload(terrainTable);
 
 function preload(arrayOfImages) {
-  $(arrayOfImages).each(function(){
-    (new Image()).src = this;
+  $.each(arrayOfImages, function(key, value){
+    (new Image()).src = 'images/terrain/' + value['tile'];
   });
 }
 
@@ -34,44 +29,13 @@ function init() {
   var MAP_WIDTH = 3;
   var HEX_HEIGHT = 72;
   var HEX_WIDTH = 72;
-  
-  draw(green,0,0);
-  draw(desert,0,1);
-  draw(hills,0,2);
-  draw(cave,0,3);
-  draw(green,0,4);
-  draw(desert,0,5);
-  
-  draw(hills,1,0);
-  draw(cave,1,1);
-  draw(green,1,2);
-  draw(desert,1,3);
-  draw(hills,1,4);
-  draw(cave,1,5);
-  
-  draw(green,2,0);
-  draw(desert,2,1);
-  draw(hills,2,2);
-  draw(cave,2,3);
-  draw(hills,2,4);
-  draw(desert,2,5);
-  
-  draw(green,3,0);
-  draw(green,3,1);
-  draw(hills,3,2);
-  draw(hills,3,3);
-  draw(green,3,4);
-  draw(green,3,5);
-  
-  drawLayer(forest,0,2);
-  drawLayer(forest,1,2);
     
   document.addEventListener('mousemove', mouseMove, true);
   
   map = readMap('maps/2p_Aethermaw.map');
   
   $.each(map, function(index) {
-    
+    $('#out').append(this + '\n');
   })
   
   function mouseMove(e) {

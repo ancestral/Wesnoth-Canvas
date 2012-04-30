@@ -15,17 +15,64 @@
     </style>
     <script type="text/javascript" language="javascript" src="scripts/jquery.min.js"></script>
     <script type="text/javascript" language="javascript" src="scripts/map.js"></script>
-  	<script type="text/javascript" language="javascript" src="scripts/grid.js"></script>
   	<script type="text/javascript" language="javascript" src="scripts/terrainCodeTable.js"></script>
+  	<script type="text/javascript" language="javascript" src="scripts/grid.js"></script>
   </head>
 
   <body onload="init();">
-    <div id="container">
+    <div id="container" style="padding: 8px;">
       <div id="hex">&nbsp;</div>
-      <div id="canvas" style="cursor:crosshair; padding: 8px;">
+      <div id="canvas" style="cursor:crosshair; padding-top: 8px;">
         <canvas id="game" width="800" height="600" style="position: absolute;"></canvas>
         <canvas id="effects" width="800" height="600" style="position: absolute;"></canvas>
-      </div>        
+      </div>     
+      <div id="chooser" style="position: absolute; top: 8px; left: 80px;">
+        <select>
+          <option>2p_Aethermaw.map</option>
+          <option>2p_Arcanclave_Citadel.map</option>
+          <option>2p_Caves_of_the_Basilisk.map</option>
+          <option>2p_Cynsaun_Battlefield.map</option>
+          <option>2p_Den_of_Onis.map</option>
+          <option>2p_Elensefar_Courtyard.map</option>
+          <option>2p_Fallenstar_Lake.map</option>
+          <option>2p_Hamlets.map</option>
+          <option>2p_Hornshark_Island.map</option>
+          <option>2p_Howling_Ghost_Badlands.map</option>
+          <option>2p_Sablestone_Delta.map</option>
+          <option>2p_Silverhead_Crossing.map</option>
+          <option>2p_Sullas_Ruins.map</option>
+          <option>2p_The_Freelands.map</option>
+          <option>2p_Thousand_Stings_Garrison.map</option>
+          <option>2p_Weldyn_Channel.map</option>
+          <option>3p_Alirok_Marsh.map</option>
+          <option>3p_Island_of_the_Horatii.map</option>
+          <option>3p_Morituri.map</option>
+          <option>4p_A_New_Land.map</option>
+          <option>4p_Blue_Water_Province.map</option>
+          <option>4p_Castle_Hopping_Isle.map</option>
+          <option>4p_Clash.map</option>
+          <option>4p_Hamlets.map</option>
+          <option>4p_Isars_Cross.map</option>
+          <option>4p_King_of_the_Hill.map</option>
+          <option>4p_Loris_River.map</option>
+          <option>4p_Morituri.map</option>
+          <option>4p_Paths_of_Daggers.map</option>
+          <option>4p_Ruins_of_Terra-Dwelve.map</option>
+          <option>4p_Siege_Castles.map</option>
+          <option>4p_Underworld.map</option>
+          <option>4p_Xanthe_Chaos.map</option>
+          <option>5p_Auction-X.map</option>
+          <option>5p_Forest_of_Fear.map</option>
+          <option>5p_The_Wilderlands.map</option>
+          <option>6p_Crusaders_Field.map</option>
+          <option>6p_Hexcake.map</option>
+          <option>6p_The_Manzivan_Traps.map</option>
+          <option>6p_Volcano.map</option>
+          <option>6p_Waterloo_Sunset.map</option>
+          <option>8p_Mokena_Prairie.map</option>
+          <option>8p_Morituri.map</option>
+          <option>9p_Merkwuerdigliebe.map</option>
+        </select>
       </div>
     </div>
   </body>
