@@ -1,6 +1,6 @@
 /* map.js
  * JavaScript file for Wesnoth Canvas
- * last updated 29 Apr 12
+ * last updated 30 Apr 12
  */
  
 Array.prototype.clean = function(deleteValue) {
@@ -15,20 +15,18 @@ Array.prototype.clean = function(deleteValue) {
 
 function readMap(map) {
   var mapData;
-  $(document).ready(function() {
-    $.ajax({
-      async: false,
-      url: map,
-      success: function(data) {
-        mapData = data.split('\n');
-        $.each(mapData, function(index) {
-          mapData[index] = this.replace(/\s*/g,'').split(',');
-          if (/=/.test(mapData[index])) {
-            mapData[index] = '';            
-          }
-        });
-      }
-    });
+  $.ajax({
+    async: false,
+    url: map,
+    success: function(data) {
+      mapData = data.split('\n');
+      $.each(mapData, function(index) {
+        mapData[index] = this.replace(/\s*/g,'').split(',');
+        if (/=/.test(mapData[index])) {
+          mapData[index] = '';            
+        }
+      });
+    }
   });
   return mapData.clean('');
 }
