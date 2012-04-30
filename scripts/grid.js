@@ -6,6 +6,7 @@
 var tile = new Image();
 var topSelect = 'images/misc/hover-hex-top.png';
 var botSelect = 'images/misc/hover-hex-bottom.png';
+var brush = 'images/editor/brush.png';
 
 var canvas;
 var effects;
@@ -40,13 +41,23 @@ function loadMap(map) {
 
   $.each(map, function(index) {
     $.each(map[index], function(i) {
-      if (terrainTable[this] != null) {
-        draw('images/terrain/' + terrainTable[this]['tile'],i,index);
-      } else if (terrainTable[this.split('^')[0]] != null) {
-        draw('images/terrain/' + terrainTable[this.split('^')[0]]['tile'],i,index);
-        if (terrainTable['^' + this.split('^')[1]] != null) {
-          draw('images/terrain/' + terrainTable['^' + this.split('^')[1]]['tile'],i,index);
+      var that = this;
+      var flag = false;
+      if ($.inArray(that.substr(0,1),['1','2','3','4','5','6','7','8','9']) != -1 ) {
+        that = that.substr(1,(that.length-1));
+        flag = true;
+      }
+      
+      if (terrainTable[that] != null) {
+        draw('images/terrain/' + terrainTable[that]['tile'],i,index);
+      } else if (terrainTable[that.split('^')[0]] != null) {
+        draw('images/terrain/' + terrainTable[that.split('^')[0]]['tile'],i,index);
+        if (terrainTable['^' + that.split('^')[1]] != null) {
+          draw('images/terrain/' + terrainTable['^' + that.split('^')[1]]['tile'],i,index);
         }
+      }
+      if (flag == true) {
+        draw('images/editor/tool-overlay-starting-position.png',i,index);
       }
     });
   });
