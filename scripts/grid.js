@@ -181,7 +181,7 @@ function draw(what,x,y) {
   var xOffset = 0;
   var yOffset = 0;
   if ((x % 2) == 1) { yOffset = HEX_HEIGHT/2; }
-  canvas.drawImage(tile,x*HEX_WIDTH*.75,y*HEX_HEIGHT+yOffset)
+  canvas.drawImage(tile,x*HEX_WIDTH*.75,y*HEX_HEIGHT+yOffset);
 }
 
 function drawSelect(what,x,y) {
@@ -189,7 +189,7 @@ function drawSelect(what,x,y) {
   var xOffset = 0;
   var yOffset = 0;
   if ((x % 2) == 1) { yOffset = HEX_HEIGHT/2; }
-  effects.drawImage(tile,x*HEX_WIDTH*.75,y*HEX_HEIGHT+yOffset)
+  effects.drawImage(tile,x*HEX_WIDTH*.75,y*HEX_HEIGHT+yOffset);
 }
 
 function drawObject(what,x,y) {
