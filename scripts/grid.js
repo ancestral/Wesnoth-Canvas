@@ -71,11 +71,16 @@ function loadMap(map) {
     });
   });
   
+
+/* This will paint hexes on the map. I'm turning it off for now. Probably needs its own canvas. */
+
+/*
   for(var j=0;j<MAP_HEIGHT;j++) {
     for(var i=0;i<MAP_WIDTH;i++) {
       draw('ui/hexgrid.png',i,j);
     }
   }
+ */
 }
 
 
