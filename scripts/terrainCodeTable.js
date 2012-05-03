@@ -800,7 +800,23 @@ var terrainTable = {
   'Ch': {
     'name': 'Human Castle',
     'group': 'castle',
-    'tile': 'castle/castle-tile.png'
+    'tile': 'castle/castle-tile.png',
+    'convex': {
+      'ne': 'castle/castle-convex-tr.png',
+      'e' : 'castle/castle-convex-r.png',
+      'se': 'castle/castle-convex-br.png',
+      'sw': 'castle/castle-convex-bl.png',
+      'w' : 'castle/castle-convex-l.png',
+      'nw': 'castle/castle-convex-tl.png'
+    },
+    'concave': {
+      'ne': 'castle/castle-concave-tr.png',
+      'e' : 'castle/castle-concave-r.png',
+      'se': 'castle/castle-concave-br.png',
+      'sw': 'castle/castle-concave-bl.png',
+      'w' : 'castle/castle-concave-l.png',
+      'nw': 'castle/castle-concave-tl.png'
+    }
   },
   'Cha': {
     'name': 'Snowy Human Castle',
@@ -818,19 +834,67 @@ var terrainTable = {
     'name': 'Dwarven Castle',
     'alias': 'Ch',
     'group': [ 'castle', 'cave' ],
-    'tile': 'castle/dwarven-castle-tile.png'
+    'tile': 'castle/dwarven-castle-tile.png',
+    'convex': {
+      'ne': 'castle/dwarven-castle-convex-tr.png',
+      'e' : 'castle/dwarven-castle-convex-r.png',
+      'se': 'castle/dwarven-castle-convex-br.png',
+      'sw': 'castle/dwarven-castle-convex-bl.png',
+      'w' : 'castle/dwarven-castle-convex-l.png',
+      'nw': 'castle/dwarven-castle-convex-tl.png'
+    },
+    'concave': {
+      'ne': 'castle/dwarven-castle-concave-tr.png',
+      'e' : 'castle/dwarven-castle-concave-r.png',
+      'se': 'castle/dwarven-castle-concave-br.png',
+      'sw': 'castle/dwarven-castle-concave-bl.png',
+      'w' : 'castle/dwarven-castle-concave-l.png',
+      'nw': 'castle/dwarven-castle-concave-tl.png'
+    }
   },
   'Chr': {
     'name': 'Ruined Human Castle',
     'alias': 'Ch',
     'group': 'castle',
-    'tile': 'castle/ruin-tile.png'
+    'tile': 'castle/ruin-tile.png',
+    'convex': {
+      'ne': [ 'castle/ruin-convex-tr.png', 'castle/ruin2-convex-tr.png', 'castle/ruin3-convex-tr.png', 'castle/ruin4-convex-tr.png', 'castle/ruin5-convex-tr.png' ],
+      'e' : [ 'castle/ruin-convex-r.png', 'castle/ruin2-convex-r.png', 'castle/ruin3-convex-r.png', 'castle/ruin4-convex-r.png', 'castle/ruin5-convex-r.png' ],
+      'se': [ 'castle/ruin-convex-br.png', 'castle/ruin2-convex-br.png', 'castle/ruin3-convex-br.png', 'castle/ruin4-convex-br.png', 'castle/ruin5-convex-br.png' ],
+      'sw': [ 'castle/ruin-convex-bl.png', 'castle/ruin2-convex-bl.png', 'castle/ruin3-convex-bl.png', 'castle/ruin4-convex-bl.png', 'castle/ruin5-convex-bl.png' ],
+      'w' : [ 'castle/ruin-convex-l.png', 'castle/ruin2-convex-l.png', 'castle/ruin3-convex-l.png', 'castle/ruin4-convex-l.png', 'castle/ruin5-convex-l.png' ],
+      'nw': [ 'castle/ruin-convex-tl.png', 'castle/ruin2-convex-tl.png', 'castle/ruin3-convex-tl.png', 'castle/ruin4-convex-tl.png', 'castle/ruin5-convex-tl.png' ]
+    },
+    'concave': {
+      'ne': [ 'castle/ruin-concave-tr.png', 'castle/ruin2-concave-tr.png', 'castle/ruin3-concave-tr.png', 'castle/ruin4-concave-tr.png', 'castle/ruin5-concave-tr.png' ],
+      'e' : [ 'castle/ruin-concave-r.png', 'castle/ruin2-concave-r.png', 'castle/ruin3-concave-r.png', 'castle/ruin4-concave-r.png', 'castle/ruin5-concave-r.png' ],
+      'se': [ 'castle/ruin-concave-br.png', 'castle/ruin2-concave-br.png', 'castle/ruin3-concave-br.png', 'castle/ruin4-concave-br.png', 'castle/ruin5-concave-br.png' ],
+      'sw': [ 'castle/ruin-concave-bl.png', 'castle/ruin2-concave-bl.png', 'castle/ruin3-concave-bl.png', 'castle/ruin4-concave-bl.png', 'castle/ruin5-concave-bl.png' ],
+      'w' : [ 'castle/ruin-concave-l.png', 'castle/ruin2-concave-l.png', 'castle/ruin3-concave-l.png', 'castle/ruin4-concave-l.png', 'castle/ruin5-concave-l.png' ],
+      'nw': [ 'castle/ruin-concave-tl.png', 'castle/ruin2-concave-tl.png', 'castle/ruin3-concave-tl.png', 'castle/ruin4-concave-tl.png', 'castle/ruin5-concave-tl.png' ]
+    }
   },
   'Chw': {
     'name': 'Sunken Human Ruin',
     'alias': 'Ch',
     'group': [ 'castle', 'water' ],
-    'tile': 'castle/sunken-ruin-tile.png'
+    'tile': 'castle/sunken-ruin-tile.png',
+    'convex': {
+      'ne': [ 'castle/sunken-ruin-convex-tr.png', 'castle/sunken-ruin2-convex-tr.png', 'castle/sunken-ruin3-convex-tr.png', 'castle/sunken-ruin4-convex-tr.png', 'castle/sunken-ruin5-convex-tr.png', 'castle/sunken-ruin6-convex-tr.png' ],
+      'e' : [ 'castle/sunken-ruin-convex-r.png', 'castle/sunken-ruin2-convex-r.png', 'castle/sunken-ruin3-convex-r.png', 'castle/sunken-ruin4-convex-r.png', 'castle/sunken-ruin5-convex-r.png', 'castle/sunken-ruin6-convex-r.png' ],
+      'se': [ 'castle/sunken-ruin-convex-br.png', 'castle/sunken-ruin2-convex-br.png', 'castle/sunken-ruin3-convex-br.png', 'castle/sunken-ruin4-convex-br.png', 'castle/sunken-ruin5-convex-br.png', 'castle/sunken-ruin6-convex-br.png' ],
+      'sw': [ 'castle/sunken-ruin-convex-bl.png', 'castle/sunken-ruin2-convex-bl.png', 'castle/sunken-ruin3-convex-bl.png', 'castle/sunken-ruin4-convex-bl.png', 'castle/sunken-ruin5-convex-bl.png', 'castle/sunken-ruin6-convex-bl.png' ],
+      'w' : [ 'castle/sunken-ruin-convex-l.png', 'castle/sunken-ruin2-convex-l.png', 'castle/sunken-ruin3-convex-l.png', 'castle/sunken-ruin4-convex-l.png', 'castle/sunken-ruin5-convex-l.png', 'castle/sunken-ruin6-convex-l.png' ],
+      'nw': [ 'castle/sunken-ruin-convex-tl.png', 'castle/sunken-ruin2-convex-tl.png', 'castle/sunken-ruin3-convex-tl.png', 'castle/sunken-ruin4-convex-tl.png', 'castle/sunken-ruin5-convex-tl.png', 'castle/sunken-ruin6-convex-tl.png' ]
+    },
+    'concave': {
+      'ne': [ 'castle/sunken-ruin-concave-tr.png', 'castle/sunken-ruin2-concave-tr.png', 'castle/sunken-ruin3-concave-tr.png', 'castle/sunken-ruin4-concave-tr.png', 'castle/sunken-ruin5-concave-tr.png', 'castle/sunken-ruin6-concave-tr.png' ],
+      'e' : [ 'castle/sunken-ruin-concave-r.png', 'castle/sunken-ruin2-concave-r.png', 'castle/sunken-ruin3-concave-r.png', 'castle/sunken-ruin4-concave-r.png', 'castle/sunken-ruin5-concave-r.png', 'castle/sunken-ruin6-concave-r.png' ],
+      'se': [ 'castle/sunken-ruin-concave-br.png', 'castle/sunken-ruin2-concave-br.png', 'castle/sunken-ruin3-concave-br.png', 'castle/sunken-ruin4-concave-br.png', 'castle/sunken-ruin5-concave-br.png', 'castle/sunken-ruin6-concave-br.png' ],
+      'sw': [ 'castle/sunken-ruin-concave-bl.png', 'castle/sunken-ruin2-concave-bl.png', 'castle/sunken-ruin3-concave-bl.png', 'castle/sunken-ruin4-concave-bl.png', 'castle/sunken-ruin5-concave-bl.png', 'castle/sunken-ruin6-concave-bl.png' ],
+      'w' : [ 'castle/sunken-ruin-concave-l.png', 'castle/sunken-ruin2-concave-l.png', 'castle/sunken-ruin3-concave-l.png', 'castle/sunken-ruin4-concave-l.png', 'castle/sunken-ruin5-concave-l.png', 'castle/sunken-ruin6-concave-l.png' ],
+      'nw': [ 'castle/sunken-ruin-concave-tl.png', 'castle/sunken-ruin2-concave-tl.png', 'castle/sunken-ruin3-concave-tl.png', 'castle/sunken-ruin4-concave-tl.png', 'castle/sunken-ruin5-concave-tl.png', 'castle/sunken-ruin6-concave-tl.png' ]
+    }
   },
   'Chs': {
     'name': 'Swamp Human Ruin',

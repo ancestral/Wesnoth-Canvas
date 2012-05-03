@@ -10,9 +10,13 @@ var brush = 'images/editor/brush.png';
 
 var canvas;
 var effects;
+var hexes;
 
 var HEX_HEIGHT = 72;
 var HEX_WIDTH = 72;
+
+var MAP_HEIGHT;
+var MAP_WIDTH;
 
 preload(terrainTable);
 
@@ -20,6 +24,9 @@ function preload(arrayOfImages) {
   $.each(arrayOfImages, function(key, value){
     (new Image()).src = 'images/terrain/' + value['tile'];
   });
+  new Image().src = 'images/misc/hover-hex-top.png';
+  new Image().src = 'images/misc/hover-hex-bottom.png';
+  new Image().src = 'ui/hexgrid.png';
 }
 
 $(document).ready(function() {
@@ -33,10 +40,12 @@ $(document).ready(function() {
   document.addEventListener('mousemove', mouseMove, true);
 });
 
-function loadMap(map) {  
+function loadMap(map) {
+  MAP_WIDTH = map[0].length;
+  MAP_HEIGHT = map.length;
   $.each([ 'game', 'effects'], function() {
-    document.getElementById(this).width = (HEX_WIDTH*.75*map[0].length)+(HEX_WIDTH*.25);
-    document.getElementById(this).height = (HEX_HEIGHT*map.length)+(HEX_HEIGHT*.5);
+    document.getElementById(this).width = (HEX_WIDTH*.75*MAP_WIDTH)+(HEX_WIDTH*.25);
+    document.getElementById(this).height = (HEX_HEIGHT*MAP_HEIGHT)+(HEX_HEIGHT*.5);
   });
 
   $.each(map, function(index) {
@@ -61,6 +70,14 @@ function loadMap(map) {
       }
     });
   });
+  
+  var hexgridCols = ((document.getElementById('game').width)/HEX_WIDTH*1.5)-1;
+  var hexgridRows = ((document.getElementById('game').height)/HEX_HEIGHT*1.25)-1;
+  for(var j=0;j<MAP_HEIGHT;j++) {
+    for(var i=0;i<MAP_WIDTH;i++) {
+      draw('ui/hexgrid.png',i,j);
+    }
+  }
 }
 
 
@@ -76,15 +93,21 @@ function mouseMove(e) {
     mouseY = e.layerY;
   }  
 
-  var hexes = whatHex(mouseX, mouseY);
+  if (hexes) {
+    var yOffset = 0;
+    if (((hexes[0]+1) % 2) == 1) { yOffset = HEX_HEIGHT/2; }
+      effects.clearRect((hexes[0]-1)*HEX_WIDTH*.75,(hexes[1]-1)*HEX_HEIGHT+yOffset,HEX_WIDTH,HEX_HEIGHT); 
+  }
+  
+  hexes = whatHex(mouseX, mouseY);
 
   if ((hexes[0] == undefined) || (hexes[1] == undefined)) {
-    $('#hex').html('&nbsp');  
+    $('#hex').html('');  
   } else {
     $('#hex').html('(' + hexes[0] + ',' + hexes[1] + ')');
     if((hexes[0] != 0) && (hexes[1] != 0)) {
       var eWidth = effects.width
-      effects.clearRect(0,0,document.getElementById('effects').width,document.getElementById('effects').height);
+      //effects.clearRect(0,0,document.getElementById('effects').width,document.getElementById('effects').height);
       drawSelect(topSelect,hexes[0]-1,hexes[1]-1);
       drawSelect(botSelect,hexes[0]-1,hexes[1]-1);
     }
