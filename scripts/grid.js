@@ -71,8 +71,6 @@ function loadMap(map) {
     });
   });
   
-  var hexgridCols = ((document.getElementById('game').width)/HEX_WIDTH*1.5)-1;
-  var hexgridRows = ((document.getElementById('game').height)/HEX_HEIGHT*1.25)-1;
   for(var j=0;j<MAP_HEIGHT;j++) {
     for(var i=0;i<MAP_WIDTH;i++) {
       draw('ui/hexgrid.png',i,j);
