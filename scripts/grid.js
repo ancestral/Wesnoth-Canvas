@@ -25,11 +25,11 @@ preload(terrainTable);
 function preload(arrayOfImages) {
   $.each(arrayOfImages, function(key, value){
     if (this.hasOwnProperty(key))
-    $('<img/>')[0].src = 'images/terrain/' + value['tile'];
+    (new Image()).src = 'images/terrain/' + value['tile'];
   });
-  $('<img/>')[0].src = 'images/misc/hover-hex-top.png';
-  $('<img/>')[0].src = 'images/misc/hover-hex-bottom.png';
-  $('<img/>')[0].src = 'ui/hexgrid.png';
+  (new Image()).src = 'images/misc/hover-hex-top.png';
+  (new Image()).src = 'images/misc/hover-hex-bottom.png';
+  (new Image()).src = 'ui/hexgrid.png';
 }
 
 $(document).ready(function() {
