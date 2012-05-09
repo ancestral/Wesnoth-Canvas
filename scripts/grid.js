@@ -23,12 +23,16 @@ var debug = 0;
 preload(terrainTable);
 
 function preload(arrayOfImages) {
+  var images = [];
   $.each(arrayOfImages, function(key, value){
-    if (value['tile']) { new Image().src = 'images/terrain/' + value['tile']; }
+    if (value['tile']) { 
+      images[key] = new Image();
+      images[key].src = 'images/terrain/' + value['tile'];
+    }
   });
-  new Image().src = 'images/misc/hover-hex-top.png';
-  new Image().src = 'images/misc/hover-hex-bottom.png';
-  new Image().src = 'ui/hexgrid.png';
+  images['hover-hex-top'] = new Image(); images['hover-hex-top'].src = 'images/misc/hover-hex-top.png';
+  images['hover-hex-bottom'] = new Image(); images['hover-hex-bottom'].src = 'images/misc/hover-hex-bottom.png';
+  images['hexgrid'] = new Image(); images['hexgrid'].src = 'ui/hexgrid.png';
 }
 
 $(document).ready(function() {
@@ -62,12 +66,12 @@ function loadMap(map) {
         flag = true;
       }
       // Check neighboring tiles. Even checks W, NW vertices; odd checks SW, W, NW and NE vertices.
-      
+            
       if (col > 1) {
         if (terrainTable[map[row][col-1].hexValue()].hasGroup('castle')) {
           console.log('last hex (' + (col) + ', ' + (row+1) + ') was a castle');
         }
-      }      
+      }
       // Tiles with layers
       if (terrainTable[that] != undefined) {
         draw('images/terrain/' + terrainTable[that]['tile'],col,row);
