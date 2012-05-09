@@ -24,12 +24,11 @@ preload(terrainTable);
 
 function preload(arrayOfImages) {
   $.each(arrayOfImages, function(key, value){
-    if (this.hasOwnProperty(key))
-    (new Image()).src = 'images/terrain/' + value['tile'];
+    if (value['tile']) { new Image().src = 'images/terrain/' + value['tile']; }
   });
-  (new Image()).src = 'images/misc/hover-hex-top.png';
-  (new Image()).src = 'images/misc/hover-hex-bottom.png';
-  (new Image()).src = 'ui/hexgrid.png';
+  new Image().src = 'images/misc/hover-hex-top.png';
+  new Image().src = 'images/misc/hover-hex-bottom.png';
+  new Image().src = 'ui/hexgrid.png';
 }
 
 $(document).ready(function() {
@@ -39,6 +38,8 @@ $(document).ready(function() {
   $('#mapChoice').change(function() {
     loadMap(readMap('maps/' + ($('#mapChoice option:selected').html())));
   });
+  
+  loadMap(readMap('maps/2p_Aethermaw.map'));
 
   document.addEventListener('mousemove', mouseMove, true);
 });
