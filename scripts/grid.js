@@ -18,15 +18,18 @@ var HEX_WIDTH = 72;
 var MAP_HEIGHT;
 var MAP_WIDTH;
 
+var debug = 0;
+
 preload(terrainTable);
 
 function preload(arrayOfImages) {
   $.each(arrayOfImages, function(key, value){
-    (new Image()).src = 'images/terrain/' + value['tile'];
+    if (this.hasOwnProperty(key))
+    $('<img/>')[0].src = 'images/terrain/' + value['tile'];
   });
-  new Image().src = 'images/misc/hover-hex-top.png';
-  new Image().src = 'images/misc/hover-hex-bottom.png';
-  new Image().src = 'ui/hexgrid.png';
+  $('<img/>')[0].src = 'images/misc/hover-hex-top.png';
+  $('<img/>')[0].src = 'images/misc/hover-hex-bottom.png';
+  $('<img/>')[0].src = 'ui/hexgrid.png';
 }
 
 $(document).ready(function() {
@@ -47,26 +50,34 @@ function loadMap(map) {
     document.getElementById(this).width = (HEX_WIDTH*.75*MAP_WIDTH)+(HEX_WIDTH*.25);
     document.getElementById(this).height = (HEX_HEIGHT*MAP_HEIGHT)+(HEX_HEIGHT*.5);
   });
-
-  $.each(map, function(index) {
-    $.each(map[index], function(i) {
+  // Rows are index, columns are i
+  $.each(map, function(row) {
+    $.each(map[row], function(col) {
       var that = this;
       var flag = false;
+      // Starting points
       if ($.inArray(that.substr(0,1),['1','2','3','4','5','6','7','8','9']) != -1 ) {
         that = that.substr(1,(that.length-1));
         flag = true;
       }
+      // Check neighboring tiles. Even checks W, NW vertices; odd checks SW, W, NW and NE vertices.
       
-      if (terrainTable[that] != null) {
-        draw('images/terrain/' + terrainTable[that]['tile'],i,index);
-      } else if (terrainTable[that.split('^')[0]] != null) {
-        draw('images/terrain/' + terrainTable[that.split('^')[0]]['tile'],i,index);
-        if (terrainTable['^' + that.split('^')[1]] != null) {
-          draw('images/terrain/' + terrainTable['^' + that.split('^')[1]]['tile'],i,index);
+      if (col > 1) {
+        if (terrainTable[map[row][col-1].hexValue()].hasGroup('castle')) {
+          console.log('last hex (' + (col) + ', ' + (row+1) + ') was a castle');
+        }
+      }      
+      // Tiles with layers
+      if (terrainTable[that] != undefined) {
+        draw('images/terrain/' + terrainTable[that]['tile'],col,row);
+      } else if (terrainTable[that.split('^')[0]] != undefined) {
+        draw('images/terrain/' + terrainTable[that.split('^')[0]]['tile'],col,row);
+        if (terrainTable['^' + that.split('^')[1]] != undefined) {
+          draw('images/terrain/' + terrainTable['^' + that.split('^')[1]]['tile'],col,row);
         }
       }
       if (flag == true) {
-        draw('images/editor/tool-overlay-starting-position.png',i,index);
+        draw('images/editor/tool-overlay-starting-position.png',col,row);
       }
     });
   });

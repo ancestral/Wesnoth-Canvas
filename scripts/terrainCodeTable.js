@@ -1082,7 +1082,7 @@ var terrainTable = {
     'group': [ 'bridge', 'cave' ],
     'tile': 'cave/chasm-stone-bridge-se-nw-tile.png'
   },
-  '_ff^_usr': {
+  '_off^_usr': {
     'name': 'Off Map',
     'group': [ 'obstacle', 'special' ],
     'tile': 'off-map/offmap-editor.png'

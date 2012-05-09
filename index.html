@@ -11,15 +11,15 @@
     <link rel="stylesheet" type="text/css" href="stylesheets/layout.css" />
     <link rel="shortcut icon" href="images/wesnoth-icon-small.png" />
     <style type="text/css" media="screen">
-      #game { background: url('images/terrain/off-map/background.png'); }
+      #game { background-image: url('images/terrain/off-map/background.png'); }
     </style>
     <script type="text/javascript" language="javascript" src="scripts/jquery.min.js"></script>
-    <script type="text/javascript" language="javascript" src="scripts/map.js"></script>
   	<script type="text/javascript" language="javascript" src="scripts/terrainCodeTable.js"></script>
+    <script type="text/javascript" language="javascript" src="scripts/map.js"></script>
   	<script type="text/javascript" language="javascript" src="scripts/grid.js"></script>
   </head>
 
-  <body>
+  <body onload="loadMap(readMap('maps/2p_Aethermaw.map'));">
     <div id="container" style="padding: 8px;">
       <div id="hex">&nbsp;</div>
       <div id="canvas" style="cursor:crosshair; margin-top: 16px;">
