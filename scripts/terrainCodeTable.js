@@ -777,25 +777,89 @@ var terrainTable = {
     'name': 'Encampment',
     'alias': 'Ch',
     'group': 'castle',
-    'tile': 'castle/encampment/regular-tile.png'
+    'tile': 'castle/encampment/regular-tile.png',
+    'convex': {
+      'ne': 'castle/encampment/regular-convex-tr.png',
+      'e' : 'castle/encampment/regular-convex-r.png',
+      'se': 'castle/encampment/regular-convex-br.png',
+      'sw': 'castle/encampment/regular-convex-bl.png',
+      'w' : 'castle/encampment/regular-convex-l.png',
+      'nw': 'castle/encampment/regular-convex-tl.png'
+    },
+    'concave': {
+      'ne': 'castle/encampment/regular-concave-tr.png',
+      'e' : 'castle/encampment/regular-concave-r.png',
+      'se': 'castle/encampment/regular-concave-br.png',
+      'sw': 'castle/encampment/regular-concave-bl.png',
+      'w' : 'castle/encampment/regular-concave-l.png',
+      'nw': 'castle/encampment/regular-concave-tl.png'
+    }
   },
   'Cea': {
     'name': 'Snowy Encampment',
     'alias': 'Ch',
     'group': [ 'castle', 'frozen' ],
-    'tile': 'castle/encampment/snow-tile.png'
+    'tile': 'castle/encampment/snow-tile.png',
+    'convex': {
+      'ne': 'castle/encampment/snow-convex-tr.png',
+      'e' : 'castle/encampment/snow-convex-r.png',
+      'se': 'castle/encampment/snow-convex-br.png',
+      'sw': 'castle/encampment/snow-convex-bl.png',
+      'w' : 'castle/encampment/snow-convex-l.png',
+      'nw': 'castle/encampment/snow-convex-tl.png'
+    },
+    'concave': {
+      'ne': 'castle/encampment/snow-concave-tr.png',
+      'e' : 'castle/encampment/snow-concave-r.png',
+      'se': 'castle/encampment/snow-concave-br.png',
+      'sw': 'castle/encampment/snow-concave-bl.png',
+      'w' : 'castle/encampment/snow-concave-l.png',
+      'nw': 'castle/encampment/snow-concave-tl.png'
+    }
   },
   'Co': {
     'name': 'Orcish Castle',
     'alias': 'Ch',
     'group': 'castle',
-    'tile': 'castle/orcish/tile.png'
+    'tile': 'castle/orcish/tile.png',
+    'convex': {
+      'ne': 'castle/orcish/fort-convex-tr.png',
+      'e' : 'castle/orcish/fort-convex-r.png',
+      'se': 'castle/orcish/fort-convex-br.png',
+      'sw': 'castle/orcish/fort-convex-bl.png',
+      'w' : 'castle/orcish/fort-convex-l.png',
+      'nw': 'castle/orcish/fort-convex-tl.png'
+    },
+    'concave': {
+      'ne': 'castle/orcish/fort-concave-tr.png',
+      'e' : 'castle/orcish/fort-concave-r.png',
+      'se': 'castle/orcish/fort-concave-br.png',
+      'sw': 'castle/orcish/fort-concave-bl.png',
+      'w' : 'castle/orcish/fort-concave-l.png',
+      'nw': 'castle/orcish/fort-concave-tl.png'
+    }
   },
   'Coa': {
     'name': 'Snowy Orcish Castle',
     'alias': 'Ch',
     'group': [ 'castle', 'frozen' ],
-    'tile': 'castle/winter-orcish/tile.png'
+    'tile': 'castle/winter-orcish/tile.png',
+    'convex': {
+      'ne': 'castle/winter-orcish/fort-convex-tr.png',
+      'e' : 'castle/winter-orcish/fort-convex-r.png',
+      'se': 'castle/winter-orcish/fort-convex-br.png',
+      'sw': 'castle/winter-orcish/fort-convex-bl.png',
+      'w' : 'castle/winter-orcish/fort-convex-l.png',
+      'nw': 'castle/winter-orcish/fort-convex-tl.png'
+    },
+    'concave': {
+      'ne': 'castle/winter-orcish/fort-concave-tr.png',
+      'e' : 'castle/winter-orcish/fort-concave-r.png',
+      'se': 'castle/winter-orcish/fort-concave-br.png',
+      'sw': 'castle/winter-orcish/fort-concave-bl.png',
+      'w' : 'castle/winter-orcish/fort-concave-l.png',
+      'nw': 'castle/winter-orcish/fort-concave-tl.png'
+    }
   },
   'Ch': {
     'name': 'Human Castle',
@@ -822,13 +886,45 @@ var terrainTable = {
     'name': 'Snowy Human Castle',
     'alias': [ 'At', 'Ch' ],
     'group': [ 'castle', 'frozen' ],
-    'tile': 'castle/snowy/castle-tile.png'
+    'tile': 'castle/snowy/castle-tile.png',
+    'convex': {
+      'ne': 'castle/snowy/castle-convex-tr.png',
+      'e' : 'castle/snowy/castle-convex-r.png',
+      'se': 'castle/snowy/castle-convex-br.png',
+      'sw': 'castle/snowy/castle-convex-bl.png',
+      'w' : 'castle/snowy/castle-convex-l.png',
+      'nw': 'castle/snowy/castle-convex-tl.png'
+    },
+    'concave': {
+      'ne': 'castle/snowy/castle-concave-tr.png',
+      'e' : 'castle/snowy/castle-concave-r.png',
+      'se': 'castle/snowy/castle-concave-br.png',
+      'sw': 'castle/snowy/castle-concave-bl.png',
+      'w' : 'castle/snowy/castle-concave-l.png',
+      'nw': 'castle/snowy/castle-concave-tl.png'
+    }
   },
   'Cv': {
     'name': 'Elvish Castle',
     'alias': 'Ch',
     'group': 'castle',
-    'tile': 'castle/elven/tile.png'
+    'tile': 'castle/elven/tile.png',
+    'convex': {
+      'ne': 'castle/elven/castle-convex-tr.png',
+      'e' : 'castle/elven/castle-convex-r.png',
+      'se': 'castle/elven/castle-convex-br.png',
+      'sw': 'castle/elven/castle-convex-bl.png',
+      'w' : 'castle/elven/castle-convex-l.png',
+      'nw': 'castle/elven/castle-convex-tl.png'
+    },
+    'concave': {
+      'ne': 'castle/elven/castle-concave-tr.png',
+      'e' : 'castle/elven/castle-concave-r.png',
+      'se': 'castle/elven/castle-concave-br.png',
+      'sw': 'castle/elven/castle-concave-bl.png',
+      'w' : 'castle/elven/castle-concave-l.png',
+      'nw': 'castle/elven/castle-concave-tl.png'
+    }
   },
   'Cud': {
     'name': 'Dwarven Castle',
@@ -900,19 +996,67 @@ var terrainTable = {
     'name': 'Swamp Human Ruin',
     'alias': 'Ch',
     'group': [ 'castle', 'water' ],
-    'tile': 'castle/swamp-ruin-tile.png'
+    'tile': 'castle/swamp-ruin-tile.png',
+    'convex': {
+      'ne': [ 'castle/sunken-ruin-convex-tr.png', 'castle/sunken-ruin2-convex-tr.png', 'castle/sunken-ruin3-convex-tr.png', 'castle/sunken-ruin4-convex-tr.png', 'castle/sunken-ruin5-convex-tr.png', 'castle/sunken-ruin6-convex-tr.png' ],
+      'e' : [ 'castle/sunken-ruin-convex-r.png', 'castle/sunken-ruin2-convex-r.png', 'castle/sunken-ruin3-convex-r.png', 'castle/sunken-ruin4-convex-r.png', 'castle/sunken-ruin5-convex-r.png', 'castle/sunken-ruin6-convex-r.png' ],
+      'se': [ 'castle/sunken-ruin-convex-br.png', 'castle/sunken-ruin2-convex-br.png', 'castle/sunken-ruin3-convex-br.png', 'castle/sunken-ruin4-convex-br.png', 'castle/sunken-ruin5-convex-br.png', 'castle/sunken-ruin6-convex-br.png' ],
+      'sw': [ 'castle/sunken-ruin-convex-bl.png', 'castle/sunken-ruin2-convex-bl.png', 'castle/sunken-ruin3-convex-bl.png', 'castle/sunken-ruin4-convex-bl.png', 'castle/sunken-ruin5-convex-bl.png', 'castle/sunken-ruin6-convex-bl.png' ],
+      'w' : [ 'castle/sunken-ruin-convex-l.png', 'castle/sunken-ruin2-convex-l.png', 'castle/sunken-ruin3-convex-l.png', 'castle/sunken-ruin4-convex-l.png', 'castle/sunken-ruin5-convex-l.png', 'castle/sunken-ruin6-convex-l.png' ],
+      'nw': [ 'castle/sunken-ruin-convex-tl.png', 'castle/sunken-ruin2-convex-tl.png', 'castle/sunken-ruin3-convex-tl.png', 'castle/sunken-ruin4-convex-tl.png', 'castle/sunken-ruin5-convex-tl.png', 'castle/sunken-ruin6-convex-tl.png' ]
+    },
+    'concave': {
+      'ne': [ 'castle/sunken-ruin-concave-tr.png', 'castle/sunken-ruin2-concave-tr.png', 'castle/sunken-ruin3-concave-tr.png', 'castle/sunken-ruin4-concave-tr.png', 'castle/sunken-ruin5-concave-tr.png', 'castle/sunken-ruin6-concave-tr.png' ],
+      'e' : [ 'castle/sunken-ruin-concave-r.png', 'castle/sunken-ruin2-concave-r.png', 'castle/sunken-ruin3-concave-r.png', 'castle/sunken-ruin4-concave-r.png', 'castle/sunken-ruin5-concave-r.png', 'castle/sunken-ruin6-concave-r.png' ],
+      'se': [ 'castle/sunken-ruin-concave-br.png', 'castle/sunken-ruin2-concave-br.png', 'castle/sunken-ruin3-concave-br.png', 'castle/sunken-ruin4-concave-br.png', 'castle/sunken-ruin5-concave-br.png', 'castle/sunken-ruin6-concave-br.png' ],
+      'sw': [ 'castle/sunken-ruin-concave-bl.png', 'castle/sunken-ruin2-concave-bl.png', 'castle/sunken-ruin3-concave-bl.png', 'castle/sunken-ruin4-concave-bl.png', 'castle/sunken-ruin5-concave-bl.png', 'castle/sunken-ruin6-concave-bl.png' ],
+      'w' : [ 'castle/sunken-ruin-concave-l.png', 'castle/sunken-ruin2-concave-l.png', 'castle/sunken-ruin3-concave-l.png', 'castle/sunken-ruin4-concave-l.png', 'castle/sunken-ruin5-concave-l.png', 'castle/sunken-ruin6-concave-l.png' ],
+      'nw': [ 'castle/sunken-ruin-concave-tl.png', 'castle/sunken-ruin2-concave-tl.png', 'castle/sunken-ruin3-concave-tl.png', 'castle/sunken-ruin4-concave-tl.png', 'castle/sunken-ruin5-concave-tl.png', 'castle/sunken-ruin6-concave-tl.png' ]
+    }
   },
   'Cd': {
     'name': 'Desert Castle',
     'alias': 'Ch',
     'group': [ 'castle', 'desert' ],
-    'tile': 'castle/sand/tile.png'
+    'tile': 'castle/sand/tile.png',
+    'convex': {
+      'ne': 'castle/sand/castle-convex-tr.png',
+      'e' : 'castle/sand/castle-convex-r.png',
+      'se': 'castle/sand/castle-convex-br.png',
+      'sw': 'castle/sand/castle-convex-bl.png',
+      'w' : 'castle/sand/castle-convex-l.png',
+      'nw': 'castle/sand/castle-convex-tl.png'
+    },
+    'concave': {
+      'ne': 'castle/sand/castle-concave-tr.png',
+      'e' : 'castle/sand/castle-concave-r.png',
+      'se': 'castle/sand/castle-concave-br.png',
+      'sw': 'castle/sand/castle-concave-bl.png',
+      'w' : 'castle/sand/castle-concave-l.png',
+      'nw': 'castle/sand/castle-concave-tl.png'
+    }
   },
   'Cdr': {
     'name': 'Ruined Desert Castle',
     'alias': 'Ch',
     'group': [ 'castle', 'desert' ],
-    'tile': 'castle/sand/ruin-tile.png'
+    'tile': 'castle/sand/ruin-tile.png',
+    'convex': {
+      'ne': 'castle/sand/ruin-castle-convex-tr.png',
+      'e' : 'castle/sand/ruin-castle-convex-r.png',
+      'se': 'castle/sand/ruin-castle-convex-br.png',
+      'sw': 'castle/sand/ruin-castle-convex-bl.png',
+      'w' : 'castle/sand/ruin-castle-convex-l.png',
+      'nw': 'castle/sand/ruin-castle-convex-tl.png'
+    },
+    'concave': {
+      'ne': 'castle/sand/ruin-castle-concave-tr.png',
+      'e' : 'castle/sand/ruin-castle-concave-r.png',
+      'se': 'castle/sand/ruin-castle-concave-br.png',
+      'sw': 'castle/sand/ruin-castle-concave-bl.png',
+      'w' : 'castle/sand/ruin-castle-concave-l.png',
+      'nw': 'castle/sand/ruin-castle-concave-tl.png'
+    }
   },
   'Ke': {
     'name': 'Encampment Keep',
