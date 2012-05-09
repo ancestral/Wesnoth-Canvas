@@ -67,7 +67,7 @@ function loadMap(map) {
       }
       // Check neighboring tiles. Even checks W, NW vertices; odd checks SW, W, NW and NE vertices.
             
-      if (col > 1) {
+      if (col > 0) {
         if (terrainTable[map[row][col-1].hexValue()].hasGroup('castle')) {
           console.log('last hex (' + (col) + ', ' + (row+1) + ') was a castle');
         }
@@ -121,7 +121,7 @@ function mouseMove(e) {
   hexes = whatHex(mouseX, mouseY);
 
   if ((hexes[0] == undefined) || (hexes[1] == undefined)) {
-    $('#hex').html('');  
+    $('#hex').html('&nbsp;');  
   } else {
     $('#hex').html('(' + hexes[0] + ',' + hexes[1] + ')');
     if((hexes[0] != 0) && (hexes[1] != 0)) {
