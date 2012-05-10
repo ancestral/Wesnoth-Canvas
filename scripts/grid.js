@@ -10,6 +10,7 @@ var brush = 'images/editor/brush.png';
 
 var canvas;
 var effects;
+var grid;
 var hexes;
 
 var HEX_HEIGHT = 72;
@@ -24,10 +25,10 @@ preload(terrainTable);
 
 function preload(arrayOfImages) {
   var images = [];
-  $.each(arrayOfImages, function(key, value){
-    if (value['tile']) { 
+  $.each(arrayOfImages, function(key, value) {
+    if (value['symbol']) { 
       images[key] = new Image();
-      images[key].src = 'images/terrain/' + value['tile'];
+      images[key].src = 'images/terrain/' + value['symbol'];
     }
   });
   images['hover-hex-top'] = new Image(); images['hover-hex-top'].src = 'images/misc/hover-hex-top.png';
@@ -38,7 +39,8 @@ function preload(arrayOfImages) {
 $(document).ready(function() {
   canvas = document.getElementById('game').getContext('2d');
   effects = document.getElementById('effects').getContext('2d');
-
+  grid = document.getElementById('grid').getContext('2d');
+  
   $('#mapChoice').change(function() {
     loadMap(readMap('maps/' + ($('#mapChoice option:selected').html())));
   });
@@ -51,7 +53,7 @@ $(document).ready(function() {
 function loadMap(map) {
   MAP_WIDTH = map[0].length;
   MAP_HEIGHT = map.length;
-  $.each([ 'game', 'effects'], function() {
+  $.each([ 'game', 'effects', 'grid'], function() {
     document.getElementById(this).width = (HEX_WIDTH*.75*MAP_WIDTH)+(HEX_WIDTH*.25);
     document.getElementById(this).height = (HEX_HEIGHT*MAP_HEIGHT)+(HEX_HEIGHT*.5);
   });
@@ -67,36 +69,36 @@ function loadMap(map) {
       }
       // Check neighboring tiles. Even checks W, NW vertices; odd checks SW, W, NW and NE vertices.
             
-      if (col > 0) {
-        if (terrainTable[map[row][col-1].hexValue()].hasGroup('castle')) {
-          console.log('last hex (' + (col) + ', ' + (row+1) + ') was a castle');
-        }
-      }
       // Tiles with layers
       if (terrainTable[that] != undefined) {
-        draw('images/terrain/' + terrainTable[that]['tile'],col,row);
+        draw('images/terrain/' + terrainTable[that]['symbol'],col,row);
       } else if (terrainTable[that.split('^')[0]] != undefined) {
-        draw('images/terrain/' + terrainTable[that.split('^')[0]]['tile'],col,row);
+        draw('images/terrain/' + terrainTable[that.split('^')[0]]['symbol'],col,row);
         if (terrainTable['^' + that.split('^')[1]] != undefined) {
-          draw('images/terrain/' + terrainTable['^' + that.split('^')[1]]['tile'],col,row);
+          draw('images/terrain/' + terrainTable['^' + that.split('^')[1]]['symbol'],col,row);
         }
       }
-      if (flag == true) {
-        draw('images/editor/tool-overlay-starting-position.png',col,row);
+
+      if ((col % 2) == 1) {
+        if (terrainTable[map[row][col-1].hexValue()].hasGroup('castle')) {
+          if (terrainTable[that.hexValue()].hasGroup('castle')) {
+            //drawObject('images/terrain/' + terrainTable[that.hexValue()]['convex']['nw']);
+          }
+        }
+      }
+
+      if (flag == true) {          draw('images/editor/tool-overlay-starting-position.png',col,row);
       }
     });
   });
-  
 
-/* This will paint hexes on the map. I'm turning it off for now. Probably needs its own canvas. */
-
-/*
+/* This will paint hexes on the map. I'm turning it off for now.
   for(var j=0;j<MAP_HEIGHT;j++) {
     for(var i=0;i<MAP_WIDTH;i++) {
-      draw('ui/hexgrid.png',i,j);
+      drawGrid('ui/hexgrid.png',i,j);
     }
   }
- */
+*/
 }
 
 
@@ -208,7 +210,18 @@ function drawSelect(what,x,y) {
   effects.drawImage(tile,x*HEX_WIDTH*.75,y*HEX_HEIGHT+yOffset);
 }
 
+function drawGrid(what,x,y) {
+  tile.src = what;
+  var xOffset = 0;
+  var yOffset = 0;
+  if ((x % 2) == 1) { yOffset = HEX_HEIGHT/2; }
+  grid.drawImage(tile,x*HEX_WIDTH*.75,y*HEX_HEIGHT+yOffset);
+}
+
 function drawObject(what,x,y) {
   tile.src = what;
-  canvas.drawImage(tile,(x*HEX_WIDTH*.75)-.5*HEX_WIDTH,y*HEX_HEIGHT+(x*HEX_HEIGHT/2)-.5*HEX_HEIGHT);
+  var xOffset = 0;
+  var yOffset = 0;
+  if ((x % 2) == 1) { yOffset = HEX_HEIGHT/2; }
+  canvas.drawImage(tile,x*HEX_WIDTH*.75,y*HEX_HEIGHT+yOffset);
 }
