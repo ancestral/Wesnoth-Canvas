@@ -53,8 +53,8 @@ function loadMap(map) {
   MAP_WIDTH = map[0].length;
   MAP_HEIGHT = map.length;
   $.each([ 'game', 'effects' ], function() {
-    document.getElementById(this).width = (HEX_WIDTH*.75*MAP_WIDTH)+(HEX_WIDTH*.25);
-    document.getElementById(this).height = (HEX_HEIGHT*MAP_HEIGHT)+(HEX_HEIGHT*.5);
+    document.getElementById(this).width = (HEX_WIDTH*.75*MAP_WIDTH)-(HEX_WIDTH*.25);
+    document.getElementById(this).height = (HEX_HEIGHT*MAP_HEIGHT)-(HEX_HEIGHT*.5);
   });
   // Rows are index, columns are i
   $.each(map, function(row) {
@@ -115,8 +115,8 @@ function mouseMove(e) {
 
   if (hexes) {
     var yOffset = 0;
-    if (((hexes[0]+1) % 2) == 1) { yOffset = HEX_HEIGHT/2; }
-      effects.clearRect((hexes[0]-1)*HEX_WIDTH*.75,(hexes[1]-1)*HEX_HEIGHT+yOffset,HEX_WIDTH,HEX_HEIGHT); 
+    if (((hexes[0]) % 2) == 1) { yOffset = HEX_HEIGHT/2; }
+      effects.clearRect((hexes[0])*HEX_WIDTH*.75-(HEX_WIDTH*.25),(hexes[1])*HEX_HEIGHT-yOffset,HEX_WIDTH,HEX_HEIGHT); 
   }
   
   hexes = whatHex(mouseX, mouseY);
@@ -125,11 +125,11 @@ function mouseMove(e) {
     $('#hex').html('&nbsp;');  
   } else {
     $('#hex').html('(' + hexes[0] + ',' + hexes[1] + ')');
-    if((hexes[0] != 0) && (hexes[1] != 0)) {
+    if((hexes[0] >= 0) && (hexes[1] >= 0)) {
       var eWidth = effects.width
       //effects.clearRect(0,0,document.getElementById('effects').width,document.getElementById('effects').height);
-      drawSelect(topSelect,hexes[0]-1,hexes[1]-1);
-      drawSelect(botSelect,hexes[0]-1,hexes[1]-1);
+      drawSelect(topSelect,hexes[0],hexes[1]);
+      drawSelect(botSelect,hexes[0],hexes[1]);
     }
   }
 }
@@ -163,30 +163,30 @@ function whatHex(x,y) {
 
   // Odd columns
   if (((col % 6) == 1) || ((col % 6) == 2)) {
-    tileX = Math.floor((col+2)/3);
-    tileY = (Math.floor(row/2)+1);
+    tileX = Math.floor((col+2)/3)-1;
+    tileY = (Math.floor(row/2));
   }
   // Even columns
   else if (((col % 6) == 4) || ((col % 6) == 5)) {
-    tileX = Math.floor((col+2)/3);
+    tileX = Math.floor((col+2)/3)-1;
     tileY = Math.floor((row+1)/2);
   }
   else if ((col % 3) == 0) { // shared area between columns
     if ((col % 6) == 3) { // between first and second columns
       if (barycentricTest(x,y,(col*HEX_WIDTH/4),(Math.floor((row+1)/2)*HEX_HEIGHT),(col*HEX_WIDTH/4),((Math.floor(row/2))*HEX_HEIGHT)+(HEX_HEIGHT/2),((col+1)*HEX_WIDTH/4),((Math.floor(row/2))*HEX_HEIGHT)+(HEX_HEIGHT/2))) {
-        tileX = (col/3);
-        tileY = (Math.floor(row/2)+1);
+        tileX = (col/3)-1;
+        tileY = (Math.floor(row/2));
       } else {
-        tileX = (col/3)+1;
+        tileX = (col/3);
         tileY = Math.floor((row+1)/2);
       }
     } else {
       if (barycentricTest(x,y,(col*HEX_WIDTH/4),((Math.floor(row/2))*HEX_HEIGHT)+(HEX_HEIGHT/2),(col*HEX_WIDTH/4),(Math.floor((row+1)/2)*HEX_HEIGHT),((col+1)*HEX_WIDTH/4),(Math.floor((row+1)/2)*HEX_HEIGHT))) {
-        tileX = (col/3);
+        tileX = (col/3)-1;
         tileY = Math.floor((row+1)/2);
       } else {
-        tileX = (col/3)+1;
-        tileY = (Math.floor(row/2)+1);
+        tileX = (col/3);
+        tileY = (Math.floor(row/2));
       }
     }
   }
@@ -198,7 +198,7 @@ function draw(what,x,y) {
   var xOffset = 0;
   var yOffset = 0;
   if ((x % 2) == 1) { yOffset = HEX_HEIGHT/2; }
-  canvas.drawImage(tile,x*HEX_WIDTH*.75,y*HEX_HEIGHT+yOffset);
+  canvas.drawImage(tile,x*HEX_WIDTH*.75-(HEX_WIDTH*.25),y*HEX_HEIGHT-yOffset);
 }
 
 function drawSelect(what,x,y) {
@@ -206,7 +206,7 @@ function drawSelect(what,x,y) {
   var xOffset = 0;
   var yOffset = 0;
   if ((x % 2) == 1) { yOffset = HEX_HEIGHT/2; }
-  effects.drawImage(tile,x*HEX_WIDTH*.75,y*HEX_HEIGHT+yOffset);
+  effects.drawImage(tile,x*HEX_WIDTH*.75-(HEX_WIDTH*.25),y*HEX_HEIGHT-yOffset);
 }
 
 function drawGrid(what,x,y) {
@@ -214,7 +214,7 @@ function drawGrid(what,x,y) {
   var xOffset = 0;
   var yOffset = 0;
   if ((x % 2) == 1) { yOffset = HEX_HEIGHT/2; }
-  grid.drawImage(tile,x*HEX_WIDTH*.75,y*HEX_HEIGHT+yOffset);
+  grid.drawImage(tile,x*HEX_WIDTH*.75-(HEX_WIDTH*.25),y*HEX_HEIGHT-yOffset);
 }
 
 function drawObject(what,x,y) {
@@ -222,5 +222,5 @@ function drawObject(what,x,y) {
   var xOffset = 0;
   var yOffset = 0;
   if ((x % 2) == 1) { yOffset = HEX_HEIGHT/2; }
-  canvas.drawImage(tile,x*HEX_WIDTH*.75,y*HEX_HEIGHT+yOffset);
+  canvas.drawImage(tile,x*HEX_WIDTH*.75-(HEX_WIDTH*.25),y*HEX_HEIGHT-yOffset);
 }
