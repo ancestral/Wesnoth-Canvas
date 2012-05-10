@@ -8,35 +8,41 @@
 
 var terrainTable = {
   'Wog': {
-    'name': 'Gray Deep Water',
+    'name': 'Deep Water',
+    'editorName': 'Gray Deep Water',
     'alias': 'Wo',
     'group': 'water',
     'symbol': 'water/ocean-grey-tile.png'
   },
   'Wo': {
-    'name': 'Medium Deep Water',
+    'name': 'Deep Water',
+    'editorName': 'Medium Deep Water',
     'group': 'water',
     'symbol': 'water/ocean-tile.png'
   },
   'Wot': {
-    'name': 'Tropical Deep Water',
+    'name': 'Deep Water',
+    'editorName': 'Tropical Deep Water',
     'alias': 'Wo',
     'group': 'water',
     'symbol': 'water/ocean-tropical-tile.png'
   },
   'Wwg': {
-    'name': 'Gray Shallow Water',
+    'name': 'Shallow Water',
+    'editorName': 'Gray Shallow Water',
     'alias': 'Ww',
     'group': 'water',
     'symbol': 'water/coast-grey-tile.png'
   },
   'Ww': {
-    'name': 'Medium Shallow Water',
+    'name': 'Shallow Water',
+    'editorName': 'Medium Shallow Water',
     'group': 'water',
     'symbol': 'water/coast-tile.png'
   },
   'Wwt': {
-    'name': 'Tropical Shallow Water',
+    'name': 'Shallow Water',
+    'editorName': 'Tropical Shallow Water',
     'alias': 'Ww',
     'group': 'water',
     'symbol': 'water/coast-tropical-tile.png'
@@ -48,7 +54,8 @@ var terrainTable = {
     'symbol': 'water/ford-tile.png'
   },
   'Wwrg': {
-    'name': 'Gray Coastal Reef',
+    'name': 'Coastal Reef',
+    'editorName': 'Gray Coastal Reef',
     'alias': 'Wwr',
     'group': 'water',
     'symbol': 'water/reef-gray-tile.png'
@@ -59,7 +66,8 @@ var terrainTable = {
     'symbol': 'water/reef-tile.png'
   },
   'Wwrt': {
-    'name': 'Tropical Coastal Reef',
+    'name': 'Coastal Reef',
+    'editorName': 'Tropical Coastal Reef',
     'alias': 'Wwr',
     'group': 'water',
     'symbol': 'water/reef-tropical-tile.png'
@@ -70,67 +78,78 @@ var terrainTable = {
     'symbol': 'swamp/water-tile.png'
   },
   'Sm': {
-    'name': 'Muddy Quagmire',
+    'name': 'Swamp',
+    'editorName': 'Muddy Quagmire',
     'alias': 'Ss',
     'group': 'Water',
     'symbol': 'swamp/mud-tile.png'
   },
   'Gg': {
-    'name': 'Green Grass',
+    'name': 'Grassland',
+    'editorName': 'Green Grass',
     'alias': 'Gt',
     'group': 'flat',
     'symbol': 'grass/green.png'
   },
   'Gs': {
-    'name': 'Semi-dry Grass',
+    'name': 'Grassland',
+    'editorName': 'Semi-dry Grass',
     'alias': 'Gt',
     'group': 'flat',
     'symbol': 'grass/semi-dry.png'
   },
   'Gd': {
-    'name': 'Dry Grass',
+    'name': 'Grassland',
+    'editorName': 'Dry Grass',
     'alias': 'Gt',
     'group': 'flat',
     'symbol': 'grass/dry.png'
   },
   'Gll': {
-    'name': 'Leaf Litter',
+    'name': 'Grassland',
+    'editorName': 'Leaf Litter',
     'alias': 'Gt',
     'group': 'flat',
     'symbol': 'grass/leaf-litter.png'
   },
   'Rb': {
-    'name': 'Dark Dirt',
+    'name': 'Dirt',
+    'editorName': 'Dark Dirt',
     'alias': 'Gt',
     'group': 'flat',
     'symbol': 'flat/dirt-dark.png'
   },
   'Re': {
-    'name': 'Regular Dirt',
+    'name': 'Dirt',
+    'editorName': 'Regular Dirt',
     'alias': 'Gt',
     'group': 'flat',
     'symbol': 'flat/dirt.png'
   },
   'Rd': {
-    'name': 'Dry Dirt',
+    'name': 'Dirt',
+    'editorName': 'Dry Dirt',
     'alias': 'Gt',
     'group': [ 'desert', 'flat' ],
     'symbol': 'flat/desert-road.png'
   },
   'Rr': {
-    'name': 'Regular Cobbles',
+    'name': 'Road',
+    'editorName': 'Regular Cobbles',
     'alias': 'Gt',
     'group': 'flat',
     'symbol': 'flat/road.png'
   },
   'Rrc': {
-    'name': 'Clean Gray Cobbles',
+    'name': 'Road',
+    'editorName': 'Clean Gray Cobbles',
     'alias': 'Gt',
     'group': 'flat',
     'symbol': 'flat/road-clean.png'
   },
   'Rp': {
-    'name': 'Overgrown Cobbles',
+    'name': 'Road',
+    'editorName': 'Overgrown Cobbles',
     'alias': 'Gt',
     'group': 'flat',
     'symbol': 'flat/stone-path.png'
@@ -148,13 +167,15 @@ var terrainTable = {
     'symbol': 'frozen/snow.png'
   },
   'Dd': {
-    'name': 'Desert Sands',
+    'name': 'Desert',
+    'editorName': 'Desert Sands',
     'alias': 'Ds',
     'group': 'desert',
     'symbol': 'sand/desert.png'
   },
   'Ds': {
-    'name': 'Beach Sands',
+    'name': 'Sand',
+    'editorName': 'Beach Sands',
     'group': 'desert',
     'symbol': 'sand/beach.png'
   },
@@ -177,163 +198,165 @@ var terrainTable = {
     'symbol': 'sand/crater.png'
   },
   '^Efm': {
-    'name': 'Mixed Flowers',
+    'editorName': 'Mixed Flowers',
     'alias': 'Xx',
     'group': 'embellishments',
     'symbol': 'embellishments/flowers-mixed.png'
   },
   '^Gvs': {
-    'name': 'Farmland',
+    'editorName': 'Farmland',
     'alias': '_bas',
     'group': 'embellishments',
     'symbol': 'embellishments/farm-veg-spring-icon.png'
   },
   '^Es': {
-    'name': 'Stones',
+    'editorName': 'Stones',
     'alias': '_bas',
     'group': 'embellishments',
     'symbol': 'embellishments/stones-small7.png'
   },
   '^Em': {
-    'name': 'Small Mushrooms',
+    'editorName': 'Small Mushrooms',
     'alias': '_bas',
     'group': 'embellishments',
     'symbol': 'embellishments/mushroom.png'
   },
   '^Emf': {
-    'name': 'Mushroom Farm',
+    'editorName': 'Mushroom Farm',
     'alias': '_bas',
     'group': [ 'cave', 'embellishments' ],
     'symbol': 'embellishments/mushroom-farm-small.png'
   },
   '^Edp': {
-    'name': 'Desert Plants',
+    'editorName': 'Desert Plants',
     'alias': '_bas',
     'group': [ 'desert', 'embellishments' ],
     'symbol': 'embellishments/desert-plant5.png'
   },
   '^Edpp': {
-    'name': 'Desert Plants without Bones',
+    'editorName': 'Desert Plants without Bones',
     'alias': '_bas',
     'group': [ 'desert', 'embellishments' ],
     'symbol': 'embellishments/desert-plant.png'
   },
   '^Wm': {
-    'name': 'Windmill',
+    'editorName': 'Windmill',
     'alias': '_bas',
     'group': 'embellishments',
     'symbol': 'misc/windmill-tile.png'
   },
   '^Eff': {
-    'name': 'Fence',
+    'editorName': 'Fence',
     'alias': '_bas',
     'group': 'embellishments',
     'symbol': 'embellishments/fence-se-nw-01.png'
   },
   '^Esd': {
-    'name': 'Stones with Sand Drifts',
+    'editorName': 'Stones with Sand Drifts',
     'alias': '_bas',
     'group': [ 'desert', 'embellishments' ],
     'symbol': 'embellishments/rocks.png'
   },
   '^Ewl': {
-    'name': 'Water Lilies',
+    'editorName': 'Water Lilies',
     'alias': '_bas',
     'group': [ 'embellishments', 'water' ],
     'symbol': 'embellishments/water-lilies-tile.png'
   },
   '^Ewf': {
-    'name': 'Flowering Water Lilies',
+    'editorName': 'Flowering Water Lilies',
     'alias': '_bas',
     'group': [ 'embellishments', 'water' ],
     'symbol': 'embellishments/water-lilies-flower-tile.png'
   },
   '^Fet': {
-    'name': 'Great Tree',
+    'editorName': 'Great Tree',
     'alias': [ '_bas', 'Ft' ],
     'group': 'forest',
     'symbol': 'forest/great-tree-tile.png'
   },
   '^Fetd': {
-    'name': 'Dead Great Tree',
+    'editorName': 'Dead Great Tree',
     'alias': [ '_bas', 'Ft' ],
     'group': 'forest',
     'symbol': 'forest/great-tree-dead-tile.png'
   },
   '^Ft': {
-    'name': 'Tropical Forest',
+    'editorName': 'Tropical Forest',
     'alias': [ '_bas', 'Ft' ],
     'group': 'forest',
     'symbol': 'forest/tropical-tile.png'
   },
   '^Fp': {
-    'name': 'Pine Forest',
+    'editorName': 'Pine Forest',
     'alias': [ '_bas', 'Ft' ],
     'group': 'forest',
     'symbol': 'forest/pine-tile.png'
   },
   '^Fpa': {
-    'name': 'Snowy Pine Forest',
+    'editorName': 'Snowy Pine Forest',
     'alias': [ '_bas', 'At', 'Ft' ],
     'group': [ 'forest', 'frozen' ],
     'symbol': 'forest/snow-forest-tile.png'
   },
   '^Fds': {
-    'name': 'Summer Deciduous Forest',
+    'editorName': 'Summer Deciduous Forest',
     'alias': [ '_bas', 'Ft' ],
     'group': 'forest',
     'symbol': 'forest/deciduous-summer-tile.png'
   },
   '^Fdf': {
-    'name': 'Fall Deciduous Forest',
+    'editorName': 'Fall Deciduous Forest',
     'alias': [ '_bas', 'Ft' ],
     'group': 'forest',
     'symbol': 'forest/deciduous-fall-tile.png'
   },
   '^Fdw': {
-    'name': 'Winter Deciduous Forest',
+    'editorName': 'Winter Deciduous Forest',
     'alias': [ '_bas', 'Ft' ],
     'group': 'forest',
     'symbol': 'forest/deciduous-winter-tile.png'
   },
   '^Fda': {
-    'name': 'Snowy Deciduous Forest',
+    'editorName': 'Snowy Deciduous Forest',
     'alias': [ '_bas', 'At', 'Ft' ],
     'group': 'forest',
     'symbol': 'forest/deciduous-winter-snow-tile.png'
   },
   '^Fms': {
-    'name': 'Summer Mixed Forest',
+    'editorName': 'Summer Mixed Forest',
     'alias': [ '_bas', 'Ft' ],
     'group': 'forest',
     'symbol': 'forest/mixed-summer-tile.png'
   },
   '^Fmf': {
-    'name': 'Fall Mixed Forest',
+    'editorName': 'Fall Mixed Forest',
     'alias': [ '_bas', 'Ft' ],
     'group': 'forest',
     'symbol': 'forest/mixed-fall-tile.png'
   },
   '^Fmw': {
-    'name': 'Winter Mixed Forest',
+    'editorName': 'Winter Mixed Forest',
     'alias': [ '_bas', 'Ft' ],
     'group': 'forest',
     'symbol': 'forest/mixed-winter-tile.png'
   },
   '^Gma': {
-    'name': 'Snowy Mixed Forest',
+    'editorName': 'Snowy Mixed Forest',
     'alias': [ '_bas', 'At', 'Ft' ],
     'group': [ 'forest', 'frozen' ],
     'symbol': 'forest/mixed-winter-snow-tile.png'
   },
   'Hh': {
-    'name': 'Regular Hills',
+    'name': 'Hills',
+    'editorName': 'Regular Hills',
     'alias': 'Hh',
     'group': 'rough',
     'symbol': 'hills/regular.png'
   },
   'Hhd': {
-    'name': 'Dry Hills',
+    'name': 'Hills',
+    'editorName': 'Dry Hills',
     'alias': 'Hh',
     'group': 'rough',
     'symbol': 'hills/dry.png'
@@ -345,7 +368,8 @@ var terrainTable = {
     'symbol': 'hills/desert.png'
   },
   'Ha': {
-    'name': 'Snow Hills',
+    'name': 'Hills',
+    'editorName': 'Snow Hills',
     'alias': [ 'At', 'Hh' ],
     'group': [ 'frozen', 'rough' ],
     'symbol': 'hills/snow.png'
@@ -356,108 +380,125 @@ var terrainTable = {
     'symbol': 'mountains/basic-tile.png'
   },
   'Md': {
-    'name': 'Dry Mountains',
+    'name': 'Mountains',
+    'editorName': 'Dry Mountains',
     'alias': 'Mm',
     'group': [ 'desert', 'rough' ],
     'symbol': 'mountains/dry-tile.png'
   },
   'Ms': {
-    'name': 'Snowy Mountains',
+    'name': 'Mountains',
+    'editorName': 'Snowy Mountains',
     'alias': [ 'At', 'Mm' ],
     'group': [ 'frozen', 'rough' ],
     'symbol': 'hills/snow.png'
   },
   'Hh^Fp': {
-    'name': 'Forested Hills',
+    'name': 'Hills',
+    'editorName': 'Forested Hills',
     'alias': [ 'Ft', 'Hh' ],
     'group': [ 'forest', 'rough' ],
     'symbol': 'forest/forested-hills-tile.png'
   },
   'Ha^Fpa': {
-    'name': 'Forested Snow Hills',
+    'name': 'Hills',
+    'editorName': 'Forested Snow Hills',
     'alias': [ 'At', 'Ft', 'Hh' ],
     'group': [ 'forest', 'frozen', 'rough' ],
     'symbol': 'forest/forested-snow-hills-tile.png'
   },
   'Hh^Fds': {
-    'name': 'Summer Deciduous Forested Hills',
+    'name': 'Hills',
+    'editorName': 'Summer Deciduous Forested Hills',
     'alias': [ 'Ft', 'Hh' ],
     'group': [ 'forest', 'rough' ],
     'symbol': 'forest/forested-deciduous-summer-hills-tile.png'
   },
   'Hhd^Fdf': {
-    'name': 'Fall Deciduous Forested Hills',
+    'name': 'Hills',
+    'editorName': 'Fall Deciduous Forested Hills',
     'alias': [ 'Ft', 'Hh' ],
     'group': [ 'forest', 'rough' ],
     'symbol': 'forest/forested-deciduous-fall-hills-tile.png'
   },
   'Hhd^Fdw': {
-    'name': 'Winter Deciduous Forested Hills',
+    'name': 'Hills',
+    'editorName': 'Winter Deciduous Forested Hills',
     'alias': [ 'Ft', 'Hh' ],
     'group': [ 'forest', 'rough' ],
     'symbol': 'forest/forested-deciduous-winter-hills-tile.png'
   },
   'Ha^Fda': {
-    'name': 'Snowy Deciduous Forested Hills',
+    'name': 'Hills',
+    'editorName': 'Snowy Deciduous Forested Hills',
     'alias': [ 'At', 'Ft', 'Hh' ],
     'group': [ 'forest', 'frozen', 'rough' ],
     'symbol': 'forest/forested-deciduous-winter-snow-hills-tile.png'
   },
   'Hh^Fms': {
-    'name': 'Summer Mixed Forested Hills',
+    'name': 'Hills',
+    'editorName': 'Summer Mixed Forested Hills',
     'alias': [ 'Ft', 'Hh' ],
     'group': [ 'forest', 'rough' ],
     'symbol': 'forest/forested-mixed-summer-hills-tile.png'
   },
   'Hhd^Fmf': {
-    'name': 'Fall Mixed Forested Hills',
+    'name': 'Hills',
+    'editorName': 'Fall Mixed Forested Hills',
     'alias': [ 'Ft', 'Hh' ],
     'group': [ 'forest', 'rough' ],
     'symbol': 'forest/forested-mixed-fall-hills-tile.png'
   },
   'Hhd^Fmw': {
-    'name': 'Winter Mixed Forested Hills',
+    'name': 'Hills',
+    'editorName': 'Winter Mixed Forested Hills',
     'alias': [ 'Ft', 'Hh' ],
     'group': [ 'forest', 'rough' ],
     'symbol': 'forest/forested-mixed-winter-hills-tile.png'
   },
   'Ha^Fma': {
-    'name': 'Snowy Mixed Forested Hills',
+    'name': 'Hills',
+    'editorName': 'Snowy Mixed Forested Hills',
     'alias': [ 'At', 'Ft', 'Hh' ],
     'group': [ 'forest', 'frozen', 'rough' ],
     'symbol': 'forest/forested-mixed-winter-snow-hills-tile.png'
   },
   'Iwr': {
-    'name': 'Basic Wooden Floor',
+    'name': 'Wooden Floor',
+    'editorName': 'Basic Wooden Floor',
     'alias': 'Gt',
     'group': 'flat',
     'symbol': 'interior/wood-regular.png'
   },
   '^Ii': {
-    'name': 'Beam of Light',
+    'editorName': 'Beam of Light',
     'alias': '_bas',
     'group': 'cave',
     'symbol': 'cave/beam-tile.png'
   },
   'Uu': {
-    'name': 'Cave Floor',
+    'name': 'Cave',
+    'editorName': 'Cave Floor',
     'group': 'cave',
     'symbol': 'cave/floor6.png'
   },
   'Uue': {
-    'name': 'Earthy Cave Floor',
+    'name': 'Cave',
+    'editorName': 'Earthy Cave Floor',
     'alias': 'Uu',
     'group': 'cave',
     'symbol': 'cave/earthy-floor3.png'
   },
   'Urb': {
-    'name': 'Dark Flagstones',
+    'name': 'Road',
+    'editorName': 'Dark Flagstones',
     'alias': 'Gt',
     'group': 'cave',
     'symbol': 'cave/flagstones-dark.png'
   },
   'Ur': {
-    'name': 'Cave Path',
+    'name': 'Road',
+    'editorName': 'Cave Path',
     'alias': 'Gt',
     'group': 'cave',
     'symbol': 'cave/path.png'
@@ -468,7 +509,8 @@ var terrainTable = {
     'symbol': 'forest/mushrooms-tile.png'
   },
   '^Ufi': {
-    'name': 'Lit Mushroom Grove',
+    'name': 'Mushroom Grove',
+    'editorName': 'Lit Mushroom Grove',
     'alias': '^Uf',
     'group': 'cave',
     'symbol': 'forest/mushrooms-beam-tile.png'
@@ -498,25 +540,29 @@ var terrainTable = {
     'symbol': 'misc/rails-se-nw.png'
   },
   'Qxu': {
-    'name': 'Regular Chasm',
+    'name': 'Chasm',
+    'editorName': 'Regular Chasm',
     'alias': 'Qt',
     'group': [ 'cave', 'obstacle' ],
     'symbol': 'chasm/regular-tile.png'
   },
   'Qxe': {
-    'name': 'Earthy Chasm',
+    'name': 'Chasm',
+    'editorName': 'Earthy Chasm',
     'alias': 'Qt',
     'group': [ 'cave', 'obstacle' ],
     'symbol': 'chasm/earthy-tile.png'
   },
   'Qxua': {
-    'name': 'Ethereal Abyss',
+    'name': 'Chasm',
+    'editorName': 'Ethereal Abyss',
     'alias': 'Qt',
     'group': 'obstacle',
     'symbol': 'chasm/abyss-tile.png'
   },
   'Ql': {
-    'name': 'Lava Chasm',
+    'name': 'Chasm',
+    'editorName': 'Lava Chasm',
     'alias': 'Qt',
     'group': [ 'cave', 'obstacle' ],
     'symbol': 'unwalkable/lava-chasm-tile.png'
@@ -534,55 +580,64 @@ var terrainTable = {
     'symbol': 'mountains/volcano-tile.png'
   },
   'Mm^Xm': {
-    'name': 'Regular Impassable Mountains',
+    'name': 'Mountains',
+    'editorName': 'Regular Impassable Mountains',
     'alias': 'Xt',
     'group': [ 'obstacle', 'rough' ],
     'symbol': 'mountains/cloud-tile.png'
   },
   'Md^Xm': {
-    'name': 'Desert Impassable Mountains',
+    'name': 'Mountains',
+    'editorName': 'Desert Impassable Mountains',
     'alias': 'Xt',
     'group': [ 'desert', 'obstacle', 'rough' ],
     'symbol': 'mountains/cloud-desert-tile.png'
   },
   'Ms^Xm': {
-    'name': 'Snowy Impassable Mountains',
+    'name': 'Mountains',
+    'editorName': 'Snowy Impassable Mountains',
     'alias': 'Xt',
     'group': [ 'frozen', 'obstacle', 'rough' ],
     'symbol': 'mountains/cloud-snow-tile.png'
   },
   'Xu': {
-    'name': 'Natural Cave Wall',
+    'name': 'Cave Wall',
+    'editorName': 'Natural Cave Wall',
     'alias': 'Xt',
     'group': [ 'cave', 'obstacle' ],
     'symbol': 'cave/wall-rough-tile.png'
   },
   'Xuc': {
-    'name': 'Hewn Cave Wall',
+    'name': 'Cave Wall',
+    'editorName': 'Hewn Cave Wall',
     'alias': 'Xt',
     'group': [ 'cave', 'obstacle' ],
     'symbol': 'cave/wall-hewn-tile.png'
   },
   'Xue': {
-    'name': 'Natural Earthy Cave Wall',
+    'name': 'Cave Wall',
+    'editorName': 'Natural Earthy Cave Wall',
     'alias': 'Xt',
     'group': [ 'cave', 'obstacle' ],
     'symbol': 'cave/earthy-wall-rough-tile.png'
   },
   'Xuce': {
-    'name': 'Reinforced Earth Cave Wall',
+    'name': 'Cave Wall',
+    'editorName': 'Reinforced Earth Cave Wall',
     'alias': 'Xt',
     'group': [ 'cave', 'obstacle' ],
     'symbol': 'cave/earthy-wall-hewn-tile.png'
   },
   'Xos': {
     'name': 'Stone Wall',
+    'editorName': 'Stone Wall',
     'alias': 'Xt',
     'group': [ 'cave', 'obstacle' ],
     'symbol': 'walls/wall-stone-tile.png'
   },
   'Xol': {
-    'name': 'Lit Stone Wall',
+    'name': 'Stone Wall',
+    'editorName': 'Lit Stone Wall',
     'alias': 'Xt',
     'group': [ 'cave', 'obstacle' ],
     'symbol': 'walls/wall-stone-tile.png'
@@ -600,175 +655,204 @@ var terrainTable = {
     'symbol': 'void/void-editor.png'
   },
   '^Vda': {
-    'name': 'Adobe Village',
+    'name': 'Village',
+    'editorName': 'Adobe Village',
     'alias': [ '_bas', 'Vi' ],
     'group': [ 'desert', 'village' ],
     'symbol': 'village/desert-tile.png'
   },
   '^Vdt': {
-    'name': 'Desert Tent Village',
+    'name': 'Village',
+    'editorName': 'Desert Tent Village',
     'alias': [ '_bas', 'Vi' ],
     'group': [ 'desert', 'village' ],
     'symbol': 'village/desert-camp-tile.png'
   },
   '^Vct': {
-    'name': 'Tent Village',
+    'name': 'Village',
+    'editorName': 'Tent Village',
     'alias': [ '_bas', 'Vi' ],
     'group': 'village',
     'symbol': 'village/camp-tile.png'
   },
   '^Vo': {
-    'name': 'Orcish Village',
+    'name': 'Village',
+    'editorName': 'Orcish Village',
     'alias': [ '_bas', 'Vi' ],
     'group': 'village',
     'symbol': 'village/orc-tile.png'
   },
   '^Voa': {
-    'name': 'Snowy Orcish Village',
+    'name': 'Village',
+    'editorName': 'Snowy Orcish Village',
     'alias': [ '_bas', 'Vi' ],
     'group': [ 'frozen', 'village' ],
     'symbol': 'village/orc-snow-tile.png'
   },
   '^Vea': {
-    'name': 'Snowy Elven Village',
+    'name': 'Village',
+    'editorName': 'Snowy Elven Village',
     'alias': [ '_bas', 'Vi' ],
     'group': [ 'frozen', 'village' ],
     'symbol': 'village/elven-snow-tile.png'
   },
   '^Ve': {
-    'name': 'Elven Village',
+    'name': 'Village',
+    'editorName': 'Elven Village',
     'alias': [ '_bas', 'Vi' ],
     'group': 'village',
     'symbol': 'village/elven-tile.png'
   },
   '^Vh': {
-    'name': 'Cottage',
+    'name': 'Village',
+    'editorName': 'Cottage',
     'alias': [ '_bas', 'Vi' ],
     'group': 'village',
     'symbol': 'village/human-tile.png'
   },
   '^Vha': {
-    'name': 'Snowy Cottage',
+    'name': 'Village',
+    'editorName': 'Snowy Cottage',
     'alias': [ '_bas', 'Vi' ],
     'group': [ 'frozen', 'village' ],
     'symbol': 'village/snow-tile.png'
   },
   '^Vhr': {
-    'name': 'Ruined Cottage',
+    'name': 'Village',
+    'editorName': 'Ruined Cottage',
     'alias': [ '_bas', 'Vi' ],
     'group': 'village',
     'symbol': 'village/human-cottage-ruin-tile.png'
   },
   '^Vhc': {
-    'name': 'Human City',
+    'name': 'Village',
+    'editorName': 'Human City',
     'alias': [ '_bas', 'Vi' ],
     'group': 'village',
     'symbol': 'village/human-city-tile.png'
   },
   '^Vwm': {
-    'name': 'Windmill Village',
+    'name': 'Village',
+    'editorName': 'Windmill Village',
     'alias': [ '_bas', 'Vi' ],
     'group': 'village',
     'symbol': 'misc/windmill-tile.png'
   },
   '^Vhca': {
-    'name': 'Snowy Human City',
+    'name': 'Village',
+    'editorName': 'Snowy Human City',
     'alias': [ '_bas', 'Vi' ],
     'group': 'village',
     'symbol': 'village/human-city-snow-tile.png'
   },
   '^Vhcr': {
-    'name': 'Ruined Human City',
+    'name': 'Village',
+    'editorName': 'Ruined Human City',
     'alias': [ '_bas', 'Vi' ],
     'group': 'village',
     'symbol': 'village/human-city-ruin-tile.png'
   },
   '^Vhh': {
-    'name': 'Hill Stone Village',
+    'name': 'Village',
+    'editorName': 'Hill Stone Village',
     'alias': [ '_bas', 'Vi' ],
     'group': [ 'rough', 'village' ],
     'symbol': 'village/human-hills-tile.png'
   },
   '^Vhha': {
-    'name': 'Snowy Hill Stone Village',
+    'name': 'Village',
+    'editorName': 'Snowy Hill Stone Village',
     'alias': [ '_bas', 'Vi' ],
     'group': [ 'frozen', 'rough', 'village' ],
     'symbol': 'village/human-snow-hills-tile.png'
   },
   '^Vhhr': {
-    'name': 'Ruined Hill Stone Village',
+    'name': 'Village',
+    'editorName': 'Ruined Hill Stone Village',
     'alias': [ '_bas', 'Vi' ],
     'group': [ 'rough', 'village' ],
     'symbol': 'village/human-hills-ruin-tile.png'
   },
   '^Vht': {
-    'name': 'Tropical Village',
+    'name': 'Village',
+    'editorName': 'Tropical Village',
     'alias': [ '_bas', 'Vi' ],
     'group': 'village',
     'symbol': 'village/tropical-tile.png'
   },
   '^Vd': {
-    'name': 'Drake Village',
+    'name': 'Village',
+    'editorName': 'Drake Village',
     'alias': [ '_bas', 'Vi' ],
     'group': 'village',
     'symbol': 'village/drake-tile.png'
   },
   '^Vu': {
-    'name': 'Cave Village',
+    'name': 'Village',
+    'editorName': 'Cave Village',
     'alias': [ '_bas', 'Vi' ],
     'group': [ 'cave', 'village' ],
     'symbol': 'village/cave-tile.png'
   },
   '^Vud': {
-    'name': 'Dwarven Village',
+    'name': 'Village',
+    'editorName': 'Dwarven Village',
     'alias': [ '_bas', 'Vi' ],
     'group': [ 'cave', 'village' ],
     'symbol': 'village/dwarven-tile.png'
   },
   '^Vc': {
-    'name': 'Hut',
+    'name': 'Village',
+    'editorName': 'Hut',
     'alias': [ '_bas', 'Vi' ],
     'group': 'village',
     'symbol': 'village/hut-tile.png'
   },
   '^Vca': {
-    'name': 'Snowy Hut',
+    'name': 'Village',
+    'editorName': 'Snowy Hut',
     'alias': [ '_bas', 'Vi' ],
     'group': [ 'frozen', 'village' ],
     'symbol': 'village/hut-snow-tile.png'
   },
   '^Vl': {
-    'name': 'Log Cabin',
+    'name': 'Village',
+    'editorName': 'Log Cabin',
     'alias': [ '_bas', 'Vi' ],
     'group': 'village',
     'symbol': 'village/log-cabin-tile.png'
   },
   '^Vla': {
-    'name': 'Snowy Log Cabin',
+    'name': 'Village',
+    'editorName': 'Snowy Log Cabin',
     'alias': [ '_bas', 'Vi' ],
     'group': [ 'frozen', 'village' ],
     'symbol': 'village/log-cabin-snow-tile.png'
   },
   '^Vaa': {
-    'name': 'Igloo',
+    'name': 'Village',
+    'editorName': 'Igloo',
     'alias': [ '_bas', 'Vi' ],
     'group': [ 'frozen', 'village' ],
     'symbol': 'village/igloo-tile.png'
   },
   '^Vhs': {
-    'name': 'Swamp Village',
+    'name': 'Village',
+    'editorName': 'Swamp Village',
     'alias': [ '_bas', 'Vi' ],
     'group': [ 'village', 'water' ],
     'symbol': 'village/swampwater-tile.png'
   },
   '^Vm': {
-    'name': 'Merfolk Village',
+    'name': 'Village',
+    'editorName': 'Merfolk Village',
     'alias': '_bas',
     'group': [ 'village', 'water' ],
     'symbol': 'village/coast-tile.png'
   },
   '^Vov': {
-    'name': 'Village Overlay',
+    'name': 'Village',
+    'editorName': 'Village Overlay',
     'alias': '_bas',
     'group': [ 'village', 'special' ],
     'symbol': [ 'village/village-overlay-editor.png' ]
@@ -796,7 +880,8 @@ var terrainTable = {
     }
   },
   'Cea': {
-    'name': 'Snowy Encampment',
+    'name': 'Encampment',
+    'editorName': 'Snowy Encampment',
     'alias': 'Ch',
     'group': [ 'castle', 'frozen' ],
     'symbol': 'castle/encampment/snow-tile.png',
@@ -818,7 +903,8 @@ var terrainTable = {
     }
   },
   'Co': {
-    'name': 'Orcish Castle',
+    'name': 'Castle',
+    'editorName': 'Orcish Castle',
     'alias': 'Ch',
     'group': 'castle',
     'symbol': 'castle/orcish/tile.png',
@@ -840,7 +926,8 @@ var terrainTable = {
     }
   },
   'Coa': {
-    'name': 'Snowy Orcish Castle',
+    'name': 'Castle',
+    'editorName': 'Snowy Orcish Castle',
     'alias': 'Ch',
     'group': [ 'castle', 'frozen' ],
     'symbol': 'castle/winter-orcish/tile.png',
@@ -862,7 +949,8 @@ var terrainTable = {
     }
   },
   'Ch': {
-    'name': 'Human Castle',
+    'name': 'Castle',
+    'editorName': 'Human Castle',
     'group': 'castle',
     'symbol': 'castle/castle-tile.png',
     'convex': {
@@ -883,7 +971,8 @@ var terrainTable = {
     }
   },
   'Cha': {
-    'name': 'Snowy Human Castle',
+    'name': 'Castle',
+    'editorName': 'Snowy Human Castle',
     'alias': [ 'At', 'Ch' ],
     'group': [ 'castle', 'frozen' ],
     'symbol': 'castle/snowy/castle-tile.png',
@@ -905,7 +994,8 @@ var terrainTable = {
     }
   },
   'Cv': {
-    'name': 'Elvish Castle',
+    'name': 'Castle',
+    'editorName': 'Elvish Castle',
     'alias': 'Ch',
     'group': 'castle',
     'symbol': 'castle/elven/tile.png',
@@ -927,7 +1017,8 @@ var terrainTable = {
     }
   },
   'Cud': {
-    'name': 'Dwarven Castle',
+    'name': 'Castle',
+    'editorName': 'Dwarven Castle',
     'alias': 'Ch',
     'group': [ 'castle', 'cave' ],
     'symbol': 'castle/dwarven-castle-tile.png',
@@ -949,7 +1040,8 @@ var terrainTable = {
     }
   },
   'Chr': {
-    'name': 'Ruined Human Castle',
+    'name': 'Ruined Castle',
+    'editorName': 'Ruined Human Castle',
     'alias': 'Ch',
     'group': 'castle',
     'symbol': 'castle/ruin-tile.png',
@@ -971,7 +1063,8 @@ var terrainTable = {
     }
   },
   'Chw': {
-    'name': 'Sunken Human Ruin',
+    'name': 'Ruined Castle',
+    'editorName': 'Sunken Human Ruin',
     'alias': 'Ch',
     'group': [ 'castle', 'water' ],
     'symbol': 'castle/sunken-ruin-tile.png',
@@ -993,7 +1086,8 @@ var terrainTable = {
     }
   },
   'Chs': {
-    'name': 'Swamp Human Ruin',
+    'name': 'Ruined Castle',
+    'editorName': 'Swamp Human Ruin',
     'alias': 'Ch',
     'group': [ 'castle', 'water' ],
     'symbol': 'castle/swamp-ruin-tile.png',
@@ -1015,7 +1109,8 @@ var terrainTable = {
     }
   },
   'Cd': {
-    'name': 'Desert Castle',
+    'name': 'Castle',
+    'editorName': 'Desert Castle',
     'alias': 'Ch',
     'group': [ 'castle', 'desert' ],
     'symbol': 'castle/sand/tile.png',
@@ -1037,7 +1132,8 @@ var terrainTable = {
     }
   },
   'Cdr': {
-    'name': 'Ruined Desert Castle',
+    'name': 'Ruined Castle',
+    'editorName': 'Ruined Desert Castle',
     'alias': 'Ch',
     'group': [ 'castle', 'desert' ],
     'symbol': 'castle/sand/ruin-tile.png',
@@ -1065,174 +1161,203 @@ var terrainTable = {
     'symbol': 'castle/encampment/regular-keep-tile.png'
   },
   'Ket': {
-    'name': 'Tall Encampment Keep',
+    'name': 'Encampment Keep',
+    'editorName': 'Tall Encampment Keep',
     'alias': 'Ch',
     'group': 'castle',
     'symbol': 'castle/encampment/tall-keep-tile.png'
   },
   'Kea': {
-    'name': 'Snowy Encampment Keep',
+    'name': 'Encampment Keep',
+    'editorName': 'Snowy Encampment Keep',
     'alias': 'Ch',
     'group': [ 'castle', 'frozen' ],
     'symbol': 'castle/encampment/snow-keep-tile.png'
   },
   'Ko': {
-    'name': 'Orcish Keep',
+    'name': 'Keep',
+    'editorName': 'Orcish Keep',
     'alias': 'Ch',
     'group': 'castle',
     'symbol': 'castle/orcish/keep-tile.png'
   },
   'Koa': {
-    'name': 'Snowy Orcish Keep',
+    'name': 'Keep',
+    'editorName': 'Snowy Orcish Keep',
     'alias': 'Ch',
     'group': 'castle',
     'symbol': 'castle/winter-orcish/keep-tile.png'
   },
   'Kh': {
-    'name': 'Human Castle Keep',
+    'name': 'Keep',
+    'editorName': 'Human Castle Keep',
     'alias': 'Ch',
     'group': 'castle',
     'symbol': 'castle/keep-tile.png'
   },
   'Kha': {
-    'name': 'Snowy Human Castle Keep',
+    'name': 'Keep',
+    'editorName': 'Snowy Human Castle Keep',
     'alias': [ 'At', 'Ch' ],
     'group': [ 'castle', 'frozen' ],
     'symbol': 'castle/snowy/keep-tile.png'
   },
   'Kv': {
-    'name': 'Elven Castle Keep',
+    'name': 'Keep',
+    'editorName': 'Elven Castle Keep',
     'alias': 'Ch',
     'group': 'castle',
     'symbol': 'castle/elven/keep-tile.png'
   },
   'Kud': {
-    'name': 'Dwarven Castle Keep',
+    'name': 'Keep',
+    'editorName': 'Dwarven Castle Keep',
     'alias': 'Ch',
     'group': 'castle',
     'symbol': 'castle/dwarven-keep-tile.png'
   },
   'Khr': {
-    'name': 'Ruined Human Castle Keep',
+    'name': 'Ruined Keep',
+    'editorName': 'Ruined Human Castle Keep',
     'alias': 'Ch',
     'group': 'castle',
     'symbol': 'castle/ruined-keep-tile.png'
   },
   'Khw': {
-    'name': 'Sunken Human Castle Keep',
+    'name': 'Ruined Keep',
+    'editorName': 'Sunken Human Castle Keep',
     'alias': [ 'Ch', 'Ww' ],
     'group': [ 'castle', 'water' ],
     'symbol': 'castle/sunken-keep-tile.png'
   },
   'Khs': {
-    'name': 'Swamp Human Castle Keep',
+    'name': 'Ruined Keep',
+    'editorName': 'Swamp Human Castle Keep',
     'alias': [ 'Ch', 'Ss' ],
     'group': [ 'castle', 'water' ],
     'symbol': 'castle/swamp-keep-tile.png'
   },
   'Kd': {
-    'name': 'Desert Keep',
+    'name': 'Keep',
+    'editorName': 'Desert Keep',
     'alias': 'Ch',
     'group': [ 'castle', 'desert' ],
     'symbol': 'castle/sand/keep-tile.png'
   },
   'Kdr': {
-    'name': 'Ruined Desert Keep',
+    'name': 'Ruined Keep',
+    'editorName': 'Ruined Desert Keep',
     'alias': 'Ch',
     'group': [ 'castle', 'desert' ],
     'symbol': 'castle/sand/ruin-keep-tile.png'
   },
   '^Cov': {
-    'name': 'Castle Overlay',
+    'name': 'Castle',
+    'editorName': 'Castle Overlay',
     'alias': '_bas',
     'group': [ 'castle', 'special' ],
     'symbol': 'castle/castle-overlay-editor.png'
   },
   '^Kov': {
-    'name': 'Keep Overlay',
+    'name': 'Keep',
+    'editorName': 'Keep Overlay',
     'alias': '_bas',
     'group': [ 'castle', 'special' ],
     'symbol': 'castle/keep-overlay-editor.png'
   },
   '^Bw|': {
-    'name': 'Wooden Bridge',
+    'name': 'Bridge',
+    'editorName': 'Wooden Bridge',
     'alias': [ '_bas', 'Gt' ],
     'group': [ 'bridge', 'water' ],
     'symbol': 'bridge/wood-n-s.png'
   },
   '^Bw/': {
-    'name': 'Wooden Bridge',
+    'name': 'Bridge',
+    'editorName': 'Wooden Bridge',
     'alias': [ '_bas', 'Gt' ],
     'group': [ 'bridge', 'water' ],
     'symbol': 'bridge/wood-ne-sw.png'
   },
   '^Bw\\': {
-    'name': 'Wooden Bridge',
+    'name': 'Bridge',
+    'editorName': 'Wooden Bridge',
     'alias': [ '_bas', 'Gt' ],
     'group': [ 'bridge', 'water' ],
     'symbol': 'bridge/wood-se-nw.png'
   },
   '^Bw|r': {
-    'name': 'Rotting Bridge',
+    'name': 'Bridge',
+    'editorName': 'Rotting Bridge',
     'alias': [ '_bas', 'Gt' ],
     'group': [ 'bridge', 'water' ],
     'symbol': 'bridge/wood-n-s.png'
   },
   '^Bw/r': {
-    'name': 'Rotting Bridge',
+    'name': 'Bridge',
+    'editorName': 'Rotting Bridge',
     'alias': [ '_bas', 'Gt' ],
     'group': [ 'bridge', 'water' ],
     'symbol': 'bridge/wood-ne-sw.png'
   },
   '^Bw\\r': {
-    'name': 'Rotting Bridge',
+    'name': 'Bridge',
+    'editorName': 'Rotting Bridge',
     'alias': [ '_bas', 'Gt' ],
     'group': [ 'bridge', 'water' ],
     'symbol': 'bridge/wood-se-nw.png'
   },
   '^Bsb|': {
-    'name': 'Basic Stone Bridge',
+    'name': 'Bridge',
+    'editorName': 'Basic Stone Bridge',
     'alias': [ '_bas', 'Gt' ],
     'group': [ 'bridge', 'water' ],
     'symbol': 'bridge/stonebridge-n-s-tile.png'
   },
   '^Bsb/': {
-    'name': 'Basic Stone Bridge',
+    'name': 'Bridge',
+    'editorName': 'Basic Stone Bridge',
     'alias': [ '_bas', 'Gt' ],
     'group': [ 'bridge', 'water' ],
     'symbol': 'bridge/stonebridge-ne-sw-tile.png'
   },
   '^Bsb\\': {
-    'name': 'Basic Stone Bridge',
+    'name': 'Bridge',
+    'editorName': 'Basic Stone Bridge',
     'alias': [ '_bas', 'Gt' ],
     'group': [ 'bridge', 'water' ],
     'symbol': 'bridge/stonebridge-se-nw-tile.png'
   },
   '^Bs|': {
-    'name': 'Cave Chasm Bridge',
+    'name': 'Bridge',
+    'editorName': 'Cave Chasm Bridge',
     'alias': [ '_bas', 'Uu' ],
     'group': [ 'bridge', 'cave' ],
     'symbol': 'cave/chasm-stone-bridge-s-n-tile.png'
   },
   '^Bs/': {
-    'name': 'Cave Chasm Bridge',
+    'name': 'Bridge',
+    'editorName': 'Cave Chasm Bridge',
     'alias': [ '_bas', 'Uu' ],
     'group': [ 'bridge', 'cave' ],
     'symbol': 'cave/chasm-stone-bridge-sw-ne-tile.png'
   },
   '^Bs\\': {
-    'name': 'Cave Chasm Bridge',
+    'name': 'Bridge',
+    'editorName': 'Cave Chasm Bridge',
     'alias': [ '_bas', 'Uu' ],
     'group': [ 'bridge', 'cave' ],
     'symbol': 'cave/chasm-stone-bridge-se-nw-tile.png'
   },
   '_off^_usr': {
-    'name': 'Off Map',
+    'name': 'Void',
+    'editorName': 'Off Map',
     'group': [ 'obstacle', 'special' ],
     'symbol': 'off-map/offmap-editor.png'
   },
   '^fme': {
-    'name': 'Experimental Fake Map Edge',
+    'name': 'Void',
+    'editorName': 'Experimental Fake Map Edge',
     'group': [ 'obstacle', 'special' ],
     'symbol': 'off-map/border-ne-se-s-sw-nw-n.png'
   },
