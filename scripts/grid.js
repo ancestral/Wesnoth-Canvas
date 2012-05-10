@@ -39,7 +39,6 @@ function preload(arrayOfImages) {
 $(document).ready(function() {
   canvas = document.getElementById('game').getContext('2d');
   effects = document.getElementById('effects').getContext('2d');
-  grid = document.getElementById('grid').getContext('2d');
   
   $('#mapChoice').change(function() {
     loadMap(readMap('maps/' + ($('#mapChoice option:selected').html())));
@@ -53,7 +52,7 @@ $(document).ready(function() {
 function loadMap(map) {
   MAP_WIDTH = map[0].length;
   MAP_HEIGHT = map.length;
-  $.each([ 'game', 'effects', 'grid'], function() {
+  $.each([ 'game', 'effects' ], function() {
     document.getElementById(this).width = (HEX_WIDTH*.75*MAP_WIDTH)+(HEX_WIDTH*.25);
     document.getElementById(this).height = (HEX_HEIGHT*MAP_HEIGHT)+(HEX_HEIGHT*.5);
   });
