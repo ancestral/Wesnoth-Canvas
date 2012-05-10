@@ -116,7 +116,7 @@ function mouseMove(e) {
   if (hexes) {
     var yOffset = 0;
     if (((hexes[0]) % 2) == 1) { yOffset = HEX_HEIGHT/2; }
-      effects.clearRect((hexes[0])*HEX_WIDTH*.75-(HEX_WIDTH*.25),(hexes[1])*HEX_HEIGHT-yOffset,HEX_WIDTH,HEX_HEIGHT); 
+      effects.clearRect((hexes[0])*HEX_WIDTH*.75-(HEX_WIDTH*.25),(hexes[1])*HEX_HEIGHT-yOffset,HEX_WIDTH,HEX_HEIGHT);
   }
   
   hexes = whatHex(mouseX, mouseY);
@@ -155,7 +155,7 @@ function barycentricTest(x0, y0, x1, y1, x2, y2, x3, y3) {
 }
 
 function whatHex(x,y) {
-  var col = Math.floor(x/(HEX_WIDTH/4));
+  var col = Math.floor((x+(HEX_WIDTH*.25))/(HEX_WIDTH/4));
   var row = Math.floor(y/(HEX_HEIGHT/2));
 
   var tileX;
@@ -173,7 +173,7 @@ function whatHex(x,y) {
   }
   else if ((col % 3) == 0) { // shared area between columns
     if ((col % 6) == 3) { // between first and second columns
-      if (barycentricTest(x,y,(col*HEX_WIDTH/4),(Math.floor((row+1)/2)*HEX_HEIGHT),(col*HEX_WIDTH/4),((Math.floor(row/2))*HEX_HEIGHT)+(HEX_HEIGHT/2),((col+1)*HEX_WIDTH/4),((Math.floor(row/2))*HEX_HEIGHT)+(HEX_HEIGHT/2))) {
+      if (barycentricTest(x,y,(col*HEX_WIDTH/4)-(HEX_WIDTH*.25),(Math.floor((row+1)/2)*HEX_HEIGHT),(col*HEX_WIDTH/4)-(HEX_WIDTH*.25),((Math.floor(row/2))*HEX_HEIGHT)+(HEX_HEIGHT/2),((col+1)*HEX_WIDTH/4-(HEX_WIDTH*.25)),((Math.floor(row/2))*HEX_HEIGHT)+(HEX_HEIGHT/2))) {
         tileX = (col/3)-1;
         tileY = (Math.floor(row/2));
       } else {
@@ -181,7 +181,7 @@ function whatHex(x,y) {
         tileY = Math.floor((row+1)/2);
       }
     } else {
-      if (barycentricTest(x,y,(col*HEX_WIDTH/4),((Math.floor(row/2))*HEX_HEIGHT)+(HEX_HEIGHT/2),(col*HEX_WIDTH/4),(Math.floor((row+1)/2)*HEX_HEIGHT),((col+1)*HEX_WIDTH/4),(Math.floor((row+1)/2)*HEX_HEIGHT))) {
+      if (barycentricTest(x,y,(col*HEX_WIDTH/4)-(HEX_WIDTH*.25),((Math.floor(row/2))*HEX_HEIGHT)+(HEX_HEIGHT/2),(col*HEX_WIDTH/4)-(HEX_WIDTH*.25),(Math.floor((row+1)/2)*HEX_HEIGHT),((col+1)*HEX_WIDTH/4)-(HEX_WIDTH*.25),(Math.floor((row+1)/2)*HEX_HEIGHT))) {
         tileX = (col/3)-1;
         tileY = Math.floor((row+1)/2);
       } else {
