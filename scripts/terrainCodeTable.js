@@ -1,6 +1,6 @@
 /* terrainCodeTable.js
  * JavaScript file for Wesnoth Canvas
- * last updated 30 Apr 12
+ * last updated 10 May 12
  *
  * TO-DO: Add alternates and place images for special drawing tiles, such as walls, keeps and cliffs.
  *

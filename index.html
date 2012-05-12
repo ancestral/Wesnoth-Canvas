@@ -1,6 +1,6 @@
 <!-- index.html
    - main page for Wesnoth Canvas
-   - last updated 30 Apr 12
+   - last updated 10 May 12
  -->
 
 <!DOCTYPE html>
@@ -17,6 +17,7 @@
   	<script type="text/javascript" language="javascript" src="scripts/terrainCodeTable.js"></script>
     <script type="text/javascript" language="javascript" src="scripts/map.js"></script>
   	<script type="text/javascript" language="javascript" src="scripts/grid.js"></script>
+  	<script type="text/javascript" language="javascript" src="scripts/transitions.js"></script>
   </head>
 
   <body onload="loadMap(readMap('maps/ttest1.map'));">
@@ -25,7 +26,8 @@
       <div id="canvas" style="cursor:crosshair; margin-top: 16px;">
         <canvas id="game" width="800" height="600" style="position: absolute;"></canvas>
         <canvas id="effects" width="800" height="600" style="position: absolute;"></canvas>
-      </div>     
+        <canvas id="transitions" width="800" height="600" style="position: absolute;"></canvas>
+      </div>
       <div id="chooser" style="position: absolute; top: 8px; left: 80px;">
         <select id="mapChoice">
           <option>2p_Aethermaw.map</option>

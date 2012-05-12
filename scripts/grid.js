@@ -1,6 +1,6 @@
 /* grid.js
  * JavaScript file for Wesnoth Canvas
- * last updated 30 Apr 12
+ * last updated 10 May 12
  */
 
 var tile = new Image();
@@ -39,6 +39,7 @@ function preload(arrayOfImages) {
 $(document).ready(function() {
   canvas = document.getElementById('game').getContext('2d');
   effects = document.getElementById('effects').getContext('2d');
+  transitions = document.getElementById('transitions').getContext('2d');
   
   $('#mapChoice').change(function() {
     loadMap(readMap('maps/' + ($('#mapChoice option:selected').html())));
@@ -52,7 +53,7 @@ $(document).ready(function() {
 function loadMap(map) {
   MAP_WIDTH = map[0].length;
   MAP_HEIGHT = map.length;
-  $.each([ 'game', 'effects' ], function() {
+  $.each([ 'game', 'effects', 'transitions' ], function() {
     document.getElementById(this).width = (HEX_WIDTH*.75*MAP_WIDTH)-(HEX_WIDTH*.25);
     document.getElementById(this).height = (HEX_HEIGHT*MAP_HEIGHT)-(HEX_HEIGHT*.5);
   });
@@ -78,13 +79,6 @@ function loadMap(map) {
         }
       }
 
-      if ((col % 2) == 1) {
-        if (terrainTable[map[row][col-1].hexValue()].hasGroup('castle')) {
-          if (terrainTable[that.hexValue()].hasGroup('castle')) {
-            //drawObject('images/terrain/' + terrainTable[that.hexValue()]['convex']['nw']);
-          }
-        }
-      }
 
       if (flag == true) {          draw('images/editor/tool-overlay-starting-position.png',col,row);
       }
@@ -217,10 +211,10 @@ function drawGrid(what,x,y) {
   grid.drawImage(tile,x*HEX_WIDTH*.75-(HEX_WIDTH*.25),y*HEX_HEIGHT-yOffset);
 }
 
-function drawObject(what,x,y) {
+function drawTransition(what,x,y) {
   tile.src = what;
   var xOffset = 0;
   var yOffset = 0;
   if ((x % 2) == 1) { yOffset = HEX_HEIGHT/2; }
-  canvas.drawImage(tile,x*HEX_WIDTH*.75-(HEX_WIDTH*.25),y*HEX_HEIGHT-yOffset);
+  transitions.drawImage(tile,x*HEX_WIDTH*.75-(HEX_WIDTH*.25),y*HEX_HEIGHT-yOffset);
 }
