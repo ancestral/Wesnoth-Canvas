@@ -1,6 +1,6 @@
 /* terrainCodeTable.js
  * JavaScript file for Wesnoth Canvas
- * last updated 10 May 12
+ * last updated 27 May 12
  *
  * TO-DO: Add alternates and place images for special drawing tiles, such as walls, keeps and cliffs.
  *
@@ -179,7 +179,7 @@ var terrainTable = {
     'group': 'desert',
     'symbol': 'sand/beach.png'
   },
-  'Dd^Do': {
+  '^Do': {
     'name': 'Oasis',
     'alias': 'Ds',
     'group': [ 'desert', 'forest' ],
@@ -245,6 +245,12 @@ var terrainTable = {
     'group': 'embellishments',
     'symbol': 'misc/windmill-tile.png'
   },
+  '^Ecf': {
+    'editorName': 'Campfire',
+    'alias': '_bas',
+    'group': 'embellishments',
+    'symbol': 'misc/fire-A01.png'
+  },
   '^Eff': {
     'editorName': 'Fence',
     'alias': '_bas',
@@ -286,6 +292,12 @@ var terrainTable = {
     'alias': [ '_bas', 'Ft' ],
     'group': 'forest',
     'symbol': 'forest/tropical-tile.png'
+  },
+  '^Ftd': {
+    'editorName': 'Palm Forest',
+    'alias': [ '_bas', 'Ft' ],
+    'group': [ 'desert', 'forest' ],
+    'symbol': 'forest/palm-desert-tile.png'
   },
   '^Fp': {
     'editorName': 'Pine Forest',
@@ -339,6 +351,12 @@ var terrainTable = {
     'editorName': 'Winter Mixed Forest',
     'alias': [ '_bas', 'Ft' ],
     'group': 'forest',
+    'symbol': 'forest/mixed-winter-tile.png'
+  },
+  '^Fma': {
+    'editorName': 'Snowy Mixed Forest',
+    'alias': [ '_bas', 'At', 'Ft' ],
+    'group': [ 'forest', 'frozen' ],
     'symbol': 'forest/mixed-winter-tile.png'
   },
   '^Gma': {
@@ -462,6 +480,20 @@ var terrainTable = {
     'alias': [ 'At', 'Ft', 'Hh' ],
     'group': [ 'forest', 'frozen', 'rough' ],
     'symbol': 'forest/forested-mixed-winter-snow-hills-tile.png'
+  },
+  'Hh^Ft': {
+    'name': 'Hills',
+    'editorName': 'Tropical Forested Hills',
+    'alias': [ 'Ft', 'Hh' ],
+    'group': [ 'forest', 'rough' ],
+    'symbol': 'forest/forested-mixed-winter-snow-hills-tile.png'
+  },
+  'Hd^Ftd': {
+    'name': 'Hills',
+    'editorName': 'Palm Forested Hills',
+    'alias': [ 'Ds', 'Ft', 'Hh' ],
+    'group': [ 'desert', 'forest', 'rough' ],
+    'symbol': 'forest/palms-on-dunes-tile.png'
   },
   'Iwr': {
     'name': 'Wooden Floor',
@@ -1291,21 +1323,21 @@ var terrainTable = {
     'editorName': 'Rotting Bridge',
     'alias': [ '_bas', 'Gt' ],
     'group': [ 'bridge', 'water' ],
-    'symbol': 'bridge/wood-n-s.png'
+    'symbol': 'bridge/wood-rotting-n-s.png'
   },
   '^Bw/r': {
     'name': 'Bridge',
     'editorName': 'Rotting Bridge',
     'alias': [ '_bas', 'Gt' ],
     'group': [ 'bridge', 'water' ],
-    'symbol': 'bridge/wood-ne-sw.png'
+    'symbol': 'bridge/wood-rotting-ne-sw.png'
   },
   '^Bw\\r': {
     'name': 'Bridge',
     'editorName': 'Rotting Bridge',
     'alias': [ '_bas', 'Gt' ],
     'group': [ 'bridge', 'water' ],
-    'symbol': 'bridge/wood-se-nw.png'
+    'symbol': 'bridge/wood-rotting-se-nw.png'
   },
   '^Bsb|': {
     'name': 'Bridge',
@@ -1348,6 +1380,69 @@ var terrainTable = {
     'alias': [ '_bas', 'Uu' ],
     'group': [ 'bridge', 'cave' ],
     'symbol': 'cave/chasm-stone-bridge-se-nw-tile.png'
+  },
+  '^Bh|': {
+    'name': 'Bridge',
+    'editorName': 'Hanging Bridge',
+    'alias': [ '_bas', 'Gt' ],
+    'group': [ 'bridge', 'cave' ],
+    'symbol': 'bridge/hanging-s-n-tile.png'
+  },
+  '^Bh/': {
+    'name': 'Bridge',
+    'editorName': 'Hanging Bridge',
+    'alias': [ '_bas', 'Gt' ],
+    'group': [ 'bridge', 'cave' ],
+    'symbol': 'bridge/hanging-sw-ne-tile.png'
+  },
+  '^Bh\\': {
+    'name': 'Bridge',
+    'editorName': 'Hanging Bridge',
+    'alias': [ '_bas', 'Gt' ],
+    'group': [ 'bridge', 'cave' ],
+    'symbol': 'bridge/hanging-se-nw-tile.png'
+  },
+  '^Bcx|': {
+    'name': 'Bridge',
+    'editorName': 'Stone Chasm Bridge',
+    'alias': [ '_bas', 'Gt' ],
+    'group': [ 'bridge', 'cave' ],
+    'symbol': 'bridge/stonebridge-n-s-tile.png'
+  },
+  '^Bcx/': {
+    'name': 'Bridge',
+    'editorName': 'Stone Chasm Bridge',
+    'alias': [ '_bas', 'Gt' ],
+    'group': [ 'bridge', 'cave' ],
+    'symbol': 'bridge/stonebridge-ne-sw-tile.png'
+  },
+  '^Bcx\\': {
+    'name': 'Bridge',
+    'editorName': 'Stone Chasm Bridge',
+    'alias': [ '_bas', 'Gt' ],
+    'group': [ 'bridge', 'cave' ],
+    'symbol': 'bridge/stonebridge-se-nw-tile.png'
+  },
+  '^Bp|': {
+    'name': 'Bridge',
+    'editorName': 'Plank Bridge',
+    'alias': [ '_bas', 'Gt' ],
+    'group': [ 'bridge', 'cave' ],
+    'symbol': 'bridge/planks-s-n.png'
+  },
+  '^Bp/': {
+    'name': 'Bridge',
+    'editorName': 'Plank Bridge',
+    'alias': [ '_bas', 'Gt' ],
+    'group': [ 'bridge', 'cave' ],
+    'symbol': 'bridge/planks-sw-ne.png'
+  },
+  '^Bp\\': {
+    'name': 'Bridge',
+    'editorName': 'Plank Bridge',
+    'alias': [ '_bas', 'Gt' ],
+    'group': [ 'bridge', 'cave' ],
+    'symbol': 'bridge/bridge/planks-se-nw.png'
   },
   '_off^_usr': {
     'name': 'Void',
