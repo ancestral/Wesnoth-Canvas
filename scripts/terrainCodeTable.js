@@ -1442,7 +1442,7 @@ var terrainTable = {
     'editorName': 'Plank Bridge',
     'alias': [ '_bas', 'Gt' ],
     'group': [ 'bridge', 'cave' ],
-    'symbol': 'bridge/bridge/planks-se-nw.png'
+    'symbol': 'bridge/planks-se-nw.png'
   },
   '_off^_usr': {
     'name': 'Void',
