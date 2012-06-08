@@ -40,6 +40,8 @@ $(document).ready(function() {
   canvas = document.getElementById('game').getContext('2d');
   effects = document.getElementById('effects').getContext('2d');
   transitions = document.getElementById('transitions').getContext('2d');
+  
+  $('#code').css('width', $(window).width() - 22 + "px");
     
   $('#mapChoice').change(function() {
     loadMap(readMap('maps/' + ($('#mapChoice option:selected').html())));
