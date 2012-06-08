@@ -1,6 +1,6 @@
-/* grid.js
- * JavaScript file for Wesnoth Canvas
- * last updated 10 May 12
+/*  grid.js
+ *  JavaScript file for Wesnoth Canvas
+ *  last updated 8 Jun 12
  */
 
 var tile = new Image();
@@ -40,13 +40,35 @@ $(document).ready(function() {
   canvas = document.getElementById('game').getContext('2d');
   effects = document.getElementById('effects').getContext('2d');
   transitions = document.getElementById('transitions').getContext('2d');
-  
+    
   $('#mapChoice').change(function() {
     loadMap(readMap('maps/' + ($('#mapChoice option:selected').html())));
   });
   
-  loadMap(readMap('maps/2p_Aethermaw.map'));
-
+  $('#show-hide').click(function() {
+    if ($('#show-hide').html() == 'Show Map Code') {
+      $('#show-hide').html('Hide Map Code');
+      $('#code').show();
+      $('#code').focus(); 
+      $('#code').css('width', $(window).width() - 22 + "px");
+    }
+    else {
+      $('#show-hide').html('Show Map Code');
+      $('#code').hide();
+    }
+    
+      //$('#code').focus(); 
+      //$('#code').css('width', $(window).width() - 22 + "px");
+  });
+    
+  $('#code').focusout(function() {
+    try {
+      loadMap(parseMap($('#code').val().trim()))
+    } catch(err) {
+      
+    };
+  });
+  
   document.addEventListener('mousemove', mouseMove, true);
 });
 

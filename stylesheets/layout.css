@@ -1,4 +1,9 @@
-* {
+/*  layout.css
+ *  main css for Wesnoth Canvas
+ *  last updated 8 Jun 12
+ */
+
+body {
   padding: 0px;
   margin: 0px;
   border: 0px;
@@ -6,4 +11,16 @@
 
 canvas {
   display: block;
+}
+
+#code {
+  font-family: monospace;
+  margin-top: 8px;
+  border: 1px solid #333;
+  width: 800px;
+  height: 200px;
+}
+
+#show-hide {
+  float: right;
 }

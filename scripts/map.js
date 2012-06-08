@@ -1,6 +1,6 @@
-/* map.js
- * JavaScript file for Wesnoth Canvas
- * last updated 30 Apr 12
+/*  map.js
+ *  JavaScript file for Wesnoth Canvas
+ *  last updated 8 Jun 12
  */
 
 var mapData;
@@ -57,19 +57,22 @@ String.prototype.isTerrain = function() {
 };
 
 function readMap(map) {
-  //var mapData;
   $.ajax({
     async: false,
     dataType: 'text',
     url: map,
     success: function(data) {
-      mapData = data.toString().split('\n');
-      $.each(mapData, function(index) {
-        mapData[index] = this.replace(/\s*/g,'').split(',');
-        if (/=/.test(mapData[index])) {
-          mapData[index] = '';            
-        }
-      });
+      return parseMap(data);
+    }
+  });
+};
+
+function parseMap(data) {
+  mapData = data.toString().split('\n');
+  $.each(mapData, function(index) {
+    mapData[index] = this.replace(/\s*/g,'').split(',');
+    if (/=/.test(mapData[index])) {
+      mapData[index] = '';            
     }
   });
   return mapData.clean('');

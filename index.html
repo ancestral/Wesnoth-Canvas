@@ -1,6 +1,6 @@
 <!-- index.html
    - main page for Wesnoth Canvas
-   - last updated 10 May 12
+   - last updated 8 Jun 12
  -->
 
 <!DOCTYPE html>
@@ -18,17 +18,20 @@
     <script type="text/javascript" language="javascript" src="scripts/map.js"></script>
   	<script type="text/javascript" language="javascript" src="scripts/grid.js"></script>
   	<script type="text/javascript" language="javascript" src="scripts/transitions.js"></script>
+  	<script type="text/javascript" language="javascript" src="scripts/hash.js"></script>
   </head>
 
-  <body onload="loadMap(readMap('maps/ttest1.map'));">
+  <body>
     <div id="container" style="padding: 8px;">
+      <button id="show-hide" type="code">Hide Map Code</button>
       <div id="hex">&nbsp;</div>
+      <textarea id="code" /></textarea>
       <div id="canvas" style="cursor:crosshair; margin-top: 16px;">
         <canvas id="game" width="800" height="600" style="position: absolute;"></canvas>
         <canvas id="effects" width="800" height="600" style="position: absolute;"></canvas>
         <canvas id="transitions" width="800" height="600" style="position: absolute;"></canvas>
       </div>
-      <div id="chooser" style="position: absolute; top: 8px; left: 80px;">
+      <!-- div id="chooser" style="position: absolute; top: 8px; left: 80px;">
         <select id="mapChoice">
           <option>2p_Aethermaw.map</option>
           <option>2p_Arcanclave_Citadel.map</option>
@@ -75,7 +78,7 @@
           <option>8p_Morituri.map</option>
           <option>9p_Merkwuerdigliebe.map</option>
           <option selected>ttest1.map</option>
-        </select>
+        </select -->
       </div>
     </div>
   </body>
