@@ -40,7 +40,8 @@ $(document).ready(function() {
   canvas = document.getElementById('game').getContext('2d');
   effects = document.getElementById('effects').getContext('2d');
   transitions = document.getElementById('transitions').getContext('2d');
-  
+
+  $('#code').select();  
   $('#code').css('width', $(window).width() - 22 + "px");
     
   $('#mapChoice').change(function() {
@@ -49,23 +50,23 @@ $(document).ready(function() {
   
   $('#show-hide').click(function() {
     if ($('#show-hide').html() == 'Show Map Code') {
-      $('#show-hide').html('Hide Map Code');
       $('#code').show();
       $('#code').focus(); 
+      $('#code').select(); 
       $('#code').css('width', $(window).width() - 22 + "px");
+      $('#show-hide').hide();
     }
     else {
-      $('#show-hide').html('Show Map Code');
       $('#code').hide();
     }
-    
-      //$('#code').focus(); 
       //$('#code').css('width', $(window).width() - 22 + "px");
   });
     
   $('#code').focusout(function() {
     try {
-      loadMap(parseMap($('#code').val().trim()))
+      loadMap(parseMap($('#code').val().trim()));
+      $('#show-hide').show();
+      $('#code').hide();
     } catch(err) {
       
     };
