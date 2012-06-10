@@ -40,6 +40,9 @@ $(document).ready(function() {
   canvas = document.getElementById('game').getContext('2d');
   effects = document.getElementById('effects').getContext('2d');
   transitions = document.getElementById('transitions').getContext('2d');
+  
+  loadMap(parseMap($('#code').val().trim()));
+  
 
   $('#code').select();  
   $('#code').css('width', $(window).width() - 22 + "px");
@@ -142,11 +145,11 @@ function mouseMove(e) {
 
   if ((hexes[0] == undefined) || (hexes[1] == undefined)) {
     $('#hex').html('&nbsp;');  
+  } else if ((mouseX > ($('#game').position().left) + $('#game').width()) || (mouseY > ($('#game').position().top) + $('#game').height())) {
+    // Do nothing
   } else {
     $('#hex').html('(' + hexes[0] + ',' + hexes[1] + ')');
     if((hexes[0] >= 0) && (hexes[1] >= 0)) {
-      var eWidth = effects.width
-      //effects.clearRect(0,0,document.getElementById('effects').width,document.getElementById('effects').height);
       drawSelect(topSelect,hexes[0],hexes[1]);
       drawSelect(botSelect,hexes[0],hexes[1]);
     }
