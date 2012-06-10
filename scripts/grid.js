@@ -143,10 +143,8 @@ function mouseMove(e) {
   
   hexes = whatHex(mouseX, mouseY);
 
-  if ((hexes[0] == undefined) || (hexes[1] == undefined)) {
+  if ((hexes[0] == undefined) || (hexes[1] == undefined) || (mouseX > ($('#game').position().left) + $('#game').width()) || (mouseY > ($('#game').position().top) + $('#game').height())) {
     $('#hex').html('&nbsp;');  
-  } else if ((mouseX > ($('#game').position().left) + $('#game').width()) || (mouseY > ($('#game').position().top) + $('#game').height())) {
-    // Do nothing
   } else {
     $('#hex').html('(' + hexes[0] + ',' + hexes[1] + ')');
     if((hexes[0] >= 0) && (hexes[1] >= 0)) {
