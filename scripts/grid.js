@@ -4,9 +4,9 @@
  */
 
 var tile = new Image();
-var topSelect = dataDirectory + 'images/misc/hover-hex-top.png';
-var botSelect = dataDirectory + 'images/misc/hover-hex-bottom.png';
-var brush = dataDirectory + 'images/editor/brush.png';
+var topSelect = dataDirectory + '../images/misc/hover-hex-top.png';
+var botSelect = dataDirectory + '../images/misc/hover-hex-bottom.png';
+var brush = dataDirectory + '../images/editor/brush.png';
 
 var canvas;
 var effects;
