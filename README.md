@@ -14,14 +14,15 @@ Visit the Wesnoth forums, at:
 http://r.wesnoth.org/t36714
 
 ## Changelog
-Version 2 Build 1
+Version 2 Build 1a
 5 July 2012
 * Moved out tBfW dependencies. You’ll need to download the game resources and place them on the server.
 * Changed index.html to index.php, partially for dynamic data directory support.
 * Altered canvases to include a viewport, and changes as the window resizes. This should hopefully help with performance.
 * Fixed various bugs.
+* Fixed path to hover hex images.
 
-Versioin 1 Build 1
+Version 1 Build 1
 26 April
 * First entire upload of the project.
 
@@ -33,11 +34,7 @@ All other files are licensed under MIT.
 http://www.opensource.org/licenses/MIT
 
 
-<<<<<<< HEAD
-Copyright (c) 2012 "ancestral"
-=======
 Copyright © 2012 ancestral
->>>>>>> Version 2
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
