@@ -1,12 +1,12 @@
 /*  grid.js
  *  JavaScript file for Wesnoth Canvas
- *  last updated 8 Jun 12
+ *  last updated 5 Jul 12
  */
 
 var tile = new Image();
-var topSelect = 'images/misc/hover-hex-top.png';
-var botSelect = 'images/misc/hover-hex-bottom.png';
-var brush = 'images/editor/brush.png';
+var topSelect = dataDirectory + 'core/images/misc/hover-hex-top.png';
+var botSelect = dataDirectory + 'core/images/misc/hover-hex-bottom.png';
+var brush = dataDirectory + 'core/images/editor/brush.png';
 
 var canvas;
 var effects;
@@ -28,31 +28,34 @@ function preload(arrayOfImages) {
   $.each(arrayOfImages, function(key, value) {
     if (value['symbol']) { 
       images[key] = new Image();
-      images[key].src = 'images/terrain/' + value['symbol'];
+      images[key].src = dataDirectory + 'core/images/terrain/' + value['symbol'];
     }
   });
-  images['hover-hex-top'] = new Image(); images['hover-hex-top'].src = 'images/misc/hover-hex-top.png';
-  images['hover-hex-bottom'] = new Image(); images['hover-hex-bottom'].src = 'images/misc/hover-hex-bottom.png';
+  images['hover-hex-top'] = new Image(); images['hover-hex-top'].src = dataDirectory + 'core/images/misc/hover-hex-top.png';
+  images['hover-hex-bottom'] = new Image(); images['hover-hex-bottom'].src = dataDirectory + 'core/images/misc/hover-hex-bottom.png';
   images['hexgrid'] = new Image(); images['hexgrid'].src = 'ui/hexgrid.png';
 }
 
 $(document).ready(function() {
-  canvas = document.getElementById('game').getContext('2d');
+  game = document.getElementById('game').getContext('2d');
   effects = document.getElementById('effects').getContext('2d');
   transitions = document.getElementById('transitions').getContext('2d');
   
-  loadMap(parseMap($('#code').val().trim()));
+  $('#canvas').css("width", window.innerWidth - (HEX_WIDTH/4) - (window.innerWidth % (HEX_WIDTH*4/3)));
+  $('#canvas').css("height", window.innerHeight - (HEX_HEIGHT*.75) - (window.innerHeight % (HEX_HEIGHT/2)));
   
+  loadMap(parseMap($('#code').val().trim()));  
 
   $('#code').select();  
   $('#code').css('width', $(window).width() - 22 + "px");
     
-  $('#mapChoice').change(function() {
-    loadMap(readMap('maps/' + ($('#mapChoice option:selected').html())));
+  $(window).resize(function() {
+    $('#canvas').css("width", window.innerWidth - (HEX_WIDTH/4) - (window.innerWidth % (HEX_WIDTH*4/3)));
+    $('#canvas').css("height", window.innerHeight - (HEX_HEIGHT*.75) - (window.innerHeight % (HEX_HEIGHT/2)));
   });
   
   $('#show-hide').click(function() {
-    if ($('#show-hide').html() == 'Show Map Code') {
+    if ($('#show-hide').html() === 'Show Map Code') {
       $('#code').show();
       $('#code').focus(); 
       $('#code').select(); 
@@ -62,7 +65,6 @@ $(document).ready(function() {
     else {
       $('#code').hide();
     }
-      //$('#code').css('width', $(window).width() - 22 + "px");
   });
     
   $('#code').focusout(function() {
@@ -91,24 +93,24 @@ function loadMap(map) {
       var that = this;
       var flag = false;
       // Starting points
-      if ($.inArray(that.substr(0,1),['1','2','3','4','5','6','7','8','9']) != -1 ) {
+      if ($.inArray(that.substr(0,1),['1','2','3','4','5','6','7','8','9']) !== -1 ) {
         that = that.substr(1,(that.length-1));
         flag = true;
       }
       // Check neighboring tiles. Even checks W, NW vertices; odd checks SW, W, NW and NE vertices.
             
       // Tiles with layers
-      if (terrainTable[that] != undefined) {
-        draw('images/terrain/' + terrainTable[that]['symbol'],col,row);
-      } else if (terrainTable[that.split('^')[0]] != undefined) {
-        draw('images/terrain/' + terrainTable[that.split('^')[0]]['symbol'],col,row);
-        if (terrainTable['^' + that.split('^')[1]] != undefined) {
-          draw('images/terrain/' + terrainTable['^' + that.split('^')[1]]['symbol'],col,row);
+      if (terrainTable[that] !== undefined) {
+        draw(dataDirectory + 'core/images/terrain/' + terrainTable[that]['symbol'],col,row);
+      } else if (terrainTable[that.split('^')[0]] !== undefined) {
+        draw(dataDirectory + 'core/images/terrain/' + terrainTable[that.split('^')[0]]['symbol'],col,row);
+        if (terrainTable['^' + that.split('^')[1]] !== undefined) {
+          draw(dataDirectory + 'core/images/terrain/' + terrainTable['^' + that.split('^')[1]]['symbol'],col,row);
         }
       }
 
 
-      if (flag == true) {          draw('images/editor/tool-overlay-starting-position.png',col,row);
+      if (flag === true) {          draw('images/editor/tool-overlay-starting-position.png',col,row);
       }
     });
   });
@@ -124,35 +126,69 @@ function loadMap(map) {
 
 
 function mouseMove(e) {
-  var mouseX, mouseY;
+  var mouseX;
+  var mouseY;
 
-  if(e.offsetX) {
+  if (e.offsetX) {
     mouseX = e.offsetX;
     mouseY = e.offsetY;
   }
-  else if(e.layerX) {
+  else if (e.layerX) {
     mouseX = e.layerX;
     mouseY = e.layerY;
-  }  
+  }
 
   if (hexes) {
     var yOffset = 0;
-    if (((hexes[0]) % 2) == 1) { yOffset = HEX_HEIGHT/2; }
+    if (((hexes[0]) % 2) === 1) { yOffset = HEX_HEIGHT/2; }
       effects.clearRect((hexes[0])*HEX_WIDTH*.75-(HEX_WIDTH*.25),(hexes[1])*HEX_HEIGHT-yOffset,HEX_WIDTH,HEX_HEIGHT);
   }
-  
+
   hexes = whatHex(mouseX, mouseY);
 
-  if ((hexes[0] == undefined) || (hexes[1] == undefined) || (mouseX > ($('#game').position().left) + $('#game').width()) || (mouseY > ($('#game').position().top) + $('#game').height())) {
+  if ((hexes[0] === undefined) || (hexes[1] === undefined)) {
     $('#hex').html('&nbsp;');  
   } else {
     $('#hex').html('(' + hexes[0] + ',' + hexes[1] + ')');
-    if((hexes[0] >= 0) && (hexes[1] >= 0)) {
-      drawSelect(topSelect,hexes[0],hexes[1]);
-      drawSelect(botSelect,hexes[0],hexes[1]);
-    }
+    drawSelect(topSelect,hexes[0],hexes[1]);
+    drawSelect(botSelect,hexes[0],hexes[1]);
   }
 }
+
+function keyDown(e) {
+  var code = e.keyCode ? e.keyCode : e.which;
+  switch(code) {
+    case 37: moveLeft(); break;
+    case 38: moveUp(); break;
+    case 39: moveRight(); break;
+    case 40: moveDown(); break;
+  }
+}
+
+function moveLeft() {
+  if ($('#game').position().left < 0) {
+    $('canvas').css("left", $('#game').position().left + (HEX_WIDTH*.5));
+  }
+}
+
+function moveUp() {
+  if ($('#game').position().top < 0) {
+    $('canvas').css("top", $('#game').position().top + (HEX_HEIGHT*.5));
+  }
+}
+
+function moveRight() {
+  if (($('#game').position().left + $('#game').width()) > $('#canvas').width()) {
+    $('canvas').css("left", $('#game').position().left - (HEX_WIDTH*.5));
+  }
+}
+
+function moveDown() {
+  if (($('#game').position().top + $('#game').height()) - HEX_HEIGHT > $('#canvas').height()) {
+    $('canvas').css("top", $('#game').position().top - (HEX_HEIGHT*.5));
+  }
+}
+
 
 function barycentricTest(x0, y0, x1, y1, x2, y2, x3, y3) {
   /*
@@ -182,17 +218,17 @@ function whatHex(x,y) {
   var tileY;
 
   // Odd columns
-  if (((col % 6) == 1) || ((col % 6) == 2)) {
+  if (((col % 6) === 1) || ((col % 6) === 2)) {
     tileX = Math.floor((col+2)/3)-1;
     tileY = (Math.floor(row/2));
   }
   // Even columns
-  else if (((col % 6) == 4) || ((col % 6) == 5)) {
+  else if (((col % 6) === 4) || ((col % 6) === 5)) {
     tileX = Math.floor((col+2)/3)-1;
     tileY = Math.floor((row+1)/2);
   }
-  else if ((col % 3) == 0) { // shared area between columns
-    if ((col % 6) == 3) { // between first and second columns
+  else if ((col % 3) === 0) { // shared area between columns
+    if ((col % 6) === 3) { // between first and second columns
       if (barycentricTest(x,y,(col*HEX_WIDTH/4)-(HEX_WIDTH*.25),(Math.floor((row+1)/2)*HEX_HEIGHT),(col*HEX_WIDTH/4)-(HEX_WIDTH*.25),((Math.floor(row/2))*HEX_HEIGHT)+(HEX_HEIGHT/2),((col+1)*HEX_WIDTH/4-(HEX_WIDTH*.25)),((Math.floor(row/2))*HEX_HEIGHT)+(HEX_HEIGHT/2))) {
         tileX = (col/3)-1;
         tileY = (Math.floor(row/2));
@@ -217,15 +253,15 @@ function draw(what,x,y) {
   tile.src = what;
   var xOffset = 0;
   var yOffset = 0;
-  if ((x % 2) == 1) { yOffset = HEX_HEIGHT/2; }
-  canvas.drawImage(tile,x*HEX_WIDTH*.75-(HEX_WIDTH*.25),y*HEX_HEIGHT-yOffset);
+  if ((x % 2) === 1) { yOffset = HEX_HEIGHT/2; }
+  game.drawImage(tile,x*HEX_WIDTH*.75-(HEX_WIDTH*.25),y*HEX_HEIGHT-yOffset);
 }
 
 function drawSelect(what,x,y) {
   tile.src = what;
   var xOffset = 0;
   var yOffset = 0;
-  if ((x % 2) == 1) { yOffset = HEX_HEIGHT/2; }
+  if ((x % 2) === 1) { yOffset = HEX_HEIGHT/2; }
   effects.drawImage(tile,x*HEX_WIDTH*.75-(HEX_WIDTH*.25),y*HEX_HEIGHT-yOffset);
 }
 
@@ -233,7 +269,7 @@ function drawGrid(what,x,y) {
   tile.src = what;
   var xOffset = 0;
   var yOffset = 0;
-  if ((x % 2) == 1) { yOffset = HEX_HEIGHT/2; }
+  if ((x % 2) === 1) { yOffset = HEX_HEIGHT/2; }
   grid.drawImage(tile,x*HEX_WIDTH*.75-(HEX_WIDTH*.25),y*HEX_HEIGHT-yOffset);
 }
 
@@ -241,6 +277,6 @@ function drawTransition(what,x,y) {
   tile.src = what;
   var xOffset = 0;
   var yOffset = 0;
-  if ((x % 2) == 1) { yOffset = HEX_HEIGHT/2; }
+  if ((x % 2) === 1) { yOffset = HEX_HEIGHT/2; }
   transitions.drawImage(tile,x*HEX_WIDTH*.75-(HEX_WIDTH*.25),y*HEX_HEIGHT-yOffset);
 }
