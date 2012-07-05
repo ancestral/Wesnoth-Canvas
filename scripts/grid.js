@@ -4,8 +4,7 @@
  */
 
 var tile = new Image();
-var topSelect = dataDirectory + '../images/misc/hover-hex-top.png';
-var botSelect = dataDirectory + '../images/misc/hover-hex-bottom.png';
+var hexSelect = dataDirectory + '../images/misc/hover-hex.png';
 var brush = dataDirectory + '../images/editor/brush.png';
 
 var canvas;
@@ -150,8 +149,7 @@ function mouseMove(e) {
     $('#hex').html('&nbsp;');  
   } else {
     $('#hex').html('(' + hexes[0] + ',' + hexes[1] + ')');
-    drawSelect(topSelect,hexes[0],hexes[1]);
-    drawSelect(botSelect,hexes[0],hexes[1]);
+    drawSelect(hexSelect,hexes[0],hexes[1]);
   }
 }
 
