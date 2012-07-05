@@ -14,13 +14,14 @@ Visit the Wesnoth forums, at:
 http://r.wesnoth.org/t36714
 
 ## Changelog
-Version 2 Build 1b
+Version 2 Build 1c
 5 July 2012
 * Moved out tBfW dependencies. You’ll need to download the game resources and place them on the server.
 * Changed index.html to index.php, partially for dynamic data directory support.
 * Altered canvases to include a viewport, and changes as the window resizes. This should hopefully help with performance.
 * Fixed various bugs.
 * Fixed path to hover hex images — finally.
+* Fixed path to starting position flag.
 
 Version 1 Build 1
 26 April
