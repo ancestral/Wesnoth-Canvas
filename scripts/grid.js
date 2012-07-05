@@ -110,7 +110,7 @@ function loadMap(map) {
       }
 
 
-      if (flag === true) {          draw('../images/editor/tool-overlay-starting-position.png',col,row);
+      if (flag === true) {          draw(dataDirectory + '../images/editor/tool-overlay-starting-position.png',col,row);
       }
     });
   });
