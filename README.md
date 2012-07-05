@@ -3,7 +3,7 @@ A web site for displaying game maps for *The Battle for Wesnoth.*
 
 Canvas has been overhauled. Consider this Version 2.
 
-## What is Wesnoth Bestiary?
+## What is Wesnoth Canvas?
 This is a web site for display maps for displaying game maps for a free strategy game called *The Battle For Wesnoth.* (Not familiar? Check it out at http://www.wesnoth.org) Part of it is an experiment and self-learning to the wonderful ways of JavaScript, jquery, and web design. As I continue to work on the project, it will eventually be a place to create, edit and save maps — and perhaps more.
 
 ## Why here?
