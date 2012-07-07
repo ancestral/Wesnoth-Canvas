@@ -14,6 +14,11 @@ Visit the Wesnoth forums, at:
 http://r.wesnoth.org/t36714
 
 ## Changelog
+Version 2 Build 2
+7 July 2012
+* Changes to key events.
+* Added support for an interactive console.
+
 Version 2 Build 1c
 5 July 2012
 * Moved out tBfW dependencies. You’ll need to download the game resources and place them on the server.

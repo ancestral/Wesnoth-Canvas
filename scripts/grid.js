@@ -30,8 +30,7 @@ function preload(arrayOfImages) {
       images[key].src = dataDirectory + 'core/images/terrain/' + value['symbol'];
     }
   });
-  images['hover-hex-top'] = new Image(); images['hover-hex-top'].src = dataDirectory + '../images/misc/hover-hex-top.png';
-  images['hover-hex-bottom'] = new Image(); images['hover-hex-bottom'].src = dataDirectory + '../images/misc/hover-hex-bottom.png';
+  images['hover-hex'] = new Image(); images['hover-hex'].src = dataDirectory + '../images/misc/hover-hex.png';
   images['hexgrid'] = new Image(); images['hexgrid'].src = 'ui/hexgrid.png';
 }
 
@@ -40,17 +39,43 @@ $(document).ready(function() {
   effects = document.getElementById('effects').getContext('2d');
   transitions = document.getElementById('transitions').getContext('2d');
   
-  $('#canvas').css("width", window.innerWidth - (HEX_WIDTH/4) - (window.innerWidth % (HEX_WIDTH*4/3)));
-  $('#canvas').css("height", window.innerHeight - (HEX_HEIGHT*.75) - (window.innerHeight % (HEX_HEIGHT/2)));
+  $(document).bind('keyup', function(e) {
+    if ($('#console').is(':visible')) { $('#console').focus(); }
+  });
+  
+  $(document).keydown(function(e) {
+    var code = e.keyCode ? e.keyCode : e.which;
+    switch(code) {
+      case 9:   if ($('#console').is(':visible')) { $('#console').hide(); }
+                                 break;
+      case 13:  if ($('#console').is(':visible')) { $('#console').val(''); }
+                                 break;
+      case 37:  moveLeft();      break;
+      case 38:  moveUp();        break;
+      case 39:  moveRight();     break;
+      case 40:  moveDown();      break;
+      case 192: toggleConsole(); break;
+    }
+  }); 
+    
+  $('#canvas').css("width", window.innerWidth - (HEX_WIDTH/4) - (window.innerWidth % (HEX_WIDTH*3/4)));
+  $('#canvas').css("height", window.innerHeight - 9 - (HEX_WIDTH/2) -  $('#canvas').position().top - (window.innerHeight % (HEX_HEIGHT/2)));
   
   loadMap(parseMap($('#code').val().trim()));  
 
-  $('#code').select();  
-  $('#code').css('width', $(window).width() - 22 + "px");
-    
+  $('#console').css("left", 8);
+  $('#console').css("width", window.innerWidth - 28);
+
+  //$('#code').select();  
+  //$('#code').css('width', $(window).width() - 22 + "px");
+  //$('#show-hide').show();
+  //$('#code').hide();
+  
   $(window).resize(function() {
-    $('#canvas').css("width", window.innerWidth - (HEX_WIDTH/4) - (window.innerWidth % (HEX_WIDTH*4/3)));
-    $('#canvas').css("height", window.innerHeight - (HEX_HEIGHT*.75) - (window.innerHeight % (HEX_HEIGHT/2)));
+    $('#canvas').css("width", window.innerWidth - (HEX_WIDTH/4) - (window.innerWidth % (HEX_WIDTH*3/4)));
+    $('#canvas').css("height", window.innerHeight - 9 - (HEX_WIDTH/2) -  $('#canvas').position().top - (window.innerHeight % (HEX_HEIGHT/2)));
+    $('#console').css("top", window.innerHeight - $('#console').height() - 18);
+    $('#console').css("width", window.innerWidth - 28);
   });
   
   $('#show-hide').click(function() {
@@ -65,7 +90,7 @@ $(document).ready(function() {
       $('#code').hide();
     }
   });
-    
+  
   $('#code').focusout(function() {
     try {
       loadMap(parseMap($('#code').val().trim()));
@@ -76,6 +101,11 @@ $(document).ready(function() {
     };
   });
   
+  $('#console').focusout(function() {
+    $('#console').hide();
+  });
+  
+  //Mousetrap.bind('`', function() { toggleConsole() });
   document.addEventListener('mousemove', mouseMove, true);
 });
 
@@ -109,7 +139,8 @@ function loadMap(map) {
       }
 
 
-      if (flag === true) {          draw(dataDirectory + '../images/editor/tool-overlay-starting-position.png',col,row);
+      if (flag === true) {
+        draw(dataDirectory + '../images/editor/tool-overlay-starting-position.png',col,row);
       }
     });
   });
@@ -122,7 +153,6 @@ function loadMap(map) {
   }
 */
 }
-
 
 function mouseMove(e) {
   var mouseX;
@@ -153,19 +183,9 @@ function mouseMove(e) {
   }
 }
 
-function keyDown(e) {
-  var code = e.keyCode ? e.keyCode : e.which;
-  switch(code) {
-    case 37: moveLeft(); break;
-    case 38: moveUp(); break;
-    case 39: moveRight(); break;
-    case 40: moveDown(); break;
-  }
-}
-
 function moveLeft() {
   if ($('#game').position().left < 0) {
-    $('canvas').css("left", $('#game').position().left + (HEX_WIDTH*.5));
+    $('canvas').css("left", $('#game').position().left + (HEX_WIDTH*3/4));
   }
 }
 
@@ -177,7 +197,7 @@ function moveUp() {
 
 function moveRight() {
   if (($('#game').position().left + $('#game').width()) > $('#canvas').width()) {
-    $('canvas').css("left", $('#game').position().left - (HEX_WIDTH*.5));
+    $('canvas').css("left", $('#game').position().left - (HEX_WIDTH*3/4));
   }
 }
 
@@ -187,6 +207,10 @@ function moveDown() {
   }
 }
 
+function toggleConsole() {
+  $('#console').css("top", window.innerHeight - $('#console').height() - 18);
+  $('#console').toggle();
+}
 
 function barycentricTest(x0, y0, x1, y1, x2, y2, x3, y3) {
   /*
