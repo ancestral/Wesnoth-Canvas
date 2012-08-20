@@ -14,6 +14,12 @@ Visit the Wesnoth forums, at:
 http://r.wesnoth.org/t36714
 
 ## Changelog
+Version 2 Build 3
+20 August 2012
+* Modified UI logic so map scrolls better.
+* Introduced nice border.
+* Created status bar though not fully implemented yet.
+
 Version 2 Build 2
 7 July 2012
 * Changes to key events.

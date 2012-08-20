@@ -36,15 +36,42 @@ function preload(arrayOfImages) {
 
 $(document).ready(function() {
   game = document.getElementById('game').getContext('2d');
+  status = document.getElementById('status').getContext('2d');
   effects = document.getElementById('effects').getContext('2d');
   transitions = document.getElementById('transitions').getContext('2d');
+  
+  status.fillStyle = "#999999";
+  //status.fillRect(0,0,status.width,status.height);
+  
+  $('#code').focus();
   
   $(document).bind('keyup', function(e) {
     if ($('#console').is(':visible')) { $('#console').focus(); }
   });
+
+  /* 
+   *  Reference: Keyboard Map
+   *
+   *              esc—— F1——— F2——— F3——— F4——— F5——— F6——— F7——— F8——— F9——— F10—— F11—— F12—— F13—————+
+   *             |  27 | 112 | 113 | 114 | 115 | 116 | 117 | 118 | 119 | 120 | 121 | 122 | 123 |  ???  |
+   *            ` ——— 1———— 2———— 3———— 4———— 5———— 6———— 7———— 8———— 9———— 0———— - ——— = ——— delete——+
+   *           | 192 |  49 |  50 |  51 |  52 |  53 |  54 |  55 |  56 |  57 |  58 |  59 |  60 |   61  |
+   *          tab———— Q———— W———— E———— R———— T———— Y———— U———— I———— O———— P———— [ ——— ] ——— \ ————+
+   *         |   9   |  81 |  87 |  69 |  82 |  84 |  89 |  85 |  73 |  79 |  80 | 219 | 221 | 220 |
+   *        caps————— A———— S———— D———— F———— G———— H———— J———— K———— L———— ; ——— ' ——— return————+
+   *       |    20   |  65 |  83 |  68 |  70 |  71 |  72 |  74 |  75 |  76 | 186 | 222 |   13    |
+   *      shift—————— Z———— X———— C———— V———— B———— N———— M———— , ——— . ——— / ——— shift—————————+
+   *     |    16     |  90 |  88 |  67 |  86 |  66 |  78 |  77 | 188 | 190 | 191 |     16      |
+   *    fn—— ctrl opt— command space—————————————————————————— command opt——+—————up————+—————+  
+   *   |    | 17 | 18 |   91  |            32                 |   93  | 18 |     |  38 |     |
+   *  +————+————+————+———————+———————————————————————————————+———————+————left——down——right—+
+   *                                                                     |  37 |  40 |  39 |
+   *                                                                    +—————+—————+—————+
+   *
+   */
   
   $(document).keydown(function(e) {
-    var code = e.keyCode ? e.keyCode : e.which;
+    var code = e.keyCode ? e.keyCode : e.which;   
     switch(code) {
       case 9:   if ($('#console').is(':visible')) { $('#console').hide(); }
                                  break;
@@ -58,39 +85,28 @@ $(document).ready(function() {
     }
   }); 
     
-  $('#canvas').css("width", window.innerWidth - (HEX_WIDTH/4) - (window.innerWidth % (HEX_WIDTH*3/4)));
-  $('#canvas').css("height", window.innerHeight - 9 - (HEX_WIDTH/2) -  $('#canvas').position().top - (window.innerHeight % (HEX_HEIGHT/2)));
+  $('#canvas').css("width", window.innerWidth - 48 + "px");
+  $('#canvas').css("height", window.innerHeight - 72 + "px");
+  $('#canvas').css("top", 48 + "px");
+  $('#canvas').css("left", 24 + "px");
+  
+  $('#status').css("left", 24 + "px");
+  $('#status').css("top", 24 + "px");
+  $('#status').css("width", window.innerWidth - 48 + "px");
   
   loadMap(parseMap($('#code').val().trim()));  
 
-  $('#console').css("left", 8);
-  $('#console').css("width", window.innerWidth - 28);
-
-  //$('#code').select();  
-  //$('#code').css('width', $(window).width() - 22 + "px");
-  //$('#show-hide').show();
-  //$('#code').hide();
+  $('#console').css("left", 12 + "px");
+  $('#console').css("top", window.innerHeight - 12 + "px");
+  $('#console').css("width", window.innerWidth - 28 + "px");
   
   $(window).resize(function() {
-    $('#canvas').css("width", window.innerWidth - (HEX_WIDTH/4) - (window.innerWidth % (HEX_WIDTH*3/4)));
-    $('#canvas').css("height", window.innerHeight - 9 - (HEX_WIDTH/2) -  $('#canvas').position().top - (window.innerHeight % (HEX_HEIGHT/2)));
-    $('#console').css("top", window.innerHeight - $('#console').height() - 18);
-    $('#console').css("width", window.innerWidth - 28);
+    $('#canvas').css("width", window.innerWidth - 48 + "px");
+    $('#canvas').css("height", window.innerHeight - 72 + "px");
+    $('#console').css("top", window.innerHeight - 18 - $('#console').height() + "px");
+    $('#console').css("width", window.innerWidth - 28 + "px");
   });
-  
-  $('#show-hide').click(function() {
-    if ($('#show-hide').html() === 'Show Map Code') {
-      $('#code').show();
-      $('#code').focus(); 
-      $('#code').select(); 
-      $('#code').css('width', $(window).width() - 22 + "px");
-      $('#show-hide').hide();
-    }
-    else {
-      $('#code').hide();
-    }
-  });
-  
+    
   $('#code').focusout(function() {
     try {
       loadMap(parseMap($('#code').val().trim()));
@@ -98,14 +114,13 @@ $(document).ready(function() {
       $('#code').hide();
     } catch(err) {
       
-    };
+    }
   });
   
   $('#console').focusout(function() {
     $('#console').hide();
   });
   
-  //Mousetrap.bind('`', function() { toggleConsole() });
   document.addEventListener('mousemove', mouseMove, true);
 });
 
@@ -137,8 +152,7 @@ function loadMap(map) {
           draw(dataDirectory + 'core/images/terrain/' + terrainTable['^' + that.split('^')[1]]['symbol'],col,row);
         }
       }
-
-
+      
       if (flag === true) {
         draw(dataDirectory + '../images/editor/tool-overlay-starting-position.png',col,row);
       }
@@ -158,14 +172,8 @@ function mouseMove(e) {
   var mouseX;
   var mouseY;
 
-  if (e.offsetX) {
-    mouseX = e.offsetX;
-    mouseY = e.offsetY;
-  }
-  else if (e.layerX) {
-    mouseX = e.layerX;
-    mouseY = e.layerY;
-  }
+  mouseX = e.offsetX;
+  mouseY = e.offsetY;
 
   if (hexes) {
     var yOffset = 0;
@@ -176,33 +184,50 @@ function mouseMove(e) {
   hexes = whatHex(mouseX, mouseY);
 
   if ((hexes[0] === undefined) || (hexes[1] === undefined)) {
-    $('#hex').html('&nbsp;');  
+    //status.fillStyle = "#999999";
+    //status.fill();
   } else {
-    $('#hex').html('(' + hexes[0] + ',' + hexes[1] + ')');
-    drawSelect(hexSelect,hexes[0],hexes[1]);
+    if (status.getContext) {
+      var sta = status.getContext('2d');
+      sta.fillStyle = "#999999";
+      sta.fill();
+      sta.fillStyle = "#ffffff";
+      sta.fillText("(" + hexes[0] + "," + hexes[1] + ")",0,0);        
+    }
   }
+  drawSelect(hexSelect,hexes[0],hexes[1]);
 }
 
 function moveLeft() {
-  if ($('#game').position().left < 0) {
+  if ($('#game').position().left > -(HEX_WIDTH*3/4)) {
+    $('canvas').css("left", 0);
+  } else if ($('#game').position().left < 0) {
     $('canvas').css("left", $('#game').position().left + (HEX_WIDTH*3/4));
   }
 }
 
 function moveUp() {
-  if ($('#game').position().top < 0) {
+  if ($('#game').position().top > -(HEX_WIDTH*.5)) {
+    $('canvas').css("top", 0);
+  } else if ($('#game').position().top < 0) {
     $('canvas').css("top", $('#game').position().top + (HEX_HEIGHT*.5));
   }
 }
 
 function moveRight() {
-  if (($('#game').position().left + $('#game').width()) > $('#canvas').width()) {
+  var offX = ($('#game').position().left + $('#game').width()) - ($('#canvas').width());
+  if (offX < (HEX_WIDTH*3/4)) {
+    $('canvas').css("left", $('#game').position().left - offX);
+  } else if (($('#game').position().left + $('#game').width()) > $('#canvas').width()) {
     $('canvas').css("left", $('#game').position().left - (HEX_WIDTH*3/4));
   }
 }
 
 function moveDown() {
-  if (($('#game').position().top + $('#game').height()) - HEX_HEIGHT > $('#canvas').height()) {
+  var offY = ($('#game').position().top + $('#game').height()) - ($('#canvas').height());
+  if (offY < (HEX_HEIGHT*.5)) {
+    $('canvas').css("top", $('#game').position().top - offY);
+  } else if (($('#game').position().top + $('#game').height() - (HEX_HEIGHT*.5)) > $('#canvas').height()) {
     $('canvas').css("top", $('#game').position().top - (HEX_HEIGHT*.5));
   }
 }
@@ -210,6 +235,11 @@ function moveDown() {
 function toggleConsole() {
   $('#console').css("top", window.innerHeight - $('#console').height() - 18);
   $('#console').toggle();
+}
+
+function toggleCode() {
+  $('#code').toggle();
+  $('#code').focus();
 }
 
 function barycentricTest(x0, y0, x1, y1, x2, y2, x3, y3) {

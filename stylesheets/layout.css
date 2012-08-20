@@ -28,11 +28,6 @@ body {
   z-index: 1;
 }
 
-#show-hide {
-  display: none;
-  float: right;
-}
-
 #console {
   display: none;
   position: absolute;
@@ -40,6 +35,5 @@ body {
   background-color: #000;
   font-size: 14px;
   border: 2px solid #fff;
-  padding: 0.25em;
   font-family: 'Consolas', 'Inconsolata', 'Lucida Console', monospace;
 }
