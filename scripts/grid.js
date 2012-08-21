@@ -97,7 +97,6 @@ $(document).ready(function() {
   
   $('#status1').css("left", 24 + "px");
   $('#status1').css("top", 24 + "px");
-  $('#status1').css("width", window.innerWidth - 48 + "px");
   
   loadMap(parseMap($('#code').val().trim()));  
 

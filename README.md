@@ -14,7 +14,7 @@ Visit the Wesnoth forums, at:
 http://r.wesnoth.org/t36714
 
 ## Changelog
-### Version 2 Build 5
+### Version 2 Build 5b
 21 August 2012
 
 * Fixed minor issue with status bar scaling on resize events.
