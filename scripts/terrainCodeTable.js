@@ -198,168 +198,196 @@ var terrainTable = {
     'symbol': 'sand/crater.png'
   },
   '^Efm': {
+    'name': 'Mixed Flowers',
     'editorName': 'Mixed Flowers',
     'alias': 'Xx',
     'group': 'embellishments',
     'symbol': 'embellishments/flowers-mixed.png'
   },
   '^Gvs': {
+    'name': 'Farmland',
     'editorName': 'Farmland',
     'alias': '_bas',
     'group': 'embellishments',
     'symbol': 'embellishments/farm-veg-spring-icon.png'
   },
   '^Es': {
+    'name': 'Stones',
     'editorName': 'Stones',
     'alias': '_bas',
     'group': 'embellishments',
     'symbol': 'embellishments/stones-small7.png'
   },
   '^Em': {
+    'name': 'Small Mushrooms',
     'editorName': 'Small Mushrooms',
     'alias': '_bas',
     'group': 'embellishments',
     'symbol': 'embellishments/mushroom.png'
   },
   '^Emf': {
+    'name': 'Mushroom Farm',
     'editorName': 'Mushroom Farm',
     'alias': '_bas',
     'group': [ 'cave', 'embellishments' ],
     'symbol': 'embellishments/mushroom-farm-small.png'
   },
   '^Edp': {
+    'name': 'Desert Plants',
     'editorName': 'Desert Plants',
     'alias': '_bas',
     'group': [ 'desert', 'embellishments' ],
     'symbol': 'embellishments/desert-plant5.png'
   },
   '^Edpp': {
+    'name': 'Desert Plants without Bones',
     'editorName': 'Desert Plants without Bones',
     'alias': '_bas',
     'group': [ 'desert', 'embellishments' ],
     'symbol': 'embellishments/desert-plant.png'
   },
   '^Wm': {
+    'name': 'Windmill',
     'editorName': 'Windmill',
     'alias': '_bas',
     'group': 'embellishments',
     'symbol': 'misc/windmill-tile.png'
   },
   '^Ecf': {
+    'name': 'Campfire',
     'editorName': 'Campfire',
     'alias': '_bas',
     'group': 'embellishments',
     'symbol': 'misc/fire-A01.png'
   },
   '^Eff': {
+    'name': 'Fence',
     'editorName': 'Fence',
     'alias': '_bas',
     'group': 'embellishments',
     'symbol': 'embellishments/fence-se-nw-01.png'
   },
   '^Esd': {
+    'name': 'Stones with Sand Drifts',
     'editorName': 'Stones with Sand Drifts',
     'alias': '_bas',
     'group': [ 'desert', 'embellishments' ],
     'symbol': 'embellishments/rocks.png'
   },
   '^Ewl': {
+    'name': 'Water Lilies',
     'editorName': 'Water Lilies',
     'alias': '_bas',
     'group': [ 'embellishments', 'water' ],
     'symbol': 'embellishments/water-lilies-tile.png'
   },
   '^Ewf': {
+    'name': 'Flowering Water Lilies',
     'editorName': 'Flowering Water Lilies',
     'alias': '_bas',
     'group': [ 'embellishments', 'water' ],
     'symbol': 'embellishments/water-lilies-flower-tile.png'
   },
   '^Fet': {
+    'name': 'Great Tree',
     'editorName': 'Great Tree',
     'alias': [ '_bas', 'Ft' ],
     'group': 'forest',
     'symbol': 'forest/great-tree-tile.png'
   },
   '^Fetd': {
+    'name': 'Dead Great Tree',
     'editorName': 'Dead Great Tree',
     'alias': [ '_bas', 'Ft' ],
     'group': 'forest',
     'symbol': 'forest/great-tree-dead-tile.png'
   },
   '^Ft': {
+    'name': 'Tropical Forest',
     'editorName': 'Tropical Forest',
     'alias': [ '_bas', 'Ft' ],
     'group': 'forest',
     'symbol': 'forest/tropical-tile.png'
   },
   '^Ftd': {
+    'name': 'Palm Forest',
     'editorName': 'Palm Forest',
     'alias': [ '_bas', 'Ft' ],
     'group': [ 'desert', 'forest' ],
     'symbol': 'forest/palm-desert-tile.png'
   },
   '^Fp': {
+    'name': 'Pine Forest',
     'editorName': 'Pine Forest',
     'alias': [ '_bas', 'Ft' ],
     'group': 'forest',
     'symbol': 'forest/pine-tile.png'
   },
   '^Fpa': {
+    'name': 'Snowy Pine Forest',
     'editorName': 'Snowy Pine Forest',
     'alias': [ '_bas', 'At', 'Ft' ],
     'group': [ 'forest', 'frozen' ],
     'symbol': 'forest/snow-forest-tile.png'
   },
   '^Fds': {
+    'name': 'Summer Deciduous Forest',
     'editorName': 'Summer Deciduous Forest',
     'alias': [ '_bas', 'Ft' ],
     'group': 'forest',
     'symbol': 'forest/deciduous-summer-tile.png'
   },
   '^Fdf': {
+    'name': 'Fall Deciduous Forest',
     'editorName': 'Fall Deciduous Forest',
     'alias': [ '_bas', 'Ft' ],
     'group': 'forest',
     'symbol': 'forest/deciduous-fall-tile.png'
   },
   '^Fdw': {
+    'name': 'Winter Deciduous Forest',
     'editorName': 'Winter Deciduous Forest',
     'alias': [ '_bas', 'Ft' ],
     'group': 'forest',
     'symbol': 'forest/deciduous-winter-tile.png'
   },
   '^Fda': {
+    'name': 'Snowy Deciduous Forest',
     'editorName': 'Snowy Deciduous Forest',
     'alias': [ '_bas', 'At', 'Ft' ],
     'group': 'forest',
     'symbol': 'forest/deciduous-winter-snow-tile.png'
   },
   '^Fms': {
+    'name': 'Summer Mixed Forest',
     'editorName': 'Summer Mixed Forest',
     'alias': [ '_bas', 'Ft' ],
     'group': 'forest',
     'symbol': 'forest/mixed-summer-tile.png'
   },
   '^Fmf': {
+    'name': 'Fall Mixed Forest',
     'editorName': 'Fall Mixed Forest',
     'alias': [ '_bas', 'Ft' ],
     'group': 'forest',
     'symbol': 'forest/mixed-fall-tile.png'
   },
   '^Fmw': {
+    'name': 'Winter Mixed Forest',
     'editorName': 'Winter Mixed Forest',
     'alias': [ '_bas', 'Ft' ],
     'group': 'forest',
     'symbol': 'forest/mixed-winter-tile.png'
   },
   '^Fma': {
+    'name': 'Snowy Mixed Forest',
     'editorName': 'Snowy Mixed Forest',
     'alias': [ '_bas', 'At', 'Ft' ],
     'group': [ 'forest', 'frozen' ],
     'symbol': 'forest/mixed-winter-tile.png'
   },
   '^Gma': {
+    'name': 'Snowy Mixed Forest',
     'editorName': 'Snowy Mixed Forest',
     'alias': [ '_bas', 'At', 'Ft' ],
     'group': [ 'forest', 'frozen' ],
@@ -503,6 +531,7 @@ var terrainTable = {
     'symbol': 'interior/wood-regular.png'
   },
   '^Ii': {
+    'name': 'Beam of Light',
     'editorName': 'Beam of Light',
     'alias': '_bas',
     'group': 'cave',

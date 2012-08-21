@@ -114,7 +114,6 @@ $(document).ready(function() {
   $('#code').focusout(function() {
     try {
       loadMap(parseMap($('#code').val().trim()));
-      $('#show-hide').show();
       $('#code').hide();
     } catch(err) {
       
@@ -308,17 +307,23 @@ function drawSelect(what,x,y) {
   if ((x % 2) === 1) { yOffset = HEX_HEIGHT/2; }
   effects.drawImage(tile,x*HEX_WIDTH*.75-(HEX_WIDTH*.25),y*HEX_HEIGHT-yOffset);
   if (currentHex !== lastHex) {
-    status1.clearRect(0,0,48,24);
+    status1.clearRect(0,0,400,24);
     status1.shadowColor = "#000";
     status1.shadowOffsetX = 2;
     status1.shadowOffsetY = 2;
     status1.textAlign = "right";
-    status1.font = "16px Gentium Basic";
-    status1.fillStyle = "#fff";
-    status1.fillText(x,16,12);
+    status1.font = "18px Gentium Basic";
+    status1.fillStyle = "#eee";
+    status1.fillText(x,18,16);
     status1.textAlign = "left";
-    status1.fillText(',',17,12);
-    status1.fillText(y,22,12);
+    status1.fillText(',',19,16);
+    status1.fillText(y,24,16);
+
+    if (mapData[y][x].indexOf('^') >= 0) {
+      status1.fillText(terrainTable[mapData[y][x].hexValue().split('^')[0]]['name'] + ', ' + terrainTable['^' + mapData[y][x].split('^')[1]]['name'],48,16);
+    } else {
+      status1.fillText(terrainTable[mapData[y][x].hexValue()]['name'],48,16);
+    }
   }
 }
 

@@ -14,6 +14,13 @@ Visit the Wesnoth forums, at:
 http://r.wesnoth.org/t36714
 
 ## Changelog
+### Version 2 Build 6
+21 August 2012
+
+* Added names for all terrain codes
+* Made status bar narrower
+* Added name of terrain when a hex is selected
+
 ### Version 2 Build 5b
 21 August 2012
 
