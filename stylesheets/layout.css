@@ -42,6 +42,11 @@ body {
   position: relative;
 }
 
+#status1 {
+  overflow: hidden;
+  position: absolute;
+}
+
 #code {
   font-family: monospace;
   margin-top: 8px;

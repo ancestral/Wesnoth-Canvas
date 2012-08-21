@@ -14,27 +14,37 @@ Visit the Wesnoth forums, at:
 http://r.wesnoth.org/t36714
 
 ## Changelog
-Version 2 Build 4
+### Version 2 Build 5
+21 August 2012
+
+* Fixed minor issue with status bar scaling on resize events.
+* Reformated README.md.
+
+### Version 2 Build 4
 20 August 2012
+
 * Introduced Gentium fonts.
 * Moved most variables into an object to avoid unecessary variable pollution.
 * Implemented beginning of a status bar.
 * Hex updates now working, only redraws when hex changes.
 * Minor clarifications for licensing.
 
-Version 2 Build 3
+### Version 2 Build 3
 20 August 2012
+
 * Modified UI logic so map scrolls better.
 * Introduced nice border.
 * Created status bar though not fully implemented yet.
 
-Version 2 Build 2
+### Version 2 Build 2
 7 July 2012
+
 * Changes to key events.
 * Added support for an interactive console.
 
-Version 2 Build 1c
+### Version 2 Build 1c
 5 July 2012
+
 * Moved out tBfW dependencies. You’ll need to download the game resources and place them on the server.
 * Changed index.html to index.php, partially for dynamic data directory support.
 * Altered canvases to include a viewport, and changes as the window resizes. This should hopefully help with performance.
@@ -42,8 +52,9 @@ Version 2 Build 1c
 * Fixed path to hover hex images — finally.
 * Fixed path to starting position flag.
 
-Version 1 Build 1
+### Version 1 Build 1
 26 April
+
 * First entire upload of the project.
 
 ## License
