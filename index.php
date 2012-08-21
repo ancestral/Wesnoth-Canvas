@@ -1,7 +1,7 @@
 <?php
 /* index.php
  * main page for Wesnoth Canvas
- * last updated 5 Jul 12
+ * last updated 21 Aug 12
  */
  
  $data_directory = "../trunk/data/";

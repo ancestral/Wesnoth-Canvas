@@ -1,6 +1,6 @@
 /*  grid.js
  *  JavaScript file for Wesnoth Canvas
- *  last updated 5 Jul 12
+ *  last updated 21 Aug 12
  */
 
 var Wesnoth = Wesnoth || (function() {
@@ -320,9 +320,9 @@ function drawSelect(what,x,y) {
     status1.fillText(y,24,16);
 
     if (mapData[y][x].indexOf('^') >= 0) {
-      status1.fillText(terrainTable[mapData[y][x].hexValue().split('^')[0]]['name'] + ', ' + terrainTable['^' + mapData[y][x].split('^')[1]]['name'],48,16);
+      status1.fillText(terrainTable[mapData[y][x].hexValue().split('^')[0]]['name'] + ', ' + terrainTable['^' + mapData[y][x].split('^')[1]]['name'],64,16);
     } else {
-      status1.fillText(terrainTable[mapData[y][x].hexValue()]['name'],48,16);
+      status1.fillText(terrainTable[mapData[y][x].hexValue()]['name'],64,16);
     }
   }
 }
