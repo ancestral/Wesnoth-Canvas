@@ -26,7 +26,7 @@
   <body style="background-image: url('<?php echo $data_directory ?>core/images/terrain/off-map/background.png');">
     <div id="container">
       <header>
-        <canvas id="status" class="pane" width="800" height="24" style="position: absolute;"></canvas>       
+        <canvas id="status1" width="800" height="24" style="position: absolute;"></canvas>       
         <textarea id="code" class="mousetrap">Mm,Wwf,Wwf,Gs^Fp,Hh^Fp,Hh,Mm,Hh,Gs^Fp,Hh,Gs^Fp,Gs^Fp,Hh,Hh,Wwf,Wwf,Hh,Hh,Mm,Gs^Fp,Wwf,Hh,Gs^Fp,Mm,Mm,Mm,Mm,Mm,Mm
 Hh^Fp,Hh^Fp,Wwf,Mm,Hh^Uf,Hh^Fms,Gg^Fms,Hh^Fms,Gs^Fp,Hh,Hh,Gg,Gs^Fms,Gs^Fp,Wwf,Wwf,Mm,Gs^Fms,Gs^Fms,Wwf,Wwf,Hh,Hh,Hh^Fp,Gs^Fms,Mm,Mm,Mm^Xm,Mm
 Wwf,Gg^Uf,Gg,Wwf,Wwf,Hh,Gg^Vh,Gg^Efm,Gg,Mm,Hh,Gg,Gg,Gg,Wwf,Wwf,Wwf,Hh,Wwf,Wwf,Gg^Efm,Gs^Fp,Mm,Hh,Mm,Hh,Gg^Efm,Mm,Wwf

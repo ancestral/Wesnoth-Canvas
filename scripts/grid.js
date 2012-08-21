@@ -3,6 +3,8 @@
  *  last updated 5 Jul 12
  */
 
+var Wesnoth = Wesnoth || (function() {
+
 var tile = new Image();
 var hexSelect = dataDirectory + '../images/misc/hover-hex.png';
 var brush = dataDirectory + '../images/editor/brush.png';
@@ -10,7 +12,11 @@ var brush = dataDirectory + '../images/editor/brush.png';
 var canvas;
 var effects;
 var grid;
-var hexes;
+var currentHex;
+var lastHex;
+var status1;
+var transitions;
+var game;
 
 var HEX_HEIGHT = 72;
 var HEX_WIDTH = 72;
@@ -36,11 +42,10 @@ function preload(arrayOfImages) {
 
 $(document).ready(function() {
   game = document.getElementById('game').getContext('2d');
-  status = document.getElementById('status').getContext('2d');
+  status1 = document.getElementById('status1').getContext('2d');
   effects = document.getElementById('effects').getContext('2d');
   transitions = document.getElementById('transitions').getContext('2d');
   
-  status.fillStyle = "#999999";
   //status.fillRect(0,0,status.width,status.height);
   
   $('#code').focus();
@@ -90,9 +95,9 @@ $(document).ready(function() {
   $('#canvas').css("top", 48 + "px");
   $('#canvas').css("left", 24 + "px");
   
-  $('#status').css("left", 24 + "px");
-  $('#status').css("top", 24 + "px");
-  $('#status').css("width", window.innerWidth - 48 + "px");
+  $('#status1').css("left", 24 + "px");
+  $('#status1').css("top", 24 + "px");
+  $('#status1').css("width", window.innerWidth - 48 + "px");
   
   loadMap(parseMap($('#code').val().trim()));  
 
@@ -175,60 +180,48 @@ function mouseMove(e) {
   mouseX = e.offsetX;
   mouseY = e.offsetY;
 
-  if (hexes) {
+  if (currentHex) {
     var yOffset = 0;
-    if (((hexes[0]) % 2) === 1) { yOffset = HEX_HEIGHT/2; }
-      effects.clearRect((hexes[0])*HEX_WIDTH*.75-(HEX_WIDTH*.25),(hexes[1])*HEX_HEIGHT-yOffset,HEX_WIDTH,HEX_HEIGHT);
+    if (((currentHex[0]) % 2) === 1) { yOffset = HEX_HEIGHT/2; }
+      effects.clearRect((currentHex[0])*HEX_WIDTH*.75-(HEX_WIDTH*.25),(currentHex[1])*HEX_HEIGHT-yOffset,HEX_WIDTH,HEX_HEIGHT);
   }
+  lastHex = currentHex;
+  currentHex = whatHex(mouseX, mouseY);
 
-  hexes = whatHex(mouseX, mouseY);
-
-  if ((hexes[0] === undefined) || (hexes[1] === undefined)) {
-    //status.fillStyle = "#999999";
-    //status.fill();
-  } else {
-    if (status.getContext) {
-      var sta = status.getContext('2d');
-      sta.fillStyle = "#999999";
-      sta.fill();
-      sta.fillStyle = "#ffffff";
-      sta.fillText("(" + hexes[0] + "," + hexes[1] + ")",0,0);        
-    }
-  }
-  drawSelect(hexSelect,hexes[0],hexes[1]);
+  drawSelect(hexSelect,currentHex[0],currentHex[1]);
 }
 
 function moveLeft() {
   if ($('#game').position().left > -(HEX_WIDTH*3/4)) {
-    $('canvas').css("left", 0);
+    $('.pane').css("left", 0);
   } else if ($('#game').position().left < 0) {
-    $('canvas').css("left", $('#game').position().left + (HEX_WIDTH*3/4));
+    $('.pane').css("left", $('#game').position().left + (HEX_WIDTH*3/4));
   }
 }
 
 function moveUp() {
   if ($('#game').position().top > -(HEX_WIDTH*.5)) {
-    $('canvas').css("top", 0);
+    $('.pane').css("top", 0);
   } else if ($('#game').position().top < 0) {
-    $('canvas').css("top", $('#game').position().top + (HEX_HEIGHT*.5));
+    $('.pane').css("top", $('#game').position().top + (HEX_HEIGHT*.5));
   }
 }
 
 function moveRight() {
   var offX = ($('#game').position().left + $('#game').width()) - ($('#canvas').width());
   if (offX < (HEX_WIDTH*3/4)) {
-    $('canvas').css("left", $('#game').position().left - offX);
+    $('.pane').css("left", $('#game').position().left - offX);
   } else if (($('#game').position().left + $('#game').width()) > $('#canvas').width()) {
-    $('canvas').css("left", $('#game').position().left - (HEX_WIDTH*3/4));
+    $('.pane').css("left", $('#game').position().left - (HEX_WIDTH*3/4));
   }
 }
 
 function moveDown() {
   var offY = ($('#game').position().top + $('#game').height()) - ($('#canvas').height());
   if (offY < (HEX_HEIGHT*.5)) {
-    $('canvas').css("top", $('#game').position().top - offY);
+    $('.pane').css("top", $('#game').position().top - offY);
   } else if (($('#game').position().top + $('#game').height() - (HEX_HEIGHT*.5)) > $('#canvas').height()) {
-    $('canvas').css("top", $('#game').position().top - (HEX_HEIGHT*.5));
+    $('.pane').css("top", $('#game').position().top - (HEX_HEIGHT*.5));
   }
 }
 
@@ -315,6 +308,19 @@ function drawSelect(what,x,y) {
   var yOffset = 0;
   if ((x % 2) === 1) { yOffset = HEX_HEIGHT/2; }
   effects.drawImage(tile,x*HEX_WIDTH*.75-(HEX_WIDTH*.25),y*HEX_HEIGHT-yOffset);
+  if (currentHex !== lastHex) {
+    status1.clearRect(0,0,48,24);
+    status1.shadowColor = "#000";
+    status1.shadowOffsetX = 2;
+    status1.shadowOffsetY = 2;
+    status1.textAlign = "right";
+    status1.font = "16px Gentium Basic";
+    status1.fillStyle = "#fff";
+    status1.fillText(x,16,12);
+    status1.textAlign = "left";
+    status1.fillText(',',17,12);
+    status1.fillText(y,22,12);
+  }
 }
 
 function drawGrid(what,x,y) {
@@ -332,3 +338,5 @@ function drawTransition(what,x,y) {
   if ((x % 2) === 1) { yOffset = HEX_HEIGHT/2; }
   transitions.drawImage(tile,x*HEX_WIDTH*.75-(HEX_WIDTH*.25),y*HEX_HEIGHT-yOffset);
 }
+
+})();

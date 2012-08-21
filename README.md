@@ -14,6 +14,14 @@ Visit the Wesnoth forums, at:
 http://r.wesnoth.org/t36714
 
 ## Changelog
+Version 2 Build 4
+20 August 2012
+* Introduced Gentium fonts.
+* Moved most variables into an object to avoid unecessary variable pollution.
+* Implemented beginning of a status bar.
+* Hex updates now working, only redraws when hex changes.
+* Minor clarifications for licensing.
+
 Version 2 Build 3
 20 August 2012
 * Modified UI logic so map scrolls better.
@@ -39,8 +47,11 @@ Version 1 Build 1
 * First entire upload of the project.
 
 ## License
-Files in the data directory are licensed under GPL Version 2 as per The Battle for Wesnoth project.
+Files in the image directory are licensed under GPL Version 2 as per The Battle for Wesnoth project.
 http://www.gnu.org/licenses/gpl-2.0.txt
+
+Files in the font directory are licensed under SIL Open Font License 1.1.
+http://scripts.sil.org/OFL
 
 All other files are licensed under MIT.
 http://www.opensource.org/licenses/MIT

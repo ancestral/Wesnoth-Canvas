@@ -3,10 +3,36 @@
  *  last updated 5 Jul 12
  */
 
+@font-face {
+  font-family: "Gentium Basic";
+  src: url(../fonts/GenBasR.ttf);
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Gentium Basic";
+  src: url(../fonts/GenBasI.ttf);
+  font-weight: normal;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Gentium Basic";
+  src: url(../fonts/GenBasB.ttf);
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Gentium Basic";
+  src: url(../fonts/GenBasBI.ttf);
+  font-weight: bold;
+  font-style: italic;
+}
+
 body {
   padding: 0px;
   margin: 0px;
   border: 0px;
+  -webkit-font-smoothing: antialiased;
 }
 
 #canvas {
