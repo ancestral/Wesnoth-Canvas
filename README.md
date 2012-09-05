@@ -14,12 +14,20 @@ Visit the Wesnoth forums, at:
 http://r.wesnoth.org/t36714
 
 ## Changelog
+### Version 2 Build 7
+4 September 2012
+
+* Added new cursor. Not sure how I like it; may revert to original one.
+* Added transition map. This is the beginning for really drawing nice-looking terrain.
+* Minor formatting changes to terrain table.
+* Removed GPL license on images. These are original works inspired by the Wesnoth project.
+
 ### Version 2 Build 6
 21 August 2012
 
-* Added names for all terrain codes
-* Made status bar narrower
-* Added name of terrain when a hex is selected
+* Added names for all terrain codes.
+* Made status bar narrower.
+* Added name of terrain when a hex is selected.
 
 ### Version 2 Build 5b
 21 August 2012

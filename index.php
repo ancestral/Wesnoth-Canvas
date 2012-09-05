@@ -1,7 +1,7 @@
 <?php
 /* index.php
  * main page for Wesnoth Canvas
- * last updated 21 Aug 12
+ * last updated 4 Sep 12
  */
  
  $data_directory = "../trunk/data/";
@@ -19,12 +19,13 @@
   	<script src="scripts/terrainCodeTable.js"></script>
     <script src="scripts/map.js"></script>
   	<script src="scripts/grid.js"></script>
+    <script src="scripts/terrain.js"></script>    
     <link rel="stylesheet" type="text/css" href="stylesheets/layout.css" />
     <link rel="shortcut icon" href="images/wesnoth-icon-small.png" />
   </head>
 
   <body style="background-image: url('<?php echo $data_directory ?>core/images/terrain/off-map/background.png');">
-    <div id="container">
+    <div id="container" style="cursor:url('images/normal.png'), auto;">
       <header>
         <canvas id="status1" width="400" height="24"></canvas>       
         <textarea id="code" class="mousetrap">Mm,Wwf,Wwf,Gs^Fp,Hh^Fp,Hh,Mm,Hh,Gs^Fp,Hh,Gs^Fp,Gs^Fp,Hh,Hh,Wwf,Wwf,Hh,Hh,Mm,Gs^Fp,Wwf,Hh,Gs^Fp,Mm,Mm,Mm,Mm,Mm,Mm
@@ -58,10 +59,11 @@ Wwf,Wwf,Gg^Efm,Hh,Mm,Wwf,Mm,Hh,Gg,Gg,Wwf,Wwf,Wwf,Wwf,Wwf,Wwf,Gs^Fms,Gg,Hh,Gg,Gg,
 Mm,Mm,Mm,Hh,Gs^Fms,Hh^Fp,Hh,Gs^Fp,Wwf,Wwf,Gs^Fms,Hh,Mm,Wwf,Wwf,Wwf,Hh^Fms,Mm,Gg^Uf,Gg^Efm,Gs^Fp,Gg^Efm,Gs^Fp,Hh,Hh^Fp,Wwf,Wwf,Gg^Fms,Hh^Fms
 Mm,Mm,Mm,Mm^Xo,Mm,Hh^Fp,Gs^Fp,Hh,Wwf,Wwf,Mm,Gs^Fms,Hh,Gg,Wwf,Wwf,Hh,Hh,Mm,Hh^Fp,Gs^Fp,Hh,Gs^Fp,Hh^Fp,Mm,Mm,Wwf,Hh,Mm</textarea>
       </header>
-      <div id="canvas" style="cursor:crosshair;">        
+      <div id="canvas">        
         <canvas id="game" class="pane" width="800" height="600" style="position: absolute;"></canvas>
         <canvas id="effects" class="pane" width="800" height="600" style="position: absolute;"></canvas>
         <canvas id="transitions" class="pane" width="800" height="600" style="position: absolute;"></canvas>
+        <canvas id="grid" class="pane" width="800" height="600" style="position: absolute;"></canvas>
       </div>
       <input id="console" class="mousetrap"></input>
     </div>    

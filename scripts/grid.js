@@ -1,6 +1,6 @@
 /*  grid.js
  *  JavaScript file for Wesnoth Canvas
- *  last updated 21 Aug 12
+ *  last updated 4 Sep 12
  */
 
 var Wesnoth = Wesnoth || (function() {
@@ -17,6 +17,7 @@ var lastHex;
 var status1;
 var transitions;
 var game;
+var grid;
 
 var HEX_HEIGHT = 72;
 var HEX_WIDTH = 72;
@@ -45,6 +46,7 @@ $(document).ready(function() {
   status1 = document.getElementById('status1').getContext('2d');
   effects = document.getElementById('effects').getContext('2d');
   transitions = document.getElementById('transitions').getContext('2d');
+  grid = document.getElementById('grid').getContext('2d');
   
   //status.fillRect(0,0,status.width,status.height);
   
@@ -86,7 +88,7 @@ $(document).ready(function() {
       case 38:  moveUp();        break;
       case 39:  moveRight();     break;
       case 40:  moveDown();      break;
-      case 192: toggleConsole(); break;
+    //case 192: toggleConsole(); break;
     }
   }); 
     
@@ -162,7 +164,27 @@ function loadMap(map) {
     });
   });
 
-/* This will paint hexes on the map. I'm turning it off for now.
+  var tmap = createTransitionMap(mapData);
+  
+  $.each(map, function(row) {
+    $.each(map[row], function(col) {
+      $.each(tmap[col + ',' + row], function(index, tile) {
+        
+/*        switch(tile) {
+          case "Wwf": if (tile.Wwf % 1 == 0) {
+            if (tile.Hh % 64 == 0) {
+              console.log('pip');
+              draw(dataDirectory + 'core/images/terrain/' + 'regular-to-water-ne.png', col, row);
+            }
+          }
+        }
+*/        
+      });
+    });
+  });
+
+// This will paint hexes on the map. I'm turning it off for now.
+/*
   for(var j=0;j<MAP_HEIGHT;j++) {
     for(var i=0;i<MAP_WIDTH;i++) {
       drawGrid('ui/hexgrid.png',i,j);
@@ -320,7 +342,11 @@ function drawSelect(what,x,y) {
     status1.fillText(y,24,16);
 
     if (mapData[y][x].indexOf('^') >= 0) {
-      status1.fillText(terrainTable[mapData[y][x].hexValue().split('^')[0]]['name'] + ', ' + terrainTable['^' + mapData[y][x].split('^')[1]]['name'],64,16);
+      if (terrainTable[mapData[y][x]]) {
+        status1.fillText(terrainTable[mapData[y][x]]['name'],64,16);
+      } else {
+        status1.fillText(terrainTable[mapData[y][x].hexValue().split('^')[0]]['name'] + ', ' + terrainTable['^' + mapData[y][x].split('^')[1]]['name'],64,16);
+      }
     } else {
       status1.fillText(terrainTable[mapData[y][x].hexValue()]['name'],64,16);
     }
