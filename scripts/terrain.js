@@ -1,10 +1,12 @@
 /*  terrain.js
  *  JavaScript file for Wesnoth Canvas
- *  last updated 30 Aug 12
+ *  last updated 24 Sep 12
  */
 
+var tmap = {};
+
 function createTransitionMap(map) {
-  var tmap = {};
+  tmap = {};
   $.each(map, function(row) {
     $.each(map[row], function(col) {
       var that = this;

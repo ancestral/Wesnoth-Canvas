@@ -1,6 +1,6 @@
 /*  grid.js
  *  JavaScript file for Wesnoth Canvas
- *  last updated 4 Sep 12
+ *  last updated 18 Sep 12
  */
 
 var Wesnoth = Wesnoth || (function() {
@@ -90,7 +90,9 @@ $(document).ready(function() {
       case 40:  moveDown();      break;
     //case 192: toggleConsole(); break;
     }
-  }); 
+  });
+  
+  $('#container').css("height", window.innerHeight + "px");
     
   $('#canvas').css("width", window.innerWidth - 48 + "px");
   $('#canvas').css("height", window.innerHeight - 72 + "px");
@@ -107,6 +109,7 @@ $(document).ready(function() {
   $('#console').css("width", window.innerWidth - 28 + "px");
   
   $(window).resize(function() {
+    $('#container').css("height", window.innerHeight + "px");
     $('#canvas').css("width", window.innerWidth - 48 + "px");
     $('#canvas').css("height", window.innerHeight - 72 + "px");
     $('#console').css("top", window.innerHeight - 18 - $('#console').height() + "px");

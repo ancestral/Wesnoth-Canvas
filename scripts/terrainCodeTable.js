@@ -1,8 +1,8 @@
-/* terrainCodeTable.js
- * JavaScript file for Wesnoth Canvas
- * last updated 4 Sep 12
+/*  terrainCodeTable.js
+ *  JavaScript file for Wesnoth Canvas
+ *  last updated 24 Sep 12
  *
- * TO-DO: Add alternates and place images for special drawing tiles, such as walls, keeps and cliffs.
+ *  TO-DO: Add alternates and place images for special drawing tiles, such as walls, keeps and cliffs.
  *
  */
 
@@ -12,166 +12,198 @@ var terrainTable = {
     "editorName": "Gray Deep Water",
     "alias": "Wo",
     "group": "water",
-    "symbol": "water/ocean-grey-tile.png"
+    "symbol": "water/ocean-grey-tile.png",
+    "image": [ "water/ocean-A01.png", "water/ocean-A02.png", "water/ocean-A03.png", "water/ocean-A04.png", "water/ocean-A05.png", "water/ocean-A06.png", "water/ocean-A07.png", "water/ocean-A08.png", "water/ocean-A09.png", "water/ocean-A10.png", "water/ocean-A11.png", "water/ocean-A12.png", "water/ocean-A13.png", "water/ocean-A14.png", "water/ocean-A15.png" ],
+    "filter": "light.png"
   },
   "Wo": {
     "name": "Deep Water",
     "editorName": "Medium Deep Water",
     "group": "water",
-    "symbol": "water/ocean-tile.png"
+    "symbol": "water/ocean-tile.png",
+    "image": [ "water/ocean-A01.png", "water/ocean-A02.png", "water/ocean-A03.png", "water/ocean-A04.png", "water/ocean-A05.png", "water/ocean-A06.png", "water/ocean-A07.png", "water/ocean-A08.png", "water/ocean-A09.png", "water/ocean-A10.png", "water/ocean-A11.png", "water/ocean-A12.png", "water/ocean-A13.png", "water/ocean-A14.png", "water/ocean-A15.png" ]
   },
   "Wot": {
     "name": "Deep Water",
     "editorName": "Tropical Deep Water",
     "alias": "Wo",
     "group": "water",
-    "symbol": "water/ocean-tropical-tile.png"
+    "symbol": "water/ocean-tropical-tile.png",
+    "image": [ "water/coast-tropical-A01.png", "water/coast-tropical-A02.png", "water/coast-tropical-A03.png", "water/coast-tropical-A04.png", "water/coast-tropical-A05.png", "water/coast-tropical-A06.png", "water/coast-tropical-A07.png", "water/coast-tropical-A08.png", "water/coast-tropical-A09.png", "water/coast-tropical-A10.png", "water/coast-tropical-A11.png", "water/coast-tropical-A12.png", "water/coast-tropical-A13.png", "water/coast-tropical-A14.png", "water/coast-tropical-A15.png" ]
   },
   "Wwg": {
     "name": "Shallow Water",
     "editorName": "Gray Shallow Water",
     "alias": "Ww",
     "group": "water",
-    "symbol": "water/coast-grey-tile.png"
+    "symbol": "water/coast-grey-tile.png",
+    "image": [ "water/ocean-A01.png", "water/ocean-A02.png", "water/ocean-A03.png", "water/ocean-A04.png", "water/ocean-A05.png", "water/ocean-A06.png", "water/ocean-A07.png", "water/ocean-A08.png", "water/ocean-A09.png", "water/ocean-A10.png", "water/ocean-A11.png", "water/ocean-A12.png", "water/ocean-A13.png", "water/ocean-A14.png", "water/ocean-A15.png" ],
+    "filter": "light.png"
   },
   "Ww": {
     "name": "Shallow Water",
     "editorName": "Medium Shallow Water",
     "group": "water",
-    "symbol": "water/coast-tile.png"
+    "symbol": "water/coast-tile.png",
+    "image": [ "water/ocean-A01.png", "water/ocean-A02.png", "water/ocean-A03.png", "water/ocean-A04.png", "water/ocean-A05.png", "water/ocean-A06.png", "water/ocean-A07.png", "water/ocean-A08.png", "water/ocean-A09.png", "water/ocean-A10.png", "water/ocean-A11.png", "water/ocean-A12.png", "water/ocean-A13.png", "water/ocean-A14.png", "water/ocean-A15.png" ]
   },
   "Wwt": {
     "name": "Shallow Water",
     "editorName": "Tropical Shallow Water",
     "alias": "Ww",
     "group": "water",
-    "symbol": "water/coast-tropical-tile.png"
+    "symbol": "water/coast-tropical-tile.png",
+    "image": [ "water/coast-tropical-A01.png", "water/coast-tropical-A02.png", "water/coast-tropical-A03.png", "water/coast-tropical-A04.png", "water/coast-tropical-A05.png", "water/coast-tropical-A06.png", "water/coast-tropical-A07.png", "water/coast-tropical-A08.png", "water/coast-tropical-A09.png", "water/coast-tropical-A10.png", "water/coast-tropical-A11.png", "water/coast-tropical-A12.png", "water/coast-tropical-A13.png", "water/coast-tropical-A14.png", "water/coast-tropical-A15.png" ]
   },
   "Wwf": {
     "name": "Ford",
     "alias": [ "Gt", "Ww" ],
     "group": "water",
-    "symbol": "water/ford-tile.png"
+    "symbol": "water/ford-tile.png",
+    "image": [ "water/ocean-A01.png", "water/ocean-A02.png", "water/ocean-A03.png", "water/ocean-A04.png", "water/ocean-A05.png", "water/ocean-A06.png", "water/ocean-A07.png", "water/ocean-A08.png", "water/ocean-A09.png", "water/ocean-A10.png", "water/ocean-A11.png", "water/ocean-A12.png", "water/ocean-A13.png", "water/ocean-A14.png", "water/ocean-A15.png" ]
   },
   "Wwrg": {
     "name": "Coastal Reef",
     "editorName": "Gray Coastal Reef",
     "alias": "Wwr",
     "group": "water",
-    "symbol": "water/reef-gray-tile.png"
+    "symbol": "water/reef-gray-tile.png",
+    "image": [ "water/ocean-A01.png", "water/ocean-A02.png", "water/ocean-A03.png", "water/ocean-A04.png", "water/ocean-A05.png", "water/ocean-A06.png", "water/ocean-A07.png", "water/ocean-A08.png", "water/ocean-A09.png", "water/ocean-A10.png", "water/ocean-A11.png", "water/ocean-A12.png", "water/ocean-A13.png", "water/ocean-A14.png", "water/ocean-A15.png" ],
+    "filter": "light.png",
+    "overlay": [ "reef.png", "reef2.png", "reef3.png", "reef4.png" ]
   },
   "Wwr": {
     "name": "Coastal Reef",
     "group": "water",
-    "symbol": "water/reef-tile.png"
+    "symbol": "water/reef-tile.png",
+    "image": [ "water/ocean-A01.png", "water/ocean-A02.png", "water/ocean-A03.png", "water/ocean-A04.png", "water/ocean-A05.png", "water/ocean-A06.png", "water/ocean-A07.png", "water/ocean-A08.png", "water/ocean-A09.png", "water/ocean-A10.png", "water/ocean-A11.png", "water/ocean-A12.png", "water/ocean-A13.png", "water/ocean-A14.png", "water/ocean-A15.png" ],
+    "overlay": [ "reef.png", "reef2.png", "reef3.png", "reef4.png" ]
   },
   "Wwrt": {
     "name": "Coastal Reef",
     "editorName": "Tropical Coastal Reef",
     "alias": "Wwr",
     "group": "water",
-    "symbol": "water/reef-tropical-tile.png"
+    "symbol": "water/reef-tropical-tile.png",
+    "image": [ "water/coast-tropical-A01.png", "water/coast-tropical-A02.png", "water/coast-tropical-A03.png", "water/coast-tropical-A04.png", "water/coast-tropical-A05.png", "water/coast-tropical-A06.png", "water/coast-tropical-A07.png", "water/coast-tropical-A08.png", "water/coast-tropical-A09.png", "water/coast-tropical-A10.png", "water/coast-tropical-A11.png", "water/coast-tropical-A12.png", "water/coast-tropical-A13.png", "water/coast-tropical-A14.png", "water/coast-tropical-A15.png" ],
+    "overlay": [ "reef.png", "reef2.png", "reef3.png", "reef4.png" ]
   },
   "Ss": {
     "name": "Swamp",
     "group": "water",
-    "symbol": "swamp/water-tile.png"
+    "symbol": "swamp/water-tile.png",
+    "image": [ "swamp/water.png", "swamp/water2.png", "swamp/water3.png" ]
   },
   "Sm": {
     "name": "Swamp",
     "editorName": "Muddy Quagmire",
     "alias": "Ss",
     "group": "Water",
-    "symbol": "swamp/mud-tile.png"
+    "symbol": "swamp/mud-tile.png",
+    "image": [ "swamp/mud.png", "swamp/mud2.png", "swamp/mud3.png" ]
   },
   "Gg": {
     "name": "Grassland",
     "editorName": "Green Grass",
     "alias": "Gt",
     "group": "flat",
-    "symbol": "grass/green.png"
+    "symbol": "grass/green-symbol.png",
+    "image": [ "grass/green.png", "grass/green2.png", "grass/green3.png", "grass/green4.png", "grass/green5.png", "grass/green6.png", "grass/green7.png", "grass/green8.png" ]
   },
   "Gs": {
     "name": "Grassland",
     "editorName": "Semi-dry Grass",
     "alias": "Gt",
     "group": "flat",
-    "symbol": "grass/semi-dry.png"
+    "symbol": "grass/semi-dry-symbol.png",
+    "image": [ "grass/semi-dry.png", "grass/semi-dry2.png", "grass/semi-dry3.png", "grass/semi-dry4.png", "grass/semi-dry5.png", "grass/semi-dry6.png" ]
   },
   "Gd": {
     "name": "Grassland",
     "editorName": "Dry Grass",
     "alias": "Gt",
     "group": "flat",
-    "symbol": "grass/dry.png"
+    "symbol": "grass/dry.png",
+    "image": [ "grass/dry.png", "grass/dry2.png", "grass/dry3.png", "grass/dry4.png", "grass/dry5.png", "grass/dry6.png" ]
   },
   "Gll": {
     "name": "Grassland",
     "editorName": "Leaf Litter",
     "alias": "Gt",
     "group": "flat",
-    "symbol": "grass/leaf-litter.png"
+    "symbol": "grass/leaf-litter.png",
+    "image": [ "grass/leaf-litter.png", "grass/leaf-litter2.png", "grass/leaf-litter3.png", "grass/leaf-litter4.png", "grass/leaf-litter5.png", "grass/leaf-litter6.png" ]
   },
   "Rb": {
     "name": "Dirt",
     "editorName": "Dark Dirt",
     "alias": "Gt",
     "group": "flat",
-    "symbol": "flat/dirt-dark.png"
+    "symbol": "flat/dirt-dark.png",
+    "image": [ "flat/dirt-dark.png", "flat/dirt-dark2.png", "flat/dirt-dark3.png", "flat/dirt-dark4.png", "flat/dirt-dark5.png", "flat/dirt-dark6.png", "flat/dirt-dark7.png" ]
   },
   "Re": {
     "name": "Dirt",
     "editorName": "Regular Dirt",
     "alias": "Gt",
     "group": "flat",
-    "symbol": "flat/dirt.png"
+    "symbol": "flat/dirt.png",
+    "image": [ "flat/dirt.png", "flat/dirt2.png", "flat/dirt3.png", "flat/dirt4.png", "flat/dirt5.png", "flat/dirt6.png", "flat/dirt7.png" ]
   },
   "Rd": {
     "name": "Dirt",
     "editorName": "Dry Dirt",
     "alias": "Gt",
     "group": [ "desert", "flat" ],
-    "symbol": "flat/desert-road.png"
+    "symbol": "flat/desert-road.png",
+    "image": [ "flat/dirt.png", "flat/dirt2.png", "flat/dirt3.png", "flat/dirt4.png", "flat/dirt5.png", "flat/dirt6.png", "flat/dirt7.png" ],
+    "filter": "light.png"
   },
   "Rr": {
     "name": "Road",
     "editorName": "Regular Cobbles",
     "alias": "Gt",
     "group": "flat",
-    "symbol": "flat/road.png"
+    "symbol": "flat/road.png",
+    "image": [ "flat/road-clean.png", "flat/road-clean2.png", "flat/road-clean3.png" ]
   },
   "Rrc": {
     "name": "Road",
     "editorName": "Clean Gray Cobbles",
     "alias": "Gt",
     "group": "flat",
-    "symbol": "flat/road-clean.png"
+    "symbol": "flat/road-clean.png",
+    "image": [ "flat/road.png", "flat/road2.png", "flat/road3.png", "flat/road4.png" ]
   },
   "Rp": {
     "name": "Road",
     "editorName": "Overgrown Cobbles",
     "alias": "Gt",
     "group": "flat",
-    "symbol": "flat/stone-path.png"
+    "symbol": "flat/stone-path.png",
+    "image": [ "flat/stone-path.png", "flat/stone-path2.png" ]
   },
   "Ai": {
     "name": "Ice",
     "alias": "At",
     "group": "frozen",
-    "symbol": "frozen/ice.png"
+    "symbol": "frozen/ice.png",
+    "image": [ "frozen/ice.png", "frozen/ice2.png", "frozen/ice3.png", "frozen/ice4.png", "frozen/ice5.png", "frozen/ice6.png" ]
   },
   "Aa": {
     "name": "Snow",
     "alias": "At",
     "group": "frozen",
-    "symbol": "frozen/snow.png"
+    "symbol": "frozen/snow.png",
+    "image": [ "frozen/snow.png", "frozen/snow2.png", "frozen/snow3.png" ]
   },
   "Dd": {
     "name": "Desert",
     "editorName": "Desert Sands",
     "alias": "Ds",
     "group": "desert",
-    "symbol": "sand/desert.png"
+    "symbol": "sand/desert.png",
+    "image": [ "sand/desert.png", "sand/desert2.png", "sand/desert3.png", "sand/desert4.png", "sand/desert5.png", "sand/desert6.png", "sand/desert7.png", "sand/desert8.png" ]
   },
   "Ds": {
     "name": "Sand",

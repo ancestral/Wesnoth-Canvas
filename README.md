@@ -14,6 +14,14 @@ Visit the Wesnoth forums, at:
 http://r.wesnoth.org/t36714
 
 ## Changelog
+
+### Version 2 Build 8
+24 September 2012
+
+* Started adding arrays of images for terrain. This is going to take time. During this time, the terrian may actually look worse as I haven’t “flipped the switch” so to speak, so the terrain will draw with the editor icon version instead of the nice‐looking version which I was using earlier.
+* Continued refining logic for drawing terrain transitions using a bitwise method.
+* Refined the cursor and made it so it appears in the entire window.
+
 ### Version 2 Build 7
 4 September 2012
 
